@@ -15,7 +15,6 @@ const anchor = computed(() => {
 })
 </script>
 
-
 <template>
   <div class="content">
     <div>
@@ -50,7 +49,7 @@ const anchor = computed(() => {
 .content {
   position: relative;
   display: grid;
-  gap: var(--spacing-4);
+  gap: var(--gutter);
   align-items: start;
 
   @media (--md) {
@@ -65,13 +64,14 @@ span {
 
 nav {
   position: sticky;
-  inset-block-start: 0;
+  inset-block-start: var(--spacing-4);
+  display: none;
   order: -1;
-  padding-block: var(--spacing-2);
   background: var(--color-body-background);
   scroll-target-group: auto;
 
   @media (--md) {
+    display: block;
     order: 1;
   }
 }
@@ -98,6 +98,7 @@ ol {
 }
 
 a {
+  display: block;
   padding-block: var(--spacing-1);
   padding-inline-start: var(--spacing-2);
   text-decoration: none;

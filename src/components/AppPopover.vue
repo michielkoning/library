@@ -34,14 +34,14 @@ button {
 
 [popover] {
   position: absolute;
-  padding: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-2);
   margin: var(--spacing-2);
   position-area: top;
   position-anchor: v-bind(anchor);
   position-try-fallbacks: flip-block;
-  color: black;
-  background-color: #fff;
-  border: 0;
+  color: var(--color-body-text);
+  background-color: var(--color-body-background);
+  border: 1px solid var(--color-primary-subtle);
   opacity: 0;
   translate: 0 var(--spacing-4);
   transition:
