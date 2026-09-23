@@ -26,8 +26,6 @@ const anchor = computed(() => {
 
 <style lang="css" scoped>
 button {
-  /* margin-block-start: 20em; */
-  margin-inline-start: 20em;
   anchor-name: v-bind(anchor);
   interest-delay: 0s var(--transition-duration);
 }

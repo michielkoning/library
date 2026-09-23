@@ -87,7 +87,7 @@ button {
 
   &:hover:not(:disabled) {
     text-decoration: 2px solid underline;
-    text-underline-offset: 0.25em;
+    text-underline-offset: 0.2em;
     background-color: var(--btn-background-color-hover);
   }
 
