@@ -91,7 +91,7 @@ const goToTab = (tab: number) => {
 <style lang="css" scoped>
 .tabs {
   margin-block-end: var(--spacing-4);
-  border-block-end: 1px solid var(--color-primary-active);
+  border-block-end: 1px solid var(--color-primary-text);
   transition:
     height var(--transition),
     content-visibility var(--transition) allow-discrete;
@@ -99,11 +99,11 @@ const goToTab = (tab: number) => {
 
 ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(v-bind(tabs.length), 1fr);
   padding: 0;
   margin: 0 0 var(--spacing-4);
   list-style: none outside;
-  border-block-end: 1px solid var(--color-primary-active);
+  border-block-end: 1px solid var(--color-primary-text);
 
   &::after {
     position: absolute;
@@ -114,7 +114,7 @@ ul {
     block-size: 3px;
     position-anchor: v-bind(anchor);
     content: "";
-    background: var(--color-primary-active);
+    background: var(--color-primary-text);
     transition:
       left var(--transition),
       width var(--transition);
@@ -129,8 +129,8 @@ ul {
 
   &:hover,
   &[aria-selected="true"] {
-    color: var(--color-primary-active);
-    background-color: var(--color-primary-subtle);
+    color: var(--color-primary-text);
+    background-color: var(--color-primary);
   }
 
   &[aria-selected="true"] {

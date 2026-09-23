@@ -3,30 +3,27 @@ import { Icon } from "@iconify/vue";
 import { computed } from "vue";
 
 const props = defineProps<{
-  text: string
-  variant:  'danger' | 'info' | 'success' | 'warning'
-}>()
+  text: string;
+  variant: "danger" | "info" | "success" | "warning";
+}>();
 
 const variantIcon = computed(() => {
   switch (props.variant) {
-    case 'danger':
-      return 'solar:danger-triangle-bold';
-    case 'info':
-      return 'solar:info-circle-bold'
-    case 'warning':
-      return 'solar:danger-circle-bold';
-    case 'success':
+    case "danger":
+      return "solar:danger-triangle-bold";
+    case "info":
+      return "solar:info-circle-bold";
+    case "warning":
+      return "solar:danger-circle-bold";
+    case "success":
     default:
-      return 'solar:check-circle-bold';
+      return "solar:check-circle-bold";
   }
-})
+});
 </script>
 
 <template>
-  <div
-    class="notification"
-    :class="variant"
-  >
+  <div class="notification" :class="variant">
     <icon :icon="variantIcon" />
     {{ text }}
   </div>
@@ -35,27 +32,27 @@ const variantIcon = computed(() => {
 <style lang="css" scoped>
 .notification {
   &.success {
-    --notification-background-color: var(--color-success-background);
+    --notification-background-color: var(--color-success);
     --notification-text-color: var(--color-success-text);
-    --notification-border-color: var(--color-success-border);
+    --notification-border-color: var(--color-success-subtle);
   }
 
   &.danger {
-    --notification-background-color: var(--color-danger-background);
+    --notification-background-color: var(--color-danger);
     --notification-text-color: var(--color-danger-text);
-    --notification-border-color: var(--color-danger-border);
+    --notification-border-color: var(--color-danger-subtle);
   }
 
   &.info {
-    --notification-background-color: var(--color-info-background);
+    --notification-background-color: var(--color-info);
     --notification-text-color: var(--color-info-text);
-    --notification-border-color: var(--color-info-border);
+    --notification-border-color: var(--color-info-subtle);
   }
 
   &.warning {
-    --notification-background-color: var(--color-warning-background);
+    --notification-background-color: var(--color-warning);
     --notification-text-color: var(--color-warning-text);
-    --notification-border-color: var(--color-warning-border);
+    --notification-border-color: var(--color-warning-subtle);
   }
 
   display: flex;

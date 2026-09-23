@@ -2,6 +2,7 @@ button {
   font-family: var(--font-family-base);
   font-size: 1em;
   color: currentcolor;
+  cursor: pointer;
   background-color: transparent;
   border: 0;
 }

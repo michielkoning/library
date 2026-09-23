@@ -1,41 +1,28 @@
 <script lang="ts" setup>
-import { useTemplateRef } from 'vue';
+import { useTemplateRef } from "vue";
 
 defineProps<{
-  id: string
-  title: string
-}>()
+  id: string;
+  title: string;
+}>();
 
-const emit = defineEmits(['open'])
-const dialog = useTemplateRef('dialog')
+const emit = defineEmits(["open"]);
+const dialog = useTemplateRef("dialog");
 
 const afterOpen = () => {
   if (!dialog.value) {
-    return
+    return;
   }
-  emit('open')
-}
+  emit("open");
+};
 </script>
 
 <template>
-  <dialog
-    :id="id"
-    ref="dialog"
-    class="gallery-dialog"
-    closedby="any"
-    @toggle="afterOpen"
-  >
+  <dialog :id="id" ref="dialog" closedby="any" @toggle="afterOpen">
     <header>
       <h2>{{ title }}</h2>
-      <button
-        :commandfor="id"
-        command="close"
-        class="btn-close"
-      >
-        <icon
-          name="solar:close-circle-bold"
-          class="icon"
-        />
+      <button :commandfor="id" command="close" class="btn-close">
+        <icon name="solar:close-circle-bold" class="icon" />
       </button>
     </header>
     <slot />
@@ -49,8 +36,12 @@ dialog {
   padding: 0;
   background-color: var(--color-black);
   border: 0;
-  box-shadow: 0 0 0 2px var(--color-black), 0 0 0 3px var(--color-black);
-  transition: display var(--transition) allow-discrete, overlay var(--transition) allow-discrete;
+  box-shadow:
+    0 0 0 2px var(--color-black),
+    0 0 0 3px var(--color-black);
+  transition:
+    display var(--transition) allow-discrete,
+    overlay var(--transition) allow-discrete;
   animation: dialog-hide var(--transition);
 
   &[open] {
