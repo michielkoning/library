@@ -3,7 +3,7 @@ import { Icon } from "@iconify/vue";
 import { computed } from "vue";
 
 const props = defineProps<{
-  text: string;
+  title: string;
   variant: "danger" | "info" | "success" | "warning";
 }>();
 
@@ -23,9 +23,17 @@ const variantIcon = computed(() => {
 </script>
 
 <template>
-  <div class="notification" :class="variant">
+  <div
+    class="notification"
+    :class="variant"
+  >
     <icon :icon="variantIcon" />
-    {{ text }}
+    <div>
+      <div class="title">
+        {{ title }}
+      </div>
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -63,6 +71,10 @@ const variantIcon = computed(() => {
   background-color: var(--notification-background-color);
   border: 1px solid var(--notification-border-color);
   border-inline-start-width: 0.25em;
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
 }
 
 svg {

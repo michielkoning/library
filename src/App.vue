@@ -13,6 +13,9 @@ import CenterWrapper from "./components/CenterWrapper.vue";
         <RouterLink to="/scroll-spy">
           Scroll spy
         </RouterLink>
+        <RouterLink to="/form">
+          Form
+        </RouterLink>
       </nav>
     </CenterWrapper>
   </header>

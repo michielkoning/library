@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+import { useField } from 'vee-validate';
 import { toRefs, useId, type InputTypeHTMLAttribute } from 'vue'
+import FormField from './FormField.vue';
 
 const props = withDefaults(defineProps<{
   type?: InputTypeHTMLAttribute
@@ -16,7 +18,7 @@ const { name } = toRefs(props)
 
 // we don't provide any rules here because we are using form-level validation
 // https://vee-validate.logaretm.com/v4/guide/validation#form-level-validation
-const { value: inputValue, handleBlur, handleChange, errorMessage } = useField<string>(name, undefined, {
+const { value, handleBlur, handleChange, errorMessage } = useField<string>(name, undefined, {
   validateOnValueUpdate: false,
 })
 
@@ -29,17 +31,16 @@ const validationListeners = {
 
 <template>
   <form-field
-    :id="id"
-    :title="title"
-    :error-message="errorMessage"
+    :id
+    :title
+    :error-message
   >
     <input
       :id
       :name
       :type
       :autocomplete
-      :value="inputValue"
-      class="field"
+      :value
       v-on="validationListeners"
     >
   </form-field>

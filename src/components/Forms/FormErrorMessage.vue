@@ -7,7 +7,6 @@ defineProps<{
 <template>
   <span
     aria-live="assertive"
-    class="error-message"
   >
     {{ errorMessage }}
   </span>

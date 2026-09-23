@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import { useField } from 'vee-validate';
 import { toRefs, useId } from 'vue';
+import FormField from './FormField.vue';
+import { Icon } from '@iconify/vue';
 
 const props = defineProps<{
   // type: 'directors' | 'authors'
@@ -11,21 +14,13 @@ const props = defineProps<{
   }[]
 }>()
 
-const model = defineModel<string | number | undefined>({
-  required: true,
-})
-
 const id = useId()
-
-defineOptions({
-  inheritAttrs: false,
-})
 
 const { name } = toRefs(props)
 
 // we don't provide any rules here because we are using form-level validation
 // https://vee-validate.logaretm.com/v4/guide/validation#form-level-validation
-const { value: inputValue, handleBlur, handleChange, errorMessage } = useField<string>(name, undefined, {
+const { value, handleBlur, handleChange, errorMessage } = useField<string>(name, undefined, {
   validateOnValueUpdate: false,
 })
 
@@ -40,23 +35,21 @@ const validationListeners = {
   <form-field
     :id
     :title
-    :error-message="errorMessage"
+    :error-message
   >
     <select
       :id
-      v-model="model"
+      :value
       :name
-      v-bind="$attrs"
+      v-on="validationListeners"
     >
-      <client-only>
-        <button>
-          <selectedcontent />
-          <icon
-            name="solar:alt-arrow-down-outline"
-            class="icon"
-          />
-        </button>
-      </client-only>
+      <button>
+        <selectedcontent />
+        <icon
+          icon="solar:alt-arrow-down-outline"
+          class="icon"
+        />
+      </button>
       <option
         v-for="option in options"
         :key="option.value"
@@ -74,9 +67,6 @@ const validationListeners = {
 }
 
 select {
-  --input-border-color: var(--color-black);
-  --input-background-color: var(--color-white);
-
   appearance: base-select;
   cursor: pointer;
 
@@ -106,7 +96,7 @@ button {
 ::picker(select) {
   margin-block-start: var(--spacing-1);
   appearance: base-select;
-  border: 2px solid var(--color-black);
+  border: 2px solid var(--color-white);
   opacity: 0;
   translate: 0 calc(-1 * var(--spacing-4));
   transition:
@@ -132,25 +122,19 @@ option {
   display: flex;
   gap: var(--spacing-2);
   padding: var(--spacing-2);
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--color-body-text);
+  background-color: var(--color-body-background);
   border-inline-start: 3px solid transparent;
 
   &:hover {
-    color: var(--color-white);
-    background-color: var(--color-black);
+    color: var(--color-primary-text);
+    background-color: var(--color-primary-hover);
   }
 
   &:checked {
     font-weight: var(--font-weight-bold);
-    color: var(--color-black);
-    background-color: var(--color-white);
-    border-inline-start-color: var(--color-black);
-
-    &:hover {
-      color: var(--color-white);
-      background-color: var(--color-black);
-    }
+    color: var(--color-primary-text);
+    background-color: var(--color-primary);
   }
 }
 </style>

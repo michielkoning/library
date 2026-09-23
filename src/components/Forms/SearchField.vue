@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { Icon } from '@iconify/vue';
+
 const model = defineModel<string>({
   required: true,
 })
@@ -13,8 +15,7 @@ const model = defineModel<string>({
       type="search"
     >
     <icon
-      name="solar:minimalistic-magnifer-outline"
-      class="icon"
+      icon="solar:minimalistic-magnifer-outline"
     />
   </div>
 </template>
@@ -28,7 +29,7 @@ input {
   padding-inline-end: 3rem;
 }
 
-.icon {
+svg {
   position: absolute;
   inset-block-start: 50%;
   inset-inline-end: var(--spacing-4);

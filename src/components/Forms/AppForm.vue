@@ -1,29 +1,79 @@
 <script lang="ts" setup>
-defineProps<{
+import type { FormErrors } from 'vee-validate';
+import AppButton from '../AppButton.vue';
+import AppNotification from '../AppNotification.vue';
+import { computed, ref } from 'vue';
+
+const props = defineProps<{
   buttonTitle: string
   successText: string
   status: 'idle' | 'pending' | 'success' | 'error'
+  errors: FormErrors<Record<string, string>>
 }>()
 
 const emit = defineEmits<{
   (event: 'submit-form'): void
 }>()
+
+const errorlist = computed(() => {
+ return Object.values(props.errors)
+})
+
+const touched = ref(false)
+
+const submit = () => {
+  touched.value = true
+  emit('submit-form')
+}
 </script>
 
 <template>
   <app-notification
     v-if="status === 'success'"
-    :text="successText"
+    :title="successText"
+    variant="success"
   />
   <form
     v-else
-    @submit.prevent="emit('submit-form')"
+    method="post"
+    novalidate
+    @submit.prevent="submit"
   >
     <slot />
-    <app-button
-      title="Reactie plaatsen"
-      type="submit"
-      :disabled="status === 'pending'"
-    />
+    <div>
+      <app-button
+        :title="buttonTitle"
+        type="submit"
+        :disabled="status === 'pending'"
+      />
+    </div>
+    <div aria-live="assertive">
+      <app-notification
+        v-if="errorlist.length && touched"
+        variant="warning"
+        title="Het formulier is niet correct ingevuld"
+      >
+        <ul>
+          <li
+            v-for="error in errors"
+            :key="error"
+          >
+            {{ error }}
+          </li>
+        </ul>
+      </app-notification>
+    </div>
   </form>
 </template>
+
+<style lang="css" scoped>
+ul {
+  padding-inline-start: 0;
+  margin: 0;
+  list-style: none outside;
+}
+
+[aria-live="assertive"]:not(:empty) {
+  margin-block-start: var(--spacing-4);
+}
+</style>

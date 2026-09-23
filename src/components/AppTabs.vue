@@ -118,7 +118,7 @@ ul {
     block-size: 3px;
     position-anchor: v-bind(anchor);
     content: "";
-    background: var(--color-primary-text);
+    background: var(--color-primary-subtle);
     transition:
       left var(--transition),
       width var(--transition);
@@ -131,7 +131,10 @@ ul {
   text-align: center;
   transition: background var(--transition);
 
-  &:hover,
+  &:hover {
+    background-color: var(--color-primary-text);
+  }
+
   &[aria-selected="true"] {
     color: var(--color-primary-text);
     background-color: var(--color-primary);

@@ -49,19 +49,19 @@ import AppPopover from "@/components/AppPopover.vue";
       obcaecati suscipit exercitationem nisi? Possimus!
     </summary-details>
     <app-notification
-      text="test"
+      title="test"
       variant="danger"
     />
     <app-notification
-      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet obcaecati suscipit exercitationem nisi? Possimus!"
+      title="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet obcaecati suscipit exercitationem nisi? Possimus!"
       variant="success"
     />
     <app-notification
-      text="test"
+      title="test"
       variant="warning"
     />
     <app-notification
-      text="test"
+      title="test"
       variant="info"
     />
     <app-tabs

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import FormErrorMessage from './FormErrorMessage.vue';
+
 defineProps<{
   id: string
   title: string
@@ -15,7 +17,7 @@ defineProps<{
       {{ title }}
     </label>
     <slot />
-    <form-error-message
+    <FormErrorMessage
       :error-message="errorMessage"
       class="error-message"
     />
