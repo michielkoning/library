@@ -1,40 +1,32 @@
 <script lang="ts" setup>
-import { useTemplateRef } from "vue";
+import { Icon } from "@iconify/vue";
 
 defineProps<{
   id: string;
   title: string;
 }>();
-
-const emit = defineEmits(["open"]);
-const dialog = useTemplateRef("dialog");
-
-const afterOpen = () => {
-  if (!dialog.value) {
-    return;
-  }
-  emit("open");
-};
 </script>
 
 <template>
-  <dialog :id="id" ref="dialog" closedby="any" @toggle="afterOpen">
+  <dialog :id="id" closedby="any">
     <header>
       <h2>{{ title }}</h2>
       <button :commandfor="id" command="close" class="btn-close">
-        <icon name="solar:close-circle-bold" class="icon" />
+        <icon icon="solar:close-circle-bold" />
       </button>
     </header>
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
   </dialog>
 </template>
 
 <style lang="css" scoped>
 dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
-  max-inline-size: 1280px;
+  max-inline-size: var(--container-size-md);
   padding: 0;
-  background-color: var(--color-black);
+  background-color: var(--color-white);
   border: 0;
   box-shadow:
     0 0 0 2px var(--color-black),
@@ -53,7 +45,7 @@ dialog {
   }
 }
 
-.btn-close {
+svg {
   font-size: 2em;
   cursor: pointer;
 }
@@ -74,6 +66,10 @@ header {
   padding: var(--spacing-2) var(--spacing-4) 0;
   color: var(--color-white);
   background-color: var(--color-black);
+}
+
+.content {
+  padding: var(--spacing-4);
 }
 
 @keyframes dialog-hide {

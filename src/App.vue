@@ -3,11 +3,34 @@ import SummaryDetails from "./components/SummaryDetails.vue";
 import CenterWrapper from "./components/CenterWrapper.vue";
 import AppNotification from "./components/AppNotification.vue";
 import AppTabs from "./components/AppTabs.vue";
+import AppDialog from "./components/AppDialog.vue";
+import AppBreadcrumb from "./components/AppBreadcrumb.vue";
 </script>
 
 <template>
   <div>
     <center-wrapper>
+      <app-breadcrumb
+        :pages="[
+          {
+            title: 'home',
+            to: '/',
+          },
+
+          {
+            title: 'about',
+            to: '/',
+          },
+        ]"
+      />
+      <app-dialog id="dialog" title="test">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
+          quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
+          obcaecati suscipit exercitationem nisi? Possimus!
+        </p>
+      </app-dialog>
+      <button commandfor="dialog" command="show-modal">Open Dialog</button>
       <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
         quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
