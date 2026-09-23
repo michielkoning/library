@@ -8,7 +8,7 @@ label {
 }
 
 textarea {
-  line-height: 1.6;
+  line-height: var(--line-height);
   resize: vertical;
 
   @supports (field-sizing: content) {

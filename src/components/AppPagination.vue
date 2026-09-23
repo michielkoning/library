@@ -16,7 +16,7 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
     v-if="totalPages > 1"
     class="paging"
   >
-    <nuxt-link-locale
+    <router-link
       v-if="currentPage > 1"
       :to="{
         query: {
@@ -26,7 +26,7 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
       }"
     >
       Vorige pagina
-    </nuxt-link-locale>
+    </router-link>
     <span v-else>Vorige pagina</span>
     <ul>
       <li
@@ -34,7 +34,7 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
         :key="page"
         :class="{ current: page === currentPage }"
       >
-        <nuxt-link-locale
+        <router-link
           :to="{
             query: {
               ...route.query,
@@ -43,10 +43,10 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
           }"
         >
           {{ page }}
-        </nuxt-link-locale>
+        </router-link>
       </li>
     </ul>
-    <nuxt-link-locale
+    <router-link
       v-if="currentPage < totalPages"
       :to="{
         query: {
@@ -56,7 +56,7 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
       }"
     >
       Volgende pagina
-    </nuxt-link-locale>
+    </router-link>
     <span v-else>Volgende pagina</span>
   </div>
 </template>

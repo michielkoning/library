@@ -4,17 +4,17 @@ import { computed } from "vue";
 
 const props = defineProps<{
   text: string
-  variant: 'success' | 'danger' | 'warning' | 'info'
+  variant:  'danger' | 'info' | 'success' | 'warning'
 }>()
 
 const variantIcon = computed(() => {
   switch (props.variant) {
+    case 'danger':
+      return 'solar:danger-triangle-bold';
     case 'info':
       return 'solar:info-circle-bold'
     case 'warning':
       return 'solar:danger-circle-bold';
-    case 'danger':
-      return 'solar:danger-triangle-bold';
     case 'success':
     default:
       return 'solar:check-circle-bold';
@@ -69,9 +69,11 @@ const variantIcon = computed(() => {
 }
 
 svg {
+  --size: 1.25em;
+
   flex: 0 0 auto;
-  inline-size: 1.25em;
-  block-size: 1.25em;
+  inline-size: var(--size);
+  block-size: var(--size);
   margin-block-start: 0.1em;
 }
 </style>
