@@ -6,6 +6,17 @@
   --color-red: oklch(47.19% 0.1582 33.33deg);
   --color-red-700: oklch(from var(--color-red) calc(l - 0.1) c h);
 
+  /* PRIMARY */
+  --color-primary: #62a1fe;
+  --color-primary-rgb: 98, 161, 254;
+  --color-primary-hover: #81b4fe;
+  --color-primary-active: #91bdfe;
+  --color-primary-subtle: #052c65;
+  --color-primary-subtle-hover: #063272;
+  --color-primary-subtle-active: #084298;
+  --color-primary-emphasis: #92befe;
+  --color-primary-emphasis-hover: #86b7fe;
+
   /* BODY */
   --color-body-background: light-dark(oklch(100% 0 0deg), oklch(21.2% 0.009 255.6deg));
   --color-body-text: light-dark(oklch(34.5% 0.013 248.2deg), oklch(86.7% 0.011 247.9deg));
