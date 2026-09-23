@@ -51,7 +51,11 @@ const goToTab = (tab: number) => {
 <template>
   <div class="tabs">
     <ul role="tablist">
-      <li v-for="(tab, index) in tabs" :key="tab.id" role="presentation">
+      <li
+        v-for="(tab, index) in tabs"
+        :key="tab.id"
+        role="presentation"
+      >
         <button
           :id="`tab-${tab.id}`"
           ref="button"
@@ -141,11 +145,15 @@ ul {
 [role="tabpanel"] {
   display: none;
   opacity: 0;
-  transition: opacity var(--transition);
+  transition:
+    opacity var(--transition),
+    overlay allow-discrete,
+    display allow-discrete;
 
   &.active {
     display: block;
     opacity: 1;
+    transition-delay: 0.1s;
   }
 }
 

@@ -9,10 +9,11 @@ button {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-text);
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
-}
 
-.more-link {
-  display: none;
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
 }
