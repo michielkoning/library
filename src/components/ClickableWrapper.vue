@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue';
-import type { RouteLocationRaw } from 'vue-router'
+import { useRouter, type RouteLocationRaw } from 'vue-router'
 
 const props = withDefaults(defineProps<{
   to: RouteLocationRaw
@@ -10,6 +10,8 @@ const props = withDefaults(defineProps<{
 })
 
 const down: Ref<number | null> = ref(null)
+
+  const router = useRouter()
 
 const mouseDown = (event: MouseEvent) => {
   const target = event.target as Element
@@ -29,7 +31,7 @@ const mouseUp = async () => {
   }
   const up = +new Date()
   if (up - down.value < 200) {
-    await navigateTo(props.to)
+    await router.push(props.to)
   }
 }
 </script>

@@ -2,7 +2,6 @@
 import { computed, resolveComponent } from 'vue';
 import type { RouteLocationRaw } from 'vue-router';
 
-
 const props = withDefaults(
   defineProps<{
       to?: RouteLocationRaw
@@ -34,7 +33,7 @@ const component = computed(() => {
 <template>
   <component
     :is="component"
-    :to="to"
+    :to
     :class="variant"
     :type="component === 'button' ? type : undefined"
     :disabled
@@ -86,13 +85,13 @@ button {
   border-radius: var(--btn-border-radius);
   transition: background-color var(--transition), text-decoration var(--transition);
 
-  &:hover {
+  &:hover:not(:disabled) {
     text-decoration: 2px solid underline;
     text-underline-offset: 0.25em;
     background-color: var(--btn-background-color-hover);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     padding-block: calc(var(--spacing-2) + 1px) calc(var(--spacing-2) - 1px);
   }
 }

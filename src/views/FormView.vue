@@ -10,7 +10,7 @@ import { toTypedSchema } from '@vee-validate/zod';
 import { useForm } from 'vee-validate';
 import { ref, type Ref } from 'vue';
 
-const { values, handleSubmit, errors, errorBag, meta } = useForm({
+const { handleSubmit, errors } = useForm({
   name: 'form',
   validationSchema: toTypedSchema(
     z.object({
