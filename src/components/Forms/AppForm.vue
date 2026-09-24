@@ -1,30 +1,30 @@
 <script lang="ts" setup>
-import type { FormErrors } from 'vee-validate';
-import AppButton from '../AppButton.vue';
-import AppNotification from '../AppNotification.vue';
-import { computed, ref } from 'vue';
+import type { FormErrors } from "vee-validate";
+import AppButton from "@/components/AppButton.vue";
+import AppNotification from "@/components/AppNotification.vue";
+import { computed, ref } from "vue";
 
 const props = defineProps<{
-  buttonTitle: string
-  successText: string
-  status: 'idle' | 'pending' | 'success' | 'error'
-  errors: FormErrors<Record<string, string>>
-}>()
+  buttonTitle: string;
+  successText: string;
+  status: "idle" | "pending" | "success" | "error";
+  errors: FormErrors<Record<string, string>>;
+}>();
 
 const emit = defineEmits<{
-  (event: 'submit-form'): void
-}>()
+  (event: "submit-form"): void;
+}>();
 
 const errorlist = computed(() => {
- return Object.values(props.errors)
-})
+  return Object.values(props.errors);
+});
 
-const touched = ref(false)
+const touched = ref(false);
 
 const submit = () => {
-  touched.value = true
-  emit('submit-form')
-}
+  touched.value = true;
+  emit("submit-form");
+};
 </script>
 
 <template>
@@ -40,13 +40,6 @@ const submit = () => {
     @submit.prevent="submit"
   >
     <slot />
-    <div>
-      <app-button
-        :title="buttonTitle"
-        type="submit"
-        :disabled="status === 'pending'"
-      />
-    </div>
     <div aria-live="assertive">
       <app-notification
         v-if="errorlist.length && touched"
@@ -63,6 +56,11 @@ const submit = () => {
         </ul>
       </app-notification>
     </div>
+    <app-button
+      :title="buttonTitle"
+      type="submit"
+      :disabled="status === 'pending'"
+    />
   </form>
 </template>
 

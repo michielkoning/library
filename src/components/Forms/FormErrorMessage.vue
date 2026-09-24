@@ -1,15 +1,13 @@
 <script lang="ts" setup>
 defineProps<{
-  errorMessage?: string
-}>()
+  errorMessage?: string;
+}>();
 </script>
 
 <template>
-  <span
-    aria-live="assertive"
-  >
+  <div aria-live="assertive">
     {{ errorMessage }}
-  </span>
+  </div>
 </template>
 
 <style lang="css" scoped>
