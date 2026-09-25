@@ -9,10 +9,12 @@ const props = withDefaults(
     autocomplete?: AutoFillField;
     title: string;
     name: string;
+    placeholder?: string;
   }>(),
   {
     autocomplete: undefined,
     type: "text",
+    placeholder: undefined,
   },
 );
 
@@ -34,6 +36,6 @@ const validationListeners = {
 
 <template>
   <form-field :id :title :error-message>
-    <input :id :name :type :autocomplete :value v-on="validationListeners" />
+    <input :id :name :type :autocomplete :value :placeholder v-on="validationListeners" />
   </form-field>
 </template>

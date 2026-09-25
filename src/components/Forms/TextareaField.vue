@@ -6,6 +6,7 @@ import FormField from "./FormField.vue";
 const props = defineProps<{
   title: string;
   name: string;
+  placeholder?: string;
 }>();
 
 const id = useId();
@@ -26,6 +27,6 @@ const validationListeners = {
 
 <template>
   <form-field :id :title :name :error-message>
-    <textarea :id :value :name v-on="validationListeners" />
+    <textarea :id :value :name :placeholder v-on="validationListeners" />
   </form-field>
 </template>

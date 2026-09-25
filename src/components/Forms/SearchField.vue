@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 
+defineProps<{
+  placeholder?: string;
+}>();
+
 const model = defineModel<string>({
   required: true,
 });
@@ -8,7 +12,7 @@ const model = defineModel<string>({
 
 <template>
   <div class="field">
-    <input v-model="model" placeholder="Zoeken naar voorstellingen" name="search" type="search" />
+    <input v-model="model" :placeholder name="search" type="search" />
     <icon icon="solar:minimalistic-magnifer-outline" />
   </div>
 </template>

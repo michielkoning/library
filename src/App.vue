@@ -7,9 +7,10 @@ import CenterWrapper from "./components/CenterWrapper.vue";
   <header>
     <CenterWrapper>
       <nav>
-        <RouterLink to="/"> Home </RouterLink>
-        <RouterLink to="/scroll-spy"> Scroll spy </RouterLink>
-        <RouterLink to="/form"> Form </RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/scroll-spy">Scroll spy</RouterLink>
+        <RouterLink to="/form">Form</RouterLink>
+        <RouterLink to="/carousel">Carousel</RouterLink>
       </nav>
     </CenterWrapper>
   </header>

@@ -1,6 +1,4 @@
-import FormView from "@/views/FormView.vue";
 import HomeView from "@/views/HomeView.vue";
-import ScrollSpyView from "@/views/ScrollSpyView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -12,11 +10,15 @@ const router = createRouter({
     },
     {
       path: "/scroll-spy",
-      component: ScrollSpyView,
+      component: () => import("@/views/ScrollSpyView.vue"),
     },
     {
       path: "/form",
-      component: FormView,
+      component: () => import("@/views/FormView.vue"),
+    },
+    {
+      path: "/carousel",
+      component: () => import("@/views/CarouselView.vue"),
     },
   ],
 });
