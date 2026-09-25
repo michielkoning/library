@@ -13,6 +13,15 @@ export default defineConfigWithVueTs(
   {
     name: "app/files-to-lint",
     files: ["**/*.{vue,ts,mts,tsx}"],
+    rules: {
+      "vue/component-name-in-template-casing": [
+        "error",
+        "kebab-case",
+        {
+          registeredComponentsOnly: false,
+        },
+      ],
+    },
   },
 
   globalIgnores(["**/dist/**", "**/dist-ssr/**", "**/coverage/**"]),

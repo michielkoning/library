@@ -5,17 +5,17 @@ import CenterWrapper from "./components/CenterWrapper.vue";
 
 <template>
   <header>
-    <CenterWrapper>
+    <center-wrapper>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/scroll-spy">Scroll spy</RouterLink>
-        <RouterLink to="/form">Form</RouterLink>
-        <RouterLink to="/carousel">Carousel</RouterLink>
+        <router-link to="/">Home</router-link>
+        <router-link to="/scroll-spy">Scroll spy</router-link>
+        <router-link to="/form">Form</router-link>
+        <router-link to="/carousel">Carousel</router-link>
       </nav>
-    </CenterWrapper>
+    </center-wrapper>
   </header>
   <main>
-    <RouterView />
+    <router-view />
   </main>
 </template>
 

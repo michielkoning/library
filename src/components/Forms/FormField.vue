@@ -14,7 +14,7 @@ defineProps<{
       {{ title }}
     </label>
     <slot />
-    <FormErrorMessage :error-message="errorMessage" class="error-message" />
+    <form-error-message :error-message="errorMessage" class="error-message" />
   </div>
 </template>
 
@@ -22,7 +22,6 @@ defineProps<{
 label {
   margin-block-end: var(--spacing-xxs);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text);
 }
 
 .error-message {

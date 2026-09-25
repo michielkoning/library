@@ -44,7 +44,7 @@ const validationListeners = {
         </label>
       </div>
     </div>
-    <FormErrorMessage :error-message="errorMessage" />
+    <form-error-message :error-message="errorMessage" />
   </fieldset>
 </template>
 

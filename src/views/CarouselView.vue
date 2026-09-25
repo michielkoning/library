@@ -10,11 +10,11 @@ const entries = [
 </script>
 
 <template>
-  <CenterWrapper>
-    <AppCarousel :items="entries">
+  <center-wrapper>
+    <app-carousel :items="entries">
       <template v-for="image in entries" #[image] :key="image">
         <img :src="image" />
       </template>
-    </AppCarousel>
-  </CenterWrapper>
+    </app-carousel>
+  </center-wrapper>
 </template>

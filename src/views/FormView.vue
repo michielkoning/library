@@ -48,18 +48,18 @@ const submit = handleSubmit(() => {
 </script>
 
 <template>
-  <CenterWrapper>
-    <AppForm
+  <center-wrapper>
+    <app-form
       :errors
       button-title="Reactie plaatsen"
       success-text="success"
       :status
       @submit-form="submit"
     >
-      <FormFieldset title="Adres" :columns="3">
-        <TextField name="name" title="Name" autocomplete="name" />
-        <TextField name="email" title="Email" type="email" autocomplete="email" />
-        <SelectField
+      <form-fieldset title="Adres" :columns="3">
+        <text-field name="name" title="Name" autocomplete="name" />
+        <text-field name="email" title="Email" type="email" autocomplete="email" />
+        <select-field
           :options="[
             {
               title: 'Option 1',
@@ -77,9 +77,9 @@ const submit = handleSubmit(() => {
           name="select"
           title="Opties"
         />
-        <TextareaField name="comment" title="Reactie" class="comment" />
-      </FormFieldset>
-      <RadioGroup
+        <textarea-field name="comment" title="Reactie" class="comment" />
+      </form-fieldset>
+      <radio-group
         class="options"
         :options="[
           {
@@ -98,9 +98,9 @@ const submit = handleSubmit(() => {
         name="radio"
         title="Radio opties"
       />
-    </AppForm>
+    </app-form>
     <pre>{{ values }}</pre>
-  </CenterWrapper>
+  </center-wrapper>
 </template>
 
 <style lang="css" scoped>
