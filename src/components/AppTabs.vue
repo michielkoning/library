@@ -46,6 +46,10 @@ const goToTab = (tab: number) => {
   }
   selectedTab.value = tab;
 };
+
+const total = computed(() => {
+  return props.tabs.length;
+});
 </script>
 
 <template>
@@ -98,7 +102,7 @@ const goToTab = (tab: number) => {
 
 ul {
   display: grid;
-  grid-template-columns: repeat(v-bind(tabs.length), 1fr);
+  grid-template-columns: repeat(v-bind(total), 1fr);
   padding: 0;
   margin: 0 0 var(--spacing-4);
   list-style: none outside;
@@ -112,7 +116,7 @@ ul {
     /* stylelint-disable-next-line declaration-property-value-no-unknown */
     inline-size: anchor-size(inline);
     /* stylelint-disable-next-line declaration-property-value-no-unknown */
-    block-size: anchor-size(block-size);
+    block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
     background: var(--color-primary-subtle);
