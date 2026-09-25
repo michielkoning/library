@@ -92,6 +92,22 @@ import { Icon } from "@iconify/vue";
           Recusandae perferendis temporibus dicta deleniti blanditiis aliquid?
         </p>
       </template>
-    </app-tabs>
+    </app-tabs>       <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eum sequi assumenda
+      laudantium excepturi earum enim repudiandae, esse nobis temporibus numquam ut commodi.
+      Recusandae perferendis temporibus dicta deleniti blanditiis aliquid?
+    </p>       <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eum sequi assumenda
+      laudantium excepturi earum enim repudiandae, esse nobis temporibus numquam ut commodi.
+      Recusandae perferendis temporibus dicta deleniti blanditiis aliquid?
+    </p>       <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eum sequi assumenda
+      laudantium excepturi earum enim repudiandae, esse nobis temporibus numquam ut commodi.
+      Recusandae perferendis temporibus dicta deleniti blanditiis aliquid?
+    </p>       <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eum sequi assumenda
+      laudantium excepturi earum enim repudiandae, esse nobis temporibus numquam ut commodi.
+      Recusandae perferendis temporibus dicta deleniti blanditiis aliquid?
+    </p>
   </center-wrapper>
 </template>

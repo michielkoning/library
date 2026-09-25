@@ -26,6 +26,7 @@ dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: var(--container-size-md);
   padding: 0;
+  overscroll-behavior: contain;
   color: var(--color-body-text);
   background-color: var(--color-panel-bg);
   border: 0;
@@ -51,6 +52,8 @@ svg {
 }
 
 ::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
   background-color: rgb(0 0 0 / 50%);
   backdrop-filter: blur(0.25em);
   animation: backdrop-hide var(--transition);
