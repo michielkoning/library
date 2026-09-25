@@ -9,6 +9,7 @@ import { z } from "zod";
 import { toTypedSchema } from "@vee-validate/zod";
 import { useForm } from "vee-validate";
 import { ref, type Ref } from "vue";
+import RadioGroup from "@/components/Forms/RadioGroup.vue";
 
 const { handleSubmit, errors, values } = useForm({
   name: "form",
@@ -22,6 +23,9 @@ const { handleSubmit, errors, values } = useForm({
       select: z.enum(["option 1", "option 2", "option 3", ""]).refine((val) => val !== "", {
         error: "Het veld select is verplicht",
       }),
+      radio: z.enum(["option 1", "option 2", "option 3", ""]).refine((val) => val !== "", {
+        error: "Het veld radio is verplicht",
+      }),
     }),
   ),
   initialValues: {
@@ -29,6 +33,7 @@ const { handleSubmit, errors, values } = useForm({
     comment: "",
     select: "",
     email: "",
+    radio: "option 2",
   },
 });
 
@@ -74,12 +79,32 @@ const submit = handleSubmit(() => {
         />
         <TextareaField name="comment" title="Reactie" class="comment" />
       </FormFieldset>
+      <RadioGroup
+        class="options"
+        :options="[
+          {
+            title: 'Option 1',
+            value: 'option 1',
+          },
+          {
+            title: 'Option 2',
+            value: 'option 2',
+          },
+          {
+            title: 'Option 3',
+            value: 'option 3',
+          },
+        ]"
+        name="radio"
+        title="Radio opties"
+      />
     </AppForm>
     <pre>{{ values }}</pre>
   </CenterWrapper>
 </template>
 
 <style lang="css" scoped>
+.options,
 .comment {
   grid-column: span 3;
 }

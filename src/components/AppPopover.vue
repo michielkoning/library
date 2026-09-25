@@ -6,12 +6,16 @@ const id = useId();
 const anchor = computed(() => {
   return `--${id}`;
 });
+
+defineOptions({
+  inheritAttrs: false,
+});
 </script>
 
 <template>
-  <button :interestfor="id" :popovertarget="id">Open Popover</button>
+  <button :interestfor="id" :popovertarget="id" v-bind="$attrs"><slot name="anchor" /></button>
 
-  <div :id popover="hint">Greetings, one and all!</div>
+  <div :id popover="hint"><slot /></div>
 </template>
 
 <style lang="css" scoped>

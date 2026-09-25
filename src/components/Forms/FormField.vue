@@ -20,7 +20,6 @@ defineProps<{
 
 <style lang="css" scoped>
 label {
-  display: block;
   margin-block-end: var(--spacing-xxs);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);

@@ -2,8 +2,23 @@ form {
   margin-block-end: var(--spacing-4);
 }
 
-label {
+fieldset {
+  padding: 0;
+  margin: 0 0 var(--spacing-4);
+  border: 0;
+}
+
+legend {
   display: block;
+  padding: 0;
+  margin-block-end: var(--spacing-2);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
+}
+
+label {
   margin-block-end: var(--spacing-1);
 }
 

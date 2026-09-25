@@ -6,11 +6,15 @@ import AppTabs from "@/components/AppTabs.vue";
 import AppDialog from "@/components/AppDialog.vue";
 import AppBreadcrumb from "@/components/AppBreadcrumb.vue";
 import AppPopover from "@/components/AppPopover.vue";
+import { Icon } from "@iconify/vue";
 </script>
 
 <template>
   <center-wrapper>
-    <app-popover />
+    <app-popover>
+      <template #anchor><Icon icon="solar:info-circle-bold" /></template>
+      Greetings, one and all!
+    </app-popover>
     <app-breadcrumb
       :pages="[
         {
@@ -32,7 +36,7 @@ import AppPopover from "@/components/AppPopover.vue";
       </p>
     </app-dialog>
     <button commandfor="dialog" command="show-modal">Open Dialog</button>
-    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em;">
+    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
       quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
       obcaecati suscipit exercitationem nisi? Possimus!
