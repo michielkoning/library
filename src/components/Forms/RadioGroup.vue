@@ -37,7 +37,6 @@ const validationListeners = {
           :checked="value === option.value"
           :name
           :value="option.value"
-          class="sr-only"
           v-on="validationListeners"
         />
         <label :for="`${id}-${index}`">

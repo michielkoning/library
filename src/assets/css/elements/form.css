@@ -4,7 +4,7 @@ form {
 
 fieldset {
   padding: 0;
-  margin: 0 0 var(--spacing-4);
+  margin: 0 0 var(--spacing-2);
   border: 0;
 }
 
@@ -19,6 +19,7 @@ legend {
 }
 
 label {
+  display: block;
   margin-block-end: var(--spacing-1);
 }
 

@@ -2,10 +2,10 @@
 withDefaults(
   defineProps<{
     title: string;
-    colunns?: number;
+    columns?: number;
   }>(),
   {
-    colunns: 1,
+    columns: 1,
   },
 );
 </script>
@@ -22,7 +22,7 @@ withDefaults(
 <style lang="css" scoped>
 fieldset {
   display: grid;
-  grid-template-columns: repeat(v-bind(colunns), 1fr);
+  grid-template-columns: repeat(v-bind(columns), 1fr);
   gap: var(--gutter);
 }
 </style>

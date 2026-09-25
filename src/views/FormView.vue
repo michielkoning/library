@@ -56,7 +56,7 @@ const submit = handleSubmit(() => {
       :status
       @submit-form="submit"
     >
-      <FormFieldset title="Adres" :colunns="3">
+      <FormFieldset title="Adres" :columns="3">
         <TextField name="name" title="Name" autocomplete="name" />
         <TextField name="email" title="Email" type="email" autocomplete="email" />
         <SelectField
