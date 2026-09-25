@@ -37,27 +37,27 @@ button {
   position-area: top;
   position-anchor: v-bind(anchor);
   position-try-fallbacks: flip-block;
-  color: var(--color-body-text);
-  background-color: var(--color-body-background);
-  border: 1px solid var(--color-primary-subtle);
+  color: rgb(250 250 250);
+  zoom: 0.9;
+  background-color: rgb(17 17 17);
+  border: 1px solid rgb(39 39 42);
   opacity: 0;
-  translate: 0 var(--spacing-4);
   transition:
     opacity var(--transition),
-    translate var(--transition),
+    zoom var(--transition),
     overlay allow-discrete,
     display allow-discrete;
 
   &:popover-open {
+    zoom: 1;
     opacity: 1;
-    translate: 0 0;
   }
 }
 
 @starting-style {
   [popover]:popover-open {
+    zoom: 0.9;
     opacity: 0;
-    translate: 0 var(--spacing-4);
   }
 }
 

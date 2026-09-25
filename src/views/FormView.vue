@@ -9,6 +9,7 @@ import { z } from "zod";
 import { toTypedSchema } from "@vee-validate/zod";
 import { useForm } from "vee-validate";
 import { ref, type Ref } from "vue";
+import AppButton from "@/components/AppButton.vue";
 
 const { handleSubmit, errors, values } = useForm({
   name: "form",
@@ -44,10 +45,28 @@ const submit = handleSubmit(() => {
 
 <template>
   <CenterWrapper>
-    <AppForm :errors button-title="Submit" success-text="success" :status @submit-form="submit">
-      <FormFieldset title="Adres" :colunns="3">
-        <TextField name="name" title="Name" autocomplete="name" />
-        <TextField name="email" title="Email" type="email" autocomplete="email" />
+    <AppForm
+      :errors
+      button-title="Submit"
+      success-text="success"
+      :status
+      @submit-form="submit"
+    >
+      <FormFieldset
+        title="Adres"
+        :colunns="3"
+      >
+        <TextField
+          name="name"
+          title="Name"
+          autocomplete="name"
+        />
+        <TextField
+          name="email"
+          title="Email"
+          type="email"
+          autocomplete="email"
+        />
         <SelectField
           :options="[
             {
@@ -66,15 +85,38 @@ const submit = handleSubmit(() => {
           name="select"
           title="select"
         />
-        <TextareaField name="comment" title="comment" class="comment" />
+        <TextareaField
+          name="comment"
+          title="comment"
+          class="comment"
+        />
       </FormFieldset>
     </AppForm>
     <pre>{{ values }}</pre>
+
+    <div class="buttons">
+      <AppButton
+        title="Submit"
+      />
+      <AppButton
+        variant="secondary"
+        title="Submit"
+      />
+      <AppButton
+        variant="ghost"
+        title="Submit"
+      />
+    </div>
   </CenterWrapper>
 </template>
 
 <style lang="css" scoped>
 .comment {
   grid-column: span 3;
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
 }
 </style>

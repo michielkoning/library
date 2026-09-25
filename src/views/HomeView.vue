@@ -32,7 +32,7 @@ import AppPopover from "@/components/AppPopover.vue";
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
         quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
         obcaecati suscipit exercitationem nisi? Possimus!
-      </p>;
+      </p>
     </app-dialog>
     <button
       commandfor="dialog"

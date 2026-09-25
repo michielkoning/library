@@ -33,11 +33,11 @@ dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: var(--container-size-md);
   padding: 0;
-  background-color: var(--color-white);
+  color: var(--color-body-text);
+  background-color: var(--color-panel-bg);
   border: 0;
-  box-shadow:
-    0 0 0 2px var(--color-black),
-    0 0 0 3px var(--color-black);
+  border-radius: 0.25em;
+  box-shadow: var(--shadow);
   transition:
     display var(--transition) allow-discrete,
     overlay var(--transition) allow-discrete;
@@ -71,8 +71,7 @@ header {
   align-items: start;
   justify-content: space-between;
   padding: var(--spacing-2) var(--spacing-4) 0;
-  color: var(--color-white);
-  background-color: var(--color-black);
+  background-color: var(--color-panel-bg);
 }
 
 .content {

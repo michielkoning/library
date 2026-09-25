@@ -95,7 +95,6 @@ const goToTab = (tab: number) => {
 <style lang="css" scoped>
 .tabs {
   margin-block-end: var(--spacing-4);
-  border-block-end: 1px solid var(--color-primary-text);
   transition:
     height var(--transition),
     content-visibility var(--transition) allow-discrete;
@@ -107,15 +106,15 @@ ul {
   padding: 0;
   margin: 0 0 var(--spacing-4);
   list-style: none outside;
-  border-block-end: 1px solid var(--color-primary-text);
+  border-block-end: 1px solid var(--color-primary-subtle);
 
-  &::after {
+  &::before {
     position: absolute;
     inset-block-end: anchor(bottom);
     inset-inline-start: anchor(left);
     display: block;
     inline-size: anchor-size(inline);
-    block-size: 3px;
+    block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
     background: var(--color-primary-subtle);
@@ -126,18 +125,19 @@ ul {
 }
 
 [role="tab"] {
+  position: relative;
   inline-size: 100%;
   padding: var(--spacing-3) var(--spacing-2);
   text-align: center;
   transition: background var(--transition);
 
-  &:hover {
-    background-color: var(--color-primary-text);
+  &:hover:not([aria-selected="true"]) {
+    color: var(--color-gray-fg);
+    background-color: var(--color-gray-subtle);
   }
 
   &[aria-selected="true"] {
-    color: var(--color-primary-text);
-    background-color: var(--color-primary);
+    color: var(--color-primary-fg);
   }
 
   &[aria-selected="true"] {

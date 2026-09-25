@@ -30,11 +30,11 @@ textarea {
   line-height: var(--line-height-heading);
   color: currentcolor;
   background: transparent;
-  border: 2px solid currentcolor;
+  border: 2px solid var(--chakra-colors-gray-800);
   border-radius: 0;
   transition: border-color var(--transition);
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     border-color: var(--color-accent-alternative);
   }

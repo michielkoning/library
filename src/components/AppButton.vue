@@ -48,25 +48,25 @@ button {
   --btn-border-radius: 0.5em;
 
   &.primary {
-    --btn-background-color: var(--color-primary);
-    --btn-background-color-hover: var(--color-primary-hover);
-    --btn-background-color-disabled: var(--color-primary-disabled);
-    --btn-text-color: var(--color-primary-text);
+    --btn-background-color: var(--color-primary-solid);
+    --btn-background-color-hover: var(--color-primary-emphasized);
+    --btn-text-color: var(--color-primary-contrast);
+    --focus-ring-color: var(--btn-background-color);
   }
 
   &.secondary {
-    --btn-background-color: var(--color-secondary);
-    --btn-background-color-hover: var(--color-secondary-hover);
-    --btn-background-color-disabled: var(--color-secondary-disabled);
-    --btn-text-color: var(--color-secondary-text);
+    --btn-background-color: var(--color-secondary-solid);
+    --btn-background-color-hover: var(--color-secondary-emphasized);
+    --btn-text-color: var(--color-secondary-contrast);
+    --focus-ring-color: var(--btn-background-color);
   }
 
   &.ghost {
     --btn-background-color: transparant;
-    --btn-background-color-hover: var(--color-primary-hover);
-    --btn-background-color-disabled: var(--color-primary-disabled);
-    --btn-text-color: var(--color-primary);
+    --btn-background-color-hover: var(--color-primary-subtle);
+    --btn-text-color: var(--color-primary-solid);
     --btn-border-color: currentcolor;
+    --focus-ring-color: var(--btn-text-color);
   }
 
   display: inline-block;
@@ -83,20 +83,23 @@ button {
   background-color: var(--btn-background-color);
   border: 2px solid var(--btn-border-color);
   border-radius: var(--btn-border-radius);
-  transition: background-color var(--transition), text-decoration var(--transition);
+  transition: background-color var(--transition), text-decoration var(--transition), opacity var(--transition);
 
   &:hover:not(:disabled) {
-    text-decoration: 2px solid underline;
-    text-underline-offset: 0.2em;
     background-color: var(--btn-background-color-hover);
   }
 
   &:active:not(:disabled) {
     padding-block: calc(var(--spacing-2) + 1px) calc(var(--spacing-2) - 1px);
   }
+
+  &:focus-visible {
+    outline: var(--focus-ring-color) solid 2px;
+    outline-offset: 2px;
+  }
 }
 
 button:disabled {
-  background-color: var(--btn-background-color-disabled);
+  opacity: 0.5;
 }
 </style>

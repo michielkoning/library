@@ -90,7 +90,7 @@ ol {
     block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
-    background: var(--color-primary);
+    background: var(--color-primary-solid);
     transition:
       top var(--transition),
       height var(--transition);
@@ -106,14 +106,11 @@ a {
 
   &:target-current {
     anchor-name: v-bind(anchor);
-    color: var(--color-primary-subtle);
+    color: var(--color-primary-solid);
   }
 
-  &:target-current,
   &:hover {
-    &::before {
-      background-color: var(--color-primary-subtle);
-    }
+    border-color: var(--color-primary-solid);
   }
 }
 </style>
