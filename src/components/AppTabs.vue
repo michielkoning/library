@@ -109,8 +109,10 @@ ul {
     inset-block-end: anchor(bottom);
     inset-inline-start: anchor(left);
     display: block;
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     inline-size: anchor-size(inline);
-    block-size: anchor-size(block);
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
+    block-size: anchor-size(block-size);
     position-anchor: v-bind(anchor);
     content: "";
     background: var(--color-primary-subtle);
@@ -133,11 +135,8 @@ ul {
   }
 
   &[aria-selected="true"] {
-    color: var(--color-primary-fg);
-  }
-
-  &[aria-selected="true"] {
     anchor-name: v-bind(anchor);
+    color: var(--color-primary-fg);
   }
 }
 

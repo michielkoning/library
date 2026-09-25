@@ -77,7 +77,8 @@ ol {
     inset-block-start: anchor(top);
     inset-inline-start: 0;
     display: block;
-    inline-size: 2px;
+    inline-size: 0.25em;
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
@@ -93,7 +94,7 @@ a {
   padding-block: var(--spacing-1);
   padding-inline-start: var(--spacing-2);
   text-decoration: none;
-  border-inline-start: 2px solid var(--color-primary-subtle);
+  border-inline-start: 0.25em solid var(--color-primary-subtle);
 
   &:target-current {
     anchor-name: v-bind(anchor);

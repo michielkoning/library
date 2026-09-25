@@ -15,7 +15,7 @@ const emit = defineEmits<{
   (event: "submit-form"): void;
 }>();
 
-const errorlist = computed(() => {
+const errorList = computed(() => {
   return Object.values(props.errors);
 });
 
@@ -33,7 +33,7 @@ const submit = () => {
     <slot />
     <div aria-live="assertive">
       <app-notification
-        v-if="errorlist.length && touched"
+        v-if="errorList.length && touched"
         variant="warning"
         title="Het formulier is niet correct ingevuld"
       >

@@ -32,7 +32,7 @@ import AppPopover from "@/components/AppPopover.vue";
       </p>
     </app-dialog>
     <button commandfor="dialog" command="show-modal">Open Dialog</button>
-    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em">
+    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em;">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
       quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
       obcaecati suscipit exercitationem nisi? Possimus!

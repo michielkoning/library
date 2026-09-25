@@ -19,11 +19,9 @@ const { handleSubmit, errors, values } = useForm({
       email: z.email({
         error: "Het veld email is niet correct",
       }),
-      select: z
-        .enum(["option 1", "option 2", "option 3", ""])
-        .refine((val) => val !== "option 3" && val !== "", {
-          error: "Het veld select is verplicht",
-        }),
+      select: z.enum(["option 1", "option 2", "option 3", ""]).refine((val) => val !== "", {
+        error: "Het veld select is verplicht",
+      }),
     }),
   ),
   initialValues: {

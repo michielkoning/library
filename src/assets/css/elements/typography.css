@@ -52,10 +52,12 @@ blockquote {
 }
 
 pre {
-  font-size: var(--font-size-h3);
-  text-align: center;
-  text-wrap: pretty;
+  padding: var(--spacing-4);
+  font-family: "Courier New", Courier, monospace;
+  line-height: var(--line-height-heading);
   white-space: pre-wrap;
+  background-color: var(--color-panel-bg);
+  box-shadow: var(--shadow);
 }
 
 blockquote {
