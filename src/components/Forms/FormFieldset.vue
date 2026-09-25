@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-withDefaults(defineProps<{
-  title: string
-  colunns?: number
-}>(), {
-  colunns: 1,
-})
+withDefaults(
+  defineProps<{
+    title: string;
+    colunns?: number;
+  }>(),
+  {
+    colunns: 1,
+  },
+);
 </script>
 
 <template>

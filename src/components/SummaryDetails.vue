@@ -1,26 +1,23 @@
 <script lang="ts" setup>
 defineProps<{
-  title: string
+  title: string;
   /**
-  * The **`open`** property of the HTMLDetailsElement interface is a boolean value reflecting the open HTML attribute, indicating whether the <details>'s contents (not counting the <summary>) is to be shown to the user.
-  *
-  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
-  */
-  open?: boolean
+   * The **`open`** property of the HTMLDetailsElement interface is a boolean value reflecting the open HTML attribute, indicating whether the <details>'s contents (not counting the <summary>) is to be shown to the user.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
+   */
+  open?: boolean;
   /**
-  * The **`name`** property of the HTMLDetailsElement interface reflects the name attribute of <details> elements. It enables multiple <details> elements to be connected together, where only one for the <details> elements can be open at once. This allows developers to easily create UI features such as accordions without scripting.
-  *
-  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name)
-  */
-  name?: string
-}>()
+   * The **`name`** property of the HTMLDetailsElement interface reflects the name attribute of <details> elements. It enables multiple <details> elements to be connected together, where only one for the <details> elements can be open at once. This allows developers to easily create UI features such as accordions without scripting.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name)
+   */
+  name?: string;
+}>();
 </script>
 
 <template>
-  <details
-    :open
-    :name
-  >
+  <details :open :name>
     <summary>{{ title }}</summary>
     <slot />
   </details>

@@ -1,26 +1,20 @@
 <script lang="ts" setup>
-import FormErrorMessage from './FormErrorMessage.vue';
+import FormErrorMessage from "./FormErrorMessage.vue";
 
 defineProps<{
-  id: string
-  title: string
-  errorMessage?: string
-}>()
+  id: string;
+  title: string;
+  errorMessage?: string;
+}>();
 </script>
 
 <template>
   <div>
-    <label
-      :for="id"
-      class="label"
-    >
+    <label :for="id" class="label">
       {{ title }}
     </label>
     <slot />
-    <FormErrorMessage
-      :error-message="errorMessage"
-      class="error-message"
-    />
+    <FormErrorMessage :error-message="errorMessage" class="error-message" />
   </div>
 </template>
 

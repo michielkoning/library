@@ -1,27 +1,24 @@
 <script lang="ts" setup>
-import { computed, useId } from 'vue';
+import { computed, useId } from "vue";
 
 defineProps<{
   pages: {
-    id: string
-    title: string
-  }[]
-}>()
+    id: string;
+    title: string;
+  }[];
+}>();
 
-const id = useId()
+const id = useId();
 
 const anchor = computed(() => {
-  return `--${id}`
-})
+  return `--${id}`;
+});
 </script>
 
 <template>
   <div class="content">
     <div>
-      <section
-        v-for="page in pages"
-        :key="page.title"
-      >
+      <section v-for="page in pages" :key="page.title">
         <span :id="page.id" />
         <h2>{{ page.title }}</h2>
         <slot :name="page.id" />
@@ -29,14 +26,8 @@ const anchor = computed(() => {
     </div>
     <nav>
       <ol>
-        <li
-          v-for="item in pages"
-          :id="`link-${item.title}`"
-          :key="item.title"
-        >
-          <a
-            :href="`#${item.id}`"
-          >
+        <li v-for="item in pages" :id="`link-${item.title}`" :key="item.title">
+          <a :href="`#${item.id}`">
             {{ item.title }}
           </a>
         </li>

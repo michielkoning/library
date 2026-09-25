@@ -1,27 +1,17 @@
 <script lang="ts" setup>
-import { computed, useId } from 'vue';
+import { computed, useId } from "vue";
 
-const id = useId()
+const id = useId();
 
 const anchor = computed(() => {
-  return `--${id}`
-})
+  return `--${id}`;
+});
 </script>
 
 <template>
-  <button
-    :interestfor="id"
-    :popovertarget="id"
-  >
-    Open Popover
-  </button>
+  <button :interestfor="id" :popovertarget="id">Open Popover</button>
 
-  <div
-    :id
-    popover="hint"
-  >
-    Greetings, one and all!
-  </div>
+  <div :id popover="hint">Greetings, one and all!</div>
 </template>
 
 <style lang="css" scoped>
@@ -60,5 +50,4 @@ button {
     opacity: 0;
   }
 }
-
 </style>

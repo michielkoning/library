@@ -26,25 +26,14 @@ const { value, handleBlur, handleChange, errorMessage } = useField<string>(name,
 });
 
 const validationListeners = {
-  blur: (evt: Event) => handleBlur(evt, true),
+  blur: (event: InputEvent) => handleBlur(event, true),
   change: handleChange,
-  input: (evt: Event) => handleChange(evt, !!errorMessage.value),
+  input: (event: InputEvent) => handleChange(event, !!errorMessage.value),
 };
 </script>
 
 <template>
-  <form-field
-    :id
-    :title
-    :error-message
-  >
-    <input
-      :id
-      :name
-      :type
-      :autocomplete
-      :value
-      v-on="validationListeners"
-    >
+  <form-field :id :title :error-message>
+    <input :id :name :type :autocomplete :value v-on="validationListeners" />
   </form-field>
 </template>

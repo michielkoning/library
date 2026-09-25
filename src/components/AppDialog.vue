@@ -8,17 +8,10 @@ defineProps<{
 </script>
 
 <template>
-  <dialog
-    :id="id"
-    closedby="any"
-  >
+  <dialog :id="id" closedby="any">
     <header>
       <h2>{{ title }}</h2>
-      <button
-        :commandfor="id"
-        command="close"
-        class="btn-close"
-      >
+      <button :commandfor="id" command="close" class="btn-close">
         <icon icon="solar:close-circle-bold" />
       </button>
     </header>

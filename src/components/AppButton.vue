@@ -1,33 +1,30 @@
 <script lang="ts" setup>
-import { computed, resolveComponent } from 'vue';
-import type { RouteLocationRaw } from 'vue-router';
+import { computed, resolveComponent } from "vue";
+import type { RouteLocationRaw } from "vue-router";
 
 const props = withDefaults(
   defineProps<{
-      to?: RouteLocationRaw
-      type?: 'submit' | 'button'
-      variant?: 'primary' | 'ghost' | 'secondary'
-      title: string
-      disabled?: boolean
-    }
-  >(),
+    to?: RouteLocationRaw;
+    type?: "submit" | "button";
+    variant?: "primary" | "ghost" | "secondary";
+    title: string;
+    disabled?: boolean;
+  }>(),
   {
     to: undefined,
-    variant: 'primary',
-    type: 'button',
+    variant: "primary",
+    type: "button",
     disabled: false,
   },
-)
+);
 
 const component = computed(() => {
   if (props.to) {
-    return resolveComponent('RouterLink')
+    return resolveComponent("RouterLink");
+  } else {
+    return "button";
   }
-  else {
-    return 'button'
-  }
-})
-
+});
 </script>
 
 <template>
@@ -83,7 +80,10 @@ button {
   background-color: var(--btn-background-color);
   border: 2px solid var(--btn-border-color);
   border-radius: var(--btn-border-radius);
-  transition: background-color var(--transition), text-decoration var(--transition), opacity var(--transition);
+  transition:
+    background-color var(--transition),
+    text-decoration var(--transition),
+    opacity var(--transition);
 
   &:hover:not(:disabled) {
     background-color: var(--btn-background-color-hover);

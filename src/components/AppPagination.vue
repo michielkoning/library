@@ -1,21 +1,18 @@
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed } from "vue";
+import { useRoute } from "vue-router";
 
 defineProps<{
-  totalPages: number
-}>()
+  totalPages: number;
+}>();
 
-const route = useRoute()
+const route = useRoute();
 
-const currentPage = computed(() => route.query.page ? Number(route.query.page) : 1)
+const currentPage = computed(() => (route.query.page ? Number(route.query.page) : 1));
 </script>
 
 <template>
-  <div
-    v-if="totalPages > 1"
-    class="paging"
-  >
+  <div v-if="totalPages > 1" class="paging">
     <router-link
       v-if="currentPage > 1"
       :to="{
@@ -29,11 +26,7 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
     </router-link>
     <span v-else>Vorige pagina</span>
     <ul>
-      <li
-        v-for="page in totalPages"
-        :key="page"
-        :class="{ current: page === currentPage }"
-      >
+      <li v-for="page in totalPages" :key="page" :class="{ current: page === currentPage }">
         <router-link
           :to="{
             query: {

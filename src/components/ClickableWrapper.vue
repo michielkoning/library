@@ -1,48 +1,42 @@
 <script lang="ts" setup>
-import { ref, type Ref } from 'vue';
-import { useRouter, type RouteLocationRaw } from 'vue-router'
+import { ref, type Ref } from "vue";
+import { useRouter, type RouteLocationRaw } from "vue-router";
 
-const props = withDefaults(defineProps<{
-  to: RouteLocationRaw
-  tag?: 'div' | 'li'
-}>(), {
-  tag: 'li',
-})
+const props = withDefaults(
+  defineProps<{
+    to: RouteLocationRaw;
+    tag?: "div" | "li";
+  }>(),
+  {
+    tag: "li",
+  },
+);
 
-const down: Ref<number | null> = ref(null)
+const down: Ref<number | null> = ref(null);
 
-  const router = useRouter()
+const router = useRouter();
 
 const mouseDown = (event: MouseEvent) => {
-  const target = event.target as Element
-  if (
-    target.nodeName.toUpperCase() === 'A'
-    || target.parentNode?.nodeName.toUpperCase() === 'A'
-  ) {
-    down.value = null
+  const target = event.target as Element;
+  if (target.nodeName.toUpperCase() === "A" || target.parentNode?.nodeName.toUpperCase() === "A") {
+    down.value = null;
+  } else {
+    down.value = +new Date();
   }
-  else {
-    down.value = +new Date()
-  }
-}
+};
 const mouseUp = async () => {
   if (!down.value) {
-    return
+    return;
   }
-  const up = +new Date()
+  const up = +new Date();
   if (up - down.value < 200) {
-    await router.push(props.to)
+    await router.push(props.to);
   }
-}
+};
 </script>
 
 <template>
-  <component
-    :is="tag"
-    class="item"
-    @mousedown.left="mouseDown"
-    @mouseup.left="mouseUp"
-  >
+  <component :is="tag" class="item" @mousedown.left="mouseDown" @mouseup.left="mouseUp">
     <slot />
   </component>
 </template>

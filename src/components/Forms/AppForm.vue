@@ -28,17 +28,8 @@ const submit = () => {
 </script>
 
 <template>
-  <app-notification
-    v-if="status === 'success'"
-    :title="successText"
-    variant="success"
-  />
-  <form
-    v-else
-    method="post"
-    novalidate
-    @submit.prevent="submit"
-  >
+  <app-notification v-if="status === 'success'" :title="successText" variant="success" />
+  <form v-else method="post" novalidate @submit.prevent="submit">
     <slot />
     <div aria-live="assertive">
       <app-notification
@@ -47,20 +38,13 @@ const submit = () => {
         title="Het formulier is niet correct ingevuld"
       >
         <ul>
-          <li
-            v-for="error in errors"
-            :key="error"
-          >
+          <li v-for="error in errors" :key="error">
             {{ error }}
           </li>
         </ul>
       </app-notification>
     </div>
-    <app-button
-      :title="buttonTitle"
-      type="submit"
-      :disabled="status === 'pending'"
-    />
+    <app-button :title="buttonTitle" type="submit" :disabled="status === 'pending'" />
   </form>
 </template>
 

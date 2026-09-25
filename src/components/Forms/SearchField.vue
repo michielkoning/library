@@ -1,22 +1,15 @@
 <script lang="ts" setup>
-import { Icon } from '@iconify/vue';
+import { Icon } from "@iconify/vue";
 
 const model = defineModel<string>({
   required: true,
-})
+});
 </script>
 
 <template>
   <div class="field">
-    <input
-      v-model="model"
-      placeholder="Zoeken naar voorstellingen"
-      name="search"
-      type="search"
-    >
-    <icon
-      icon="solar:minimalistic-magnifer-outline"
-    />
+    <input v-model="model" placeholder="Zoeken naar voorstellingen" name="search" type="search" />
+    <icon icon="solar:minimalistic-magnifer-outline" />
   </div>
 </template>
 

@@ -10,27 +10,16 @@ defineProps<{
 </script>
 
 <template>
-  <nav
-    v-if="pages.length"
-    aria-label="Breadcrumb"
-  >
+  <nav v-if="pages.length" aria-label="Breadcrumb">
     <ol>
-      <li
-        v-for="(page, index) in pages"
-        :key="page.title"
-      >
-        <router-link
-          :aria-current="index === pages.length - 1 ? 'page' : undefined"
-          :to="page.to"
-        >
+      <li v-for="(page, index) in pages" :key="page.title">
+        <router-link :aria-current="index === pages.length - 1 ? 'page' : undefined" :to="page.to">
           {{ page.title }}
         </router-link>
       </li>
     </ol>
   </nav>
 </template>
-
-
 
 <style lang="css" scoped>
 nav {

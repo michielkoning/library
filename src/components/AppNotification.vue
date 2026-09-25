@@ -23,10 +23,7 @@ const variantIcon = computed(() => {
 </script>
 
 <template>
-  <div
-    class="notification"
-    :class="variant"
-  >
+  <div class="notification" :class="variant">
     <icon :icon="variantIcon" />
     <div>
       <div class="title">

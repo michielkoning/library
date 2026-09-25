@@ -1,60 +1,43 @@
 <script lang="ts" setup>
-import { useField } from 'vee-validate';
-import { toRefs, useId } from 'vue';
-import FormField from './FormField.vue';
-import { Icon } from '@iconify/vue';
+import { useField } from "vee-validate";
+import { toRefs, useId } from "vue";
+import FormField from "./FormField.vue";
+import { Icon } from "@iconify/vue";
 
 const props = defineProps<{
   // type: 'directors' | 'authors'
-  name: string
-  title: string
+  name: string;
+  title: string;
   options: {
-    value: string | number
-    title: string
-  }[]
-}>()
+    value: string | number;
+    title: string;
+  }[];
+}>();
 
-const id = useId()
+const id = useId();
 
-const { name } = toRefs(props)
+const { name } = toRefs(props);
 
 // we don't provide any rules here because we are using form-level validation
 // https://vee-validate.logaretm.com/v4/guide/validation#form-level-validation
 const { value, handleBlur, handleChange, errorMessage } = useField<string>(name, undefined, {
   validateOnValueUpdate: false,
-})
+});
 
 const validationListeners = {
-  blur: (evt: Event) => handleBlur(evt, true),
+  blur: (event: Event) => handleBlur(event, true),
   change: handleChange,
-  input: (evt: Event) => handleChange(evt, !!errorMessage.value),
-}
+};
 </script>
 
 <template>
-  <form-field
-    :id
-    :title
-    :error-message
-  >
-    <select
-      :id
-      :value
-      :name
-      v-on="validationListeners"
-    >
+  <form-field :id :title :error-message>
+    <select :id :value :name v-on="validationListeners">
       <button>
         <selectedcontent />
-        <icon
-          icon="solar:alt-arrow-down-outline"
-          class="icon"
-        />
+        <icon icon="solar:alt-arrow-down-outline" class="icon" />
       </button>
-      <option
-        v-for="option in options"
-        :key="option.value"
-        :value="option.value"
-      >
+      <option v-for="option in options" :key="option.value" :value="option.value">
         {{ option.title }}
       </option>
     </select>

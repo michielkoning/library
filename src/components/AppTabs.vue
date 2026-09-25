@@ -51,11 +51,7 @@ const goToTab = (tab: number) => {
 <template>
   <div class="tabs">
     <ul role="tablist">
-      <li
-        v-for="(tab, index) in tabs"
-        :key="tab.id"
-        role="presentation"
-      >
+      <li v-for="(tab, index) in tabs" :key="tab.id" role="presentation">
         <button
           :id="`tab-${tab.id}`"
           ref="button"

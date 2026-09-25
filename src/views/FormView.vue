@@ -9,7 +9,6 @@ import { z } from "zod";
 import { toTypedSchema } from "@vee-validate/zod";
 import { useForm } from "vee-validate";
 import { ref, type Ref } from "vue";
-import AppButton from "@/components/AppButton.vue";
 
 const { handleSubmit, errors, values } = useForm({
   name: "form",
@@ -20,9 +19,11 @@ const { handleSubmit, errors, values } = useForm({
       email: z.email({
         error: "Het veld email is niet correct",
       }),
-      select: z.enum(["option 1", "option 2", "option 3", ""]).refine((val) => val !== "", {
-        error: "Het veld select is verplicht",
-      }),
+      select: z
+        .enum(["option 1", "option 2", "option 3", ""])
+        .refine((val) => val !== "option 3" && val !== "", {
+          error: "Het veld select is verplicht",
+        }),
     }),
   ),
   initialValues: {
@@ -47,26 +48,14 @@ const submit = handleSubmit(() => {
   <CenterWrapper>
     <AppForm
       :errors
-      button-title="Submit"
+      button-title="Reactie plaatsen"
       success-text="success"
       :status
       @submit-form="submit"
     >
-      <FormFieldset
-        title="Adres"
-        :colunns="3"
-      >
-        <TextField
-          name="name"
-          title="Name"
-          autocomplete="name"
-        />
-        <TextField
-          name="email"
-          title="Email"
-          type="email"
-          autocomplete="email"
-        />
+      <FormFieldset title="Adres" :colunns="3">
+        <TextField name="name" title="Name" autocomplete="name" />
+        <TextField name="email" title="Email" type="email" autocomplete="email" />
         <SelectField
           :options="[
             {
@@ -83,40 +72,17 @@ const submit = handleSubmit(() => {
             },
           ]"
           name="select"
-          title="select"
+          title="Opties"
         />
-        <TextareaField
-          name="comment"
-          title="comment"
-          class="comment"
-        />
+        <TextareaField name="comment" title="Reactie" class="comment" />
       </FormFieldset>
     </AppForm>
     <pre>{{ values }}</pre>
-
-    <div class="buttons">
-      <AppButton
-        title="Submit"
-      />
-      <AppButton
-        variant="secondary"
-        title="Submit"
-      />
-      <AppButton
-        variant="ghost"
-        title="Submit"
-      />
-    </div>
   </CenterWrapper>
 </template>
 
 <style lang="css" scoped>
 .comment {
   grid-column: span 3;
-}
-
-.buttons {
-  display: flex;
-  gap: 1em;
 }
 </style>
