@@ -3,6 +3,7 @@ import { useField } from "vee-validate";
 import { toRefs, useId } from "vue";
 import FormField from "./FormField.vue";
 import { Icon } from "@iconify/vue";
+import useTheme from "@/composables/useTheme.ts";
 
 const props = defineProps<{
   // type: 'directors' | 'authors'
@@ -28,6 +29,8 @@ const validationListeners = {
   blur: (event: Event) => handleBlur(event, true),
   change: handleChange,
 };
+
+const { colors } = useTheme()
 </script>
 
 <template>
@@ -105,18 +108,18 @@ option {
   display: flex;
   gap: var(--spacing-2);
   padding: var(--spacing-2);
-  color: var(--color-body-text);
+  color: var(--color-fg);
   background-color: var(--color-body-background);
   border-inline-start: 3px solid transparent;
 
   &:hover {
-    color: var(--color-primary-text);
+    color: v-bind(colors.fg);
     background-color: var(--color-primary-hover);
   }
 
   &:checked {
     font-weight: var(--font-weight-bold);
-    color: var(--color-primary-text);
+    color: v-bind(colors.fg);
     background-color: var(--color-primary);
   }
 }

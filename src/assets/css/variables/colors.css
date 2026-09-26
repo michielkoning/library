@@ -3,161 +3,204 @@
   --color-white: oklch(100% 0 0deg);
   --color-yellow: oklch(92.5% 0.193 102.82deg);
 
-  /* PRIMARY */
-  --color-primary: var(--color-primary-solid);
-  --color-primary-text: var(--color-primary-contrast);
-
-  /* --color-primary-subtle: var(--color-red-200); */
-  --color-primary-hover: var(--color-primary-emphasized);
-  --color-primary-disabled: var(--color-red-400);
-
   /* PANEL */
-  --color-panel-bg: var(--chakra-colors-gray-950);
   --shadow:
     0px 8px 16px color-mix(in srgb, black 64%, transparent),
     0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 30%, transparent);
 
-  /* chakra  */
-  --color-primary-border: var(--chakra-colors-teal-400);
-  --color-primary-contrast: var(--color-white);
-  --color-primary-emphasized: var(--chakra-colors-teal-700);
-  --color-primary-fg: var(--chakra-colors-teal-300);
-  --color-primary-focus-ring: var(--chakra-colors-teal-500);
-  --color-primary-muted: var(--chakra-colors-teal-800);
-  --color-primary-solid: var(--chakra-colors-teal-600);
-  --color-primary-subtle: var(--chakra-colors-teal-900);
-
-  /* SECONDARY */
-  --color-secondary-border: var(--chakra-colors-yellow-400);
-  --color-secondary-contrast: var(--color-white);
-  --color-secondary-emphasized: var(--chakra-colors-yellow-700);
-  --color-secondary-fg: var(--chakra-colors-yellow-300);
-  --color-secondary-focus-ring: var(--chakra-colors-yellow-500);
-  --color-secondary-muted: var(--chakra-colors-yellow-800);
-  --color-secondary-solid: var(--chakra-colors-yellow-600);
-  --color-secondary-subtle: var(--chakra-colors-yellow-900);
-
-  /* gray */
-  --color-gray-contrast: var(--chakra-colors-black);
-  --color-gray-fg: var(--chakra-colors-gray-200);
-  --color-gray-subtle: var(--chakra-colors-gray-900);
-  --color-gray-muted: var(--chakra-colors-gray-800);
-  --color-gray-emphasized: var(--chakra-colors-gray-700);
-  --color-gray-solid: var(--chakra-colors-white);
-  --color-gray-focus-ring: var(--chakra-colors-gray-400);
-  --color-gray-border: var(--chakra-colors-gray-800);
-
-  /* red */
-  --color-red-contrast: white;
-  --color-red-fg: var(--chakra-colors-red-300);
-  --color-red-subtle: var(--chakra-colors-red-900);
-  --color-red-muted: var(--chakra-colors-red-800);
-  --color-red-emphasized: var(--chakra-colors-red-700);
-  --color-red-solid: var(--chakra-colors-red-600);
-  --color-red-focus-ring: var(--chakra-colors-red-500);
-  --color-red-border: var(--chakra-colors-red-400);
-
-  /* orange */
-  --color-orange-contrast: black;
-  --color-orange-fg: var(--chakra-colors-orange-300);
-  --color-orange-subtle: var(--chakra-colors-orange-900);
-  --color-orange-muted: var(--chakra-colors-orange-800);
-  --color-orange-emphasized: var(--chakra-colors-orange-700);
-  --color-orange-solid: var(--chakra-colors-orange-500);
-  --color-orange-focus-ring: var(--chakra-colors-orange-500);
-  --color-orange-border: var(--chakra-colors-orange-400);
-
-  /* green */
-  --color-green-contrast: white;
-  --color-green-fg: var(--chakra-colors-green-300);
-  --color-green-subtle: var(--chakra-colors-green-900);
-  --color-green-muted: var(--chakra-colors-green-800);
-  --color-green-emphasized: var(--chakra-colors-green-700);
-  --color-green-solid: var(--chakra-colors-green-600);
-  --color-green-focus-ring: var(--chakra-colors-green-500);
-  --color-green-border: var(--chakra-colors-green-400);
-
-  /* blue */
-  --color-blue-contrast: white;
-  --color-blue-fg: var(--chakra-colors-blue-300);
-  --color-blue-subtle: var(--chakra-colors-blue-900);
-  --color-blue-muted: var(--chakra-colors-blue-800);
-  --color-blue-emphasized: var(--chakra-colors-blue-700);
-  --color-blue-solid: var(--chakra-colors-blue-600);
-  --color-blue-focus-ring: var(--chakra-colors-blue-500);
-  --color-blue-border: var(--chakra-colors-blue-400);
-
-  /* yellow */
-  --color-yellow-contrast: black;
-  --color-yellow-fg: var(--chakra-colors-yellow-300);
-  --color-yellow-subtle: var(--chakra-colors-yellow-900);
-  --color-yellow-muted: var(--chakra-colors-yellow-800);
-  --color-yellow-emphasized: var(--chakra-colors-yellow-700);
-  --color-yellow-solid: var(--chakra-colors-yellow-300);
-  --color-yellow-focus-ring: var(--chakra-colors-yellow-500);
-  --color-yellow-border: var(--chakra-colors-yellow-500);
-
-  /* teal */
-  --color-teal-contrast: white;
-  --color-teal-fg: var(--chakra-colors-teal-300);
-  --color-teal-subtle: var(--chakra-colors-teal-900);
-  --color-teal-muted: var(--chakra-colors-teal-800);
-  --color-teal-emphasized: var(--chakra-colors-teal-700);
-  --color-teal-solid: var(--chakra-colors-teal-600);
-  --color-teal-focus-ring: var(--chakra-colors-teal-500);
-  --color-teal-border: var(--chakra-colors-teal-400);
-
-  /* purple */
-  --color-purple-contrast: white;
-  --color-purple-fg: var(--chakra-colors-purple-300);
-  --color-purple-subtle: var(--chakra-colors-purple-900);
-  --color-purple-muted: var(--chakra-colors-purple-800);
-  --color-purple-emphasized: var(--chakra-colors-purple-700);
-  --color-purple-solid: var(--chakra-colors-purple-600);
-  --color-purple-focus-ring: var(--chakra-colors-purple-500);
-  --color-purple-border: var(--chakra-colors-purple-400);
-
-  /* pink */
-  --color-pink-contrast: white;
-  --color-pink-fg: var(--chakra-colors-pink-300);
-  --color-pink-subtle: var(--chakra-colors-pink-900);
-  --color-pink-muted: var(--chakra-colors-pink-800);
-  --color-pink-emphasized: var(--chakra-colors-pink-700);
-  --color-pink-solid: var(--chakra-colors-pink-600);
-  --color-pink-focus-ring: var(--chakra-colors-pink-500);
-  --color-pink-border: var(--chakra-colors-pink-400);
-
-  /* cyan */
-  --color-cyan-contrast: white;
-  --color-cyan-fg: var(--chakra-colors-cyan-300);
-  --color-cyan-subtle: var(--chakra-colors-cyan-900);
-  --color-cyan-muted: var(--chakra-colors-cyan-800);
-  --color-cyan-emphasized: var(--chakra-colors-cyan-700);
-  --color-cyan-solid: var(--chakra-colors-cyan-600);
-  --color-cyan-focus-ring: var(--chakra-colors-cyan-500);
-  --color-cyan-border: var(--chakra-colors-cyan-400);
+  /* PRIMARY */
+  --color-primary-fg: var(--color-teal-fg);
+  --color-primary-subtle: var(--color-teal-subtle);
+  --color-primary-muted: var(--color-teal-muted);
+  --color-primary-emphasized: var(--color-teal-emphasized);
+  --color-primary-solid: var(--color-teal-solid);
+  --color-primary-focusring: var(--color-teal-focusring);
+  --color-primary-border: var(--color-teal-border);
 
   /* BODY */
   --color-body-background: var(--chakra-colors-black);
   --color-body-text: var(--chakra-colors-gray-50);
 
-  /* DANGER */
-  --color-danger: light-dark(oklch(90.7% 0.037 11.6deg), oklch(31.2% 0.097 19.2deg));
-  --color-danger-text: light-dark(oklch(41% 0.134 20.8deg), oklch(79.3% 0.089 13.1deg));
-  --color-danger-subtle: light-dark(oklch(81.5% 0.079 12deg), oklch(41% 0.134 20.8deg));
+  /* CAKRA */
+  --color-bg: light-dark(var(--chakra-colors-white), var(--chakra-colors-black));
+  --color-bg-subtle: light-dark(var(--chakra-colors-gray-50), var(--chakra-colors-gray-950));
+  --color-bg-muted: light-dark(var(--chakra-colors-gray-100), var(--chakra-colors-gray-900));
+  --color-bg-emphasized: light-dark(var(--chakra-colors-gray-200), var(--chakra-colors-gray-800));
+  --color-bg-inverted: light-dark(var(--chakra-colors-black), var(--chakra-colors-white));
+  --color-bg-panel: light-dark(var(--chakra-colors-white), var(--chakra-colors-gray-950));
+  --color-bg-error: light-dark(var(--chakra-colors-red-50), var(--chakra-colors-red-950));
+  --color-bg-warning: light-dark(var(--chakra-colors-orange-50), var(--chakra-colors-orange-950));
+  --color-bg-success: light-dark(var(--chakra-colors-green-50), var(--chakra-colors-green-950));
+  --color-bg-info: light-dark(var(--chakra-colors-blue-50), var(--chakra-colors-blue-950));
+  --color-fg: light-dark(var(--chakra-colors-black), var(--chakra-colors-gray-50));
+  --color-fg-muted: light-dark(var(--chakra-colors-gray-600), var(--chakra-colors-gray-400));
+  --color-fg-subtle: light-dark(var(--chakra-colors-gray-400), var(--chakra-colors-gray-500));
+  --color-fg-inverted: light-dark(var(--chakra-colors-gray-50), var(--chakra-colors-black));
+  --color-fg-error: light-dark(var(--chakra-colors-red-500), var(--chakra-colors-red-400));
+  --color-fg-warning: light-dark(var(--chakra-colors-orange-600), var(--chakra-colors-orange-300));
+  --color-fg-success: light-dark(var(--chakra-colors-green-600), var(--chakra-colors-green-300));
+  --color-fg-info: light-dark(var(--chakra-colors-blue-600), var(--chakra-colors-blue-300));
+  --color-border: light-dark(var(--chakra-colors-gray-200), var(--chakra-colors-gray-800));
+  --color-border-muted: light-dark(var(--chakra-colors-gray-100), var(--chakra-colors-gray-900));
+  --color-border-subtle: light-dark(var(--chakra-colors-gray-50), var(--chakra-colors-gray-950));
+  --color-border-emphasized: light-dark(var(--chakra-colors-gray-300), var(--chakra-colors-gray-700));
+  --color-border-inverted: light-dark(var(--chakra-colors-gray-800), var(--chakra-colors-gray-200));
+  --color-border-error: light-dark(var(--chakra-colors-red-500), var(--chakra-colors-red-400));
+  --color-border-warning: light-dark(var(--chakra-colors-orange-500), var(--chakra-colors-orange-400));
+  --color-border-success: light-dark(var(--chakra-colors-green-500), var(--chakra-colors-green-400));
+  --color-border-info: light-dark(var(--chakra-colors-blue-500), var(--chakra-colors-blue-400));
 
-  /* INFO */
-  --color-info: light-dark(oklch(94.3% 0.04 212.2deg), oklch(40.1% 0.07 216.2deg));
-  --color-info-text: light-dark(oklch(53.2% 0.094 217.6deg), oklch(88% 0.085 211.7deg));
-  --color-info-subtle: light-dark(oklch(89.3% 0.077 211.3deg), oklch(87% 0.094 211.9deg));
+  /* gray */
+  --color-gray-contrast: light-dark(var(--chakra-colors-white), var(--chakra-colors-black));
+  --color-gray-fg: light-dark(var(--chakra-colors-gray-800), var(--chakra-colors-gray-200));
+  --color-gray-subtle: light-dark(var(--chakra-colors-gray-100), var(--chakra-colors-gray-900));
+  --color-gray-muted: light-dark(var(--chakra-colors-gray-200), var(--chakra-colors-gray-800));
+  --color-gray-emphasized: light-dark(var(--chakra-colors-gray-300), var(--chakra-colors-gray-700));
+  --color-gray-solid: light-dark(var(--chakra-colors-gray-900), var(--chakra-colors-white));
+  --color-gray-focus-ring: light-dark(var(--chakra-colors-gray-400), var(--chakra-colors-gray-400));
+  --color-gray-border: light-dark(var(--chakra-colors-gray-200), var(--chakra-colors-gray-800));
 
-  /* SUCCESS */
-  --color-success: light-dark(oklch(90.9% 0.027 166.7deg), oklch(29.7% 0.06 159.2deg));
-  --color-success-text: light-dark(oklch(38.6% 0.083 157.5deg), oklch(79.5% 0.061 164.5deg));
-  --color-success-subtle: light-dark(oklch(81.7% 0.054 165.6deg), oklch(38.6% 0.083 157.5deg));
+  /* red */
+  --color-red-contrast: light-dark(white, white);
+  --color-red-fg: light-dark(var(--chakra-colors-red-700), var(--chakra-colors-red-300));
+  --color-red-subtle: light-dark(var(--chakra-colors-red-100), var(--chakra-colors-red-900));
+  --color-red-muted: light-dark(var(--chakra-colors-red-200), var(--chakra-colors-red-800));
+  --color-red-emphasized: light-dark(var(--chakra-colors-red-300), var(--chakra-colors-red-700));
+  --color-red-solid: light-dark(var(--chakra-colors-red-600), var(--chakra-colors-red-600));
+  --color-red-focus-ring: light-dark(var(--chakra-colors-red-500), var(--chakra-colors-red-500));
+  --color-red-border: light-dark(var(--chakra-colors-red-500), var(--chakra-colors-red-400));
 
-  /* WARNING */
-  --color-warning: light-dark(oklch(96.4% 0.051 92.6deg), oklch(43.5% 0.088 86.6deg));
-  --color-warning-text: light-dark(oklch(58% 0.118 86deg), oklch(92.1% 0.108 91.6deg));
-  --color-warning-subtle: light-dark(oklch(92.9% 0.097 91.5deg), oklch(58% 0.118 86deg));
+  /* orange */
+  --color-orange-contrast: light-dark(white, black);
+  --color-orange-fg: light-dark(var(--chakra-colors-orange-700), var(--chakra-colors-orange-300));
+  --color-orange-subtle: light-dark(var(--chakra-colors-orange-100), var(--chakra-colors-orange-900));
+  --color-orange-muted: light-dark(var(--chakra-colors-orange-200), var(--chakra-colors-orange-800));
+  --color-orange-emphasized: light-dark(var(--chakra-colors-orange-300), var(--chakra-colors-orange-700));
+  --color-orange-solid: light-dark(var(--chakra-colors-orange-600), var(--chakra-colors-orange-500));
+  --color-orange-focus-ring: light-dark(var(--chakra-colors-orange-500), var(--chakra-colors-orange-500));
+  --color-orange-border: light-dark(var(--chakra-colors-orange-500), var(--chakra-colors-orange-400));
+
+  /* green */
+  --color-green-contrast: light-dark(white, white);
+  --color-green-fg: light-dark(var(--chakra-colors-green-700), var(--chakra-colors-green-300));
+  --color-green-subtle: light-dark(var(--chakra-colors-green-100), var(--chakra-colors-green-900));
+  --color-green-muted: light-dark(var(--chakra-colors-green-200), var(--chakra-colors-green-800));
+  --color-green-emphasized: light-dark(var(--chakra-colors-green-300), var(--chakra-colors-green-700));
+  --color-green-solid: light-dark(var(--chakra-colors-green-600), var(--chakra-colors-green-600));
+  --color-green-focus-ring: light-dark(var(--chakra-colors-green-500), var(--chakra-colors-green-500));
+  --color-green-border: light-dark(var(--chakra-colors-green-500), var(--chakra-colors-green-400));
+
+  /* blue */
+  --color-blue-contrast: light-dark(white, white);
+  --color-blue-fg: light-dark(var(--chakra-colors-blue-700), var(--chakra-colors-blue-300));
+  --color-blue-subtle: light-dark(var(--chakra-colors-blue-100), var(--chakra-colors-blue-900));
+  --color-blue-muted: light-dark(var(--chakra-colors-blue-200), var(--chakra-colors-blue-800));
+  --color-blue-emphasized: light-dark(var(--chakra-colors-blue-300), var(--chakra-colors-blue-700));
+  --color-blue-solid: light-dark(var(--chakra-colors-blue-600), var(--chakra-colors-blue-600));
+  --color-blue-focus-ring: light-dark(var(--chakra-colors-blue-500), var(--chakra-colors-blue-500));
+  --color-blue-border: light-dark(var(--chakra-colors-blue-500), var(--chakra-colors-blue-400));
+
+  /* yellow */
+  --color-yellow-contrast: light-dark(black, black);
+  --color-yellow-fg: light-dark(var(--chakra-colors-yellow-800), var(--chakra-colors-yellow-300));
+  --color-yellow-subtle: light-dark(var(--chakra-colors-yellow-100), var(--chakra-colors-yellow-900));
+  --color-yellow-muted: light-dark(var(--chakra-colors-yellow-200), var(--chakra-colors-yellow-800));
+  --color-yellow-emphasized: light-dark(var(--chakra-colors-yellow-300), var(--chakra-colors-yellow-700));
+  --color-yellow-solid: light-dark(var(--chakra-colors-yellow-300), var(--chakra-colors-yellow-300));
+  --color-yellow-focus-ring: light-dark(var(--chakra-colors-yellow-500), var(--chakra-colors-yellow-500));
+  --color-yellow-border: light-dark(var(--chakra-colors-yellow-500), var(--chakra-colors-yellow-500));
+
+  /* teal */
+  --color-teal-contrast: light-dark(white, white);
+  --color-teal-fg: light-dark(var(--chakra-colors-teal-700), var(--chakra-colors-teal-300));
+  --color-teal-subtle: light-dark(var(--chakra-colors-teal-100), var(--chakra-colors-teal-900));
+  --color-teal-muted: light-dark(var(--chakra-colors-teal-200), var(--chakra-colors-teal-800));
+  --color-teal-emphasized: light-dark(var(--chakra-colors-teal-300), var(--chakra-colors-teal-700));
+  --color-teal-solid: light-dark(var(--chakra-colors-teal-600), var(--chakra-colors-teal-600));
+  --color-teal-focus-ring: light-dark(var(--chakra-colors-teal-500), var(--chakra-colors-teal-500));
+  --color-teal-border: light-dark(var(--chakra-colors-teal-500), var(--chakra-colors-teal-400));
+
+  /* purple */
+  --color-purple-contrast: light-dark(white, white);
+  --color-purple-fg: light-dark(var(--chakra-colors-purple-700), var(--chakra-colors-purple-300));
+  --color-purple-subtle: light-dark(var(--chakra-colors-purple-100), var(--chakra-colors-purple-900));
+  --color-purple-muted: light-dark(var(--chakra-colors-purple-200), var(--chakra-colors-purple-800));
+  --color-purple-emphasized: light-dark(var(--chakra-colors-purple-300), var(--chakra-colors-purple-700));
+  --color-purple-solid: light-dark(var(--chakra-colors-purple-600), var(--chakra-colors-purple-600));
+  --color-purple-focus-ring: light-dark(var(--chakra-colors-purple-500), var(--chakra-colors-purple-500));
+  --color-purple-border: light-dark(var(--chakra-colors-purple-500), var(--chakra-colors-purple-400));
+
+  /* pink */
+  --color-pink-contrast: light-dark(white, white);
+  --color-pink-fg: light-dark(var(--chakra-colors-pink-700), var(--chakra-colors-pink-300));
+  --color-pink-subtle: light-dark(var(--chakra-colors-pink-100), var(--chakra-colors-pink-900));
+  --color-pink-muted: light-dark(var(--chakra-colors-pink-200), var(--chakra-colors-pink-800));
+  --color-pink-emphasized: light-dark(var(--chakra-colors-pink-300), var(--chakra-colors-pink-700));
+  --color-pink-solid: light-dark(var(--chakra-colors-pink-600), var(--chakra-colors-pink-600));
+  --color-pink-focus-ring: light-dark(var(--chakra-colors-pink-500), var(--chakra-colors-pink-500));
+  --color-pink-border: light-dark(var(--chakra-colors-pink-500), var(--chakra-colors-pink-400));
+
+  /* cyan */
+  --color-cyan-contrast: light-dark(white, white);
+  --color-cyan-fg: light-dark(var(--chakra-colors-cyan-700), var(--chakra-colors-cyan-300));
+  --color-cyan-subtle: light-dark(var(--chakra-colors-cyan-100), var(--chakra-colors-cyan-900));
+  --color-cyan-muted: light-dark(var(--chakra-colors-cyan-200), var(--chakra-colors-cyan-800));
+  --color-cyan-emphasized: light-dark(var(--chakra-colors-cyan-300), var(--chakra-colors-cyan-700));
+  --color-cyan-solid: light-dark(var(--chakra-colors-cyan-600), var(--chakra-colors-cyan-600));
+  --color-cyan-focus-ring: light-dark(var(--chakra-colors-cyan-500), var(--chakra-colors-cyan-500));
+  --color-cyan-border: light-dark(var(--chakra-colors-cyan-500), var(--chakra-colors-cyan-400));
+
+  /* shadows */
+  --shadows-xs:
+    light-dark(
+      0px 1px 2px color-mix(in srgb, var(--chakra-colors-gray-900) 10%, transparent),
+      0px 0px 1px color-mix(in srgb, var(--chakra-colors-gray-900) 20%, transparent),
+      0px 1px 1px color-mix(in srgb, black 64%, transparent),
+      0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 20%, transparent)
+    );
+  --shadows-sm:
+    light-dark(
+      0px 2px 4px color-mix(in srgb, var(--chakra-colors-gray-900) 10%, transparent),
+      0px 0px 1px color-mix(in srgb, var(--chakra-colors-gray-900) 30%, transparent),
+      0px 2px 4px color-mix(in srgb, black 64%, transparent),
+      0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 30%, transparent)
+    );
+  --shadows-md:
+    light-dark(
+      0px 4px 8px color-mix(in srgb, var(--chakra-colors-gray-900) 10%, transparent),
+      0px 0px 1px color-mix(in srgb, var(--chakra-colors-gray-900) 30%, transparent),
+      0px 4px 8px color-mix(in srgb, black 64%, transparent),
+      0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 30%, transparent)
+    );
+  --shadows-lg:
+    light-dark(
+      0px 8px 16px color-mix(in srgb, var(--chakra-colors-gray-900) 10%, transparent),
+      0px 0px 1px color-mix(in srgb, var(--chakra-colors-gray-900) 30%, transparent),
+      0px 8px 16px color-mix(in srgb, black 64%, transparent),
+      0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 30%, transparent)
+    );
+  --shadows-xl:
+    light-dark(
+      0px 16px 24px color-mix(in srgb, var(--chakra-colors-gray-900) 10%, transparent),
+      0px 0px 1px color-mix(in srgb, var(--chakra-colors-gray-900) 30%, transparent),
+      0px 16px 24px color-mix(in srgb, black 64%, transparent),
+      0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 30%, transparent)
+    );
+  --shadows-2xl:
+    light-dark(
+      0px 24px 40px color-mix(in srgb, var(--chakra-colors-gray-900) 16%, transparent),
+      0px 0px 1px color-mix(in srgb, var(--chakra-colors-gray-900) 30%, transparent),
+      0px 24px 40px color-mix(in srgb, black 64%, transparent),
+      0px 0px 1px inset color-mix(in srgb, var(--chakra-colors-gray-300) 30%, transparent)
+    );
+  --shadows-inner:
+    light-dark(
+      inset 0 2px 4px 0 color-mix(in srgb, black 5%, transparent),
+      inset 0 2px 4px 0 black
+    );
+  --shadows-inset:
+    light-dark(
+      inset 0 0 0 1px color-mix(in srgb, black 5%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, var(--chakra-colors-gray-300) 5%, transparent)
+    );
 }

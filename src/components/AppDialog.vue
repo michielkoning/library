@@ -27,8 +27,8 @@ dialog {
   max-inline-size: var(--container-size-md);
   padding: 0;
   overscroll-behavior: contain;
-  color: var(--color-body-text);
-  background-color: var(--color-panel-bg);
+  color: var(--color-fg);
+  background-color: var(--color-bg-panel);
   border: 0;
   border-radius: 0.25em;
   box-shadow: var(--shadow);

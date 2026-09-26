@@ -23,6 +23,7 @@
         "ignorePseudoClasses": ["global", "readonly", "deep", "scroll-button", "scroll-marker", "target-current"]
       }
     ],
+    "color-no-hex": true,
 
     "selector-type-no-unknown": [true, { "ignoreTypes": ["left", "right"] }],
     "nesting-selector-no-missing-scoping-root": null,

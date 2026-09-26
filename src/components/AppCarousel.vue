@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import useTheme from "@/composables/useTheme";
 import { computed } from "vue";
 
 const props = defineProps<{
@@ -8,13 +9,15 @@ const props = defineProps<{
 const total = computed(() => {
   return props.items.length;
 });
+
+const { colors } = useTheme()
 </script>
 
 <template>
   <div class="wrapper">
     <ul>
-      <li v-for="tab in items" :key="tab">
-        <slot :name="tab" />
+      <li v-for="item in items" :key="item">
+        <slot :name="item" />
       </li>
     </ul>
   </div>
@@ -23,6 +26,10 @@ const total = computed(() => {
 <style lang="css" scoped>
 .wrapper {
   position: relative;
+
+  @supports (scroll-marker-group: after) {
+    margin-block-end: var(--spacing-12);
+  }
 }
 
 ul {
@@ -30,19 +37,17 @@ ul {
   grid-template-columns: repeat(v-bind(total), 100%);
   gap: var(--spacing-2);
   padding-inline-start: 0;
-  margin-block-end: 0;
   margin-block-end: var(--spacing-4);
   list-style: none;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--chakra-colors-gray-400) transparent;
   scrollbar-width: thin;
 
-  &:has(::scroll-marker-group) {
+  @supports (scroll-marker-group: after) {
     margin-block-end: var(--spacing-2);
   }
 
-  &::scroll-button(left),
-  &::scroll-button(right) {
+  &::scroll-button(*) {
     position: absolute;
     inset-block-start: 50%;
     display: none;
@@ -53,6 +58,7 @@ ul {
     content: "";
     background-color: var(--chakra-colors-gray-900);
     border: 1px solid var(--chakra-colors-gray-300);
+    opacity: 0.7;
     transition: opacity var(--transition);
     /* stylelint-disable-next-line @stylistic/declaration-colon-newline-after */
     border-shape: shape(
@@ -68,10 +74,19 @@ ul {
       line by 74.99% 42.84%,
       close
     );
+  }
 
-    &:disabled {
-      opacity: 0;
-    }
+  &::scroll-button(*):hover,
+  &::scroll-button(*):focus {
+    opacity: 1;
+  }
+
+  &::scroll-button(*):active {
+    translate: 0 1px;
+  }
+
+  &::scroll-button(*):disabled {
+    opacity: 0.2;
   }
 
   &::scroll-button(left) {
@@ -98,7 +113,6 @@ ul {
     display: flex;
     gap: var(--spacing-2);
     place-content: center;
-    margin-block-end: var(--spacing-6);
   }
 }
 
@@ -121,11 +135,11 @@ li {
 
   &::scroll-marker:target-current,
   &::scroll-marker:hover {
-    background-color: var(--color-primary);
+    background-color: v-bind(colors.solid);
   }
 
   &::scroll-marker:target-current {
-    border-color: var(--color-primary);
+    border-color: v-bind(colors.solid);
   }
 }
 </style>

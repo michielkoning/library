@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import useTheme from "@/composables/useTheme";
 import { computed, ref, useId, useTemplateRef } from "vue";
 
 const props = defineProps<{
@@ -50,6 +51,8 @@ const goToTab = (tab: number) => {
 const total = computed(() => {
   return props.tabs.length;
 });
+
+const {colors} = useTheme()
 </script>
 
 <template>
@@ -106,7 +109,7 @@ ul {
   padding: 0;
   margin: 0 0 var(--spacing-4);
   list-style: none outside;
-  border-block-end: 1px solid var(--color-primary-subtle);
+  border-block-end: 1px solid v-bind(colors.subtle);
 
   &::before {
     position: absolute;
@@ -119,7 +122,7 @@ ul {
     block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
-    background: var(--color-primary-subtle);
+    background: v-bind(colors.muted);
     transition:
       left var(--transition),
       width var(--transition);
@@ -134,13 +137,13 @@ ul {
   transition: background var(--transition);
 
   &:hover:not([aria-selected="true"]) {
-    color: var(--color-gray-fg);
-    background-color: var(--color-gray-subtle);
+    color: v-bind(colors.fg);
+    background-color: v-bind(colors.subtle);
   }
 
   &[aria-selected="true"] {
     anchor-name: v-bind(anchor);
-    color: var(--color-primary-fg);
+    color: v-bind(colors.fg);
   }
 }
 

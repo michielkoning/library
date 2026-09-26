@@ -46,7 +46,7 @@ li {
 
 a {
   &[aria-current="page"] {
-    color: var(--color-body-text);
+    color: var(--color-fg);
 
     &:not(:hover) {
       text-decoration: none;

@@ -13,7 +13,7 @@ button {
 }
 
 a {
-  color: var(--color-primary-text);
+  color: var(--color-fg);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 
