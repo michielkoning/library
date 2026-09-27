@@ -21,7 +21,7 @@ defineProps<{
   </dialog>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: var(--container-size-md);
@@ -46,11 +46,6 @@ dialog {
   }
 }
 
-svg {
-  font-size: 2em;
-  cursor: pointer;
-}
-
 ::backdrop {
   overflow: hidden;
   overscroll-behavior: contain;
@@ -59,19 +54,26 @@ svg {
   animation: backdrop-hide var(--transition);
 }
 
-header {
-  position: sticky;
-  inset-block-start: 0;
-  display: flex;
-  gap: var(--spacing-2);
-  align-items: start;
-  justify-content: space-between;
-  padding: var(--spacing-2) var(--spacing-4) 0;
-  background-color: var(--color-panel-bg);
-}
+@scope (dialog) {
+  svg {
+    font-size: 2em;
+    cursor: pointer;
+  }
 
-.content {
-  padding: var(--spacing-4);
+  header {
+    position: sticky;
+    inset-block-start: 0;
+    display: flex;
+    gap: var(--spacing-2);
+    align-items: start;
+    justify-content: space-between;
+    padding: var(--spacing-2) var(--spacing-4) 0;
+    background-color: var(--color-panel-bg);
+  }
+
+  .content {
+    padding: var(--spacing-4);
+  }
 }
 
 @keyframes dialog-hide {

@@ -98,8 +98,6 @@ const {colors} = useTheme()
 <style lang="css">
 @scope (.tabs) {
   :scope {
-    --variant: blue;
-
     margin-block-end: var(--spacing-4);
     container-type: inline-size;
     transition:
@@ -115,12 +113,6 @@ const {colors} = useTheme()
     list-style: none outside;
     border-block-end: 1px solid v-bind(colors.subtle);
 
-    --color: purple;
-
-    @container style(--variant: blue) {
-      --color: green;
-    }
-
     &::before {
       position: absolute;
       inset-block-end: anchor(bottom);
@@ -132,7 +124,7 @@ const {colors} = useTheme()
       block-size: anchor-size(block);
       position-anchor: v-bind(anchor);
       content: "";
-      background: var(--color);
+      background: v-bind(colors.emphasized);
 
       /* background: v-bind(colors.muted); */
       transition:

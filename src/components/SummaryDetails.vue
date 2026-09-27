@@ -23,7 +23,7 @@ defineProps<{
   </details>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 details {
   cursor: pointer;
   border-block-end: 2px solid var(--color-black);
@@ -49,22 +49,15 @@ details {
     padding-block: var(--spacing-2) var(--spacing-4);
     opacity: 1;
   }
-}
 
-summary {
-  padding-block: var(--spacing-2);
+  ::marker {
+    inline-size: 2em;
+    block-size: 1em;
+    aspect-ratio: 1;
+    content: "";
+    background-color: var(--color-black);
 
-  /* display: flex; */
-}
-
-::marker {
-  inline-size: 2em;
-  block-size: 1em;
-  aspect-ratio: 1;
-  content: "";
-  background-color: var(--color-black);
-
-  /* border-shape:
+    /* border-shape:
     shape(
       from 96.34% 44.96%,
       curve by 0% 10.11% with 4.88% 2.79% / 4.88% 7.32%,
@@ -78,5 +71,13 @@ summary {
       line by 74.99% 42.84%,
       close
     ); */
+  }
 }
+
+summary {
+  padding-block: var(--spacing-2);
+
+  /* display: flex; */
+}
+
 </style>
