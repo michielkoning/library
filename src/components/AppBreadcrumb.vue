@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <nav v-if="pages.length" aria-label="Breadcrumb">
+  <nav v-if="pages.length" aria-label="Breadcrumb" class="breadcrumb">
     <ol>
       <li v-for="(page, index) in pages" :key="page.title">
         <router-link :aria-current="index === pages.length - 1 ? 'page' : undefined" :to="page.to">
@@ -22,40 +22,42 @@ defineProps<{
 </template>
 
 <style lang="css" scoped>
-nav {
-  margin-block-end: var(--spacing-4);
-}
-
-ol {
-  display: flex;
-  gap: var(--spacing-2);
-  padding: 0;
-  margin: 0;
-  list-style: none outside;
-}
-
-li {
-  display: flex;
-  gap: var(--spacing-2);
-  align-items: center;
-
-  &:not(:last-child)::after {
-    content: "/";
+@scope (.breadcrumb) {
+  :scope {
+    margin-block-end: var(--spacing-4);
   }
-}
 
-a {
-  &[aria-current="page"] {
-    color: var(--color-fg);
+  ol {
+    display: flex;
+    gap: var(--spacing-2);
+    padding: 0;
+    margin: 0;
+    list-style: none outside;
+  }
 
-    &:not(:hover) {
-      text-decoration: none;
+  li {
+    display: flex;
+    gap: var(--spacing-2);
+    align-items: center;
+
+    &:not(:last-child)::after {
+      content: "/";
     }
   }
-}
 
-svg {
-  inline-size: 1.25em;
-  translate: 0 -1px;
+  a {
+    &[aria-current="page"] {
+      color: var(--color-fg);
+
+      &:not(:hover) {
+        text-decoration: none;
+      }
+    }
+  }
+
+  svg {
+    inline-size: 1.25em;
+    translate: 0 -1px;
+  }
 }
 </style>

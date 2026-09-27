@@ -45,7 +45,7 @@ details {
   }
 
   &[open]::details-content {
-    block-size: auto;
+    block-size: max-content;
     padding-block: var(--spacing-2) var(--spacing-4);
     opacity: 1;
   }

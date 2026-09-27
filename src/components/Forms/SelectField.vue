@@ -21,12 +21,11 @@ const { name } = toRefs(props);
 
 // we don't provide any rules here because we are using form-level validation
 // https://vee-validate.logaretm.com/v4/guide/validation#form-level-validation
-const { value, handleBlur, handleChange, errorMessage } = useField<string>(name, undefined, {
+const { value, handleChange, errorMessage } = useField<string>(name, undefined, {
   validateOnValueUpdate: false,
 });
 
 const validationListeners = {
-  blur: (event: Event) => handleBlur(event, true),
   change: handleChange,
 };
 

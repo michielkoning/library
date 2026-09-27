@@ -98,7 +98,7 @@ ul {
     inset-inline-end: 1em;
   }
 
-  &:has(li + li) {
+  &:has(> li:nth-child(2)) {
     overflow-x: scroll;
     scroll-behavior: smooth;
     scroll-marker-group: after;

@@ -95,76 +95,90 @@ const {colors} = useTheme()
   </div>
 </template>
 
-<style lang="css" scoped>
-.tabs {
-  margin-block-end: var(--spacing-4);
-  transition:
-    height var(--transition),
-    content-visibility var(--transition) allow-discrete;
-}
+<style lang="css">
+@scope (.tabs) {
+  :scope {
+    --variant: blue;
 
-ul {
-  display: grid;
-  grid-template-columns: repeat(v-bind(total), 1fr);
-  padding: 0;
-  margin: 0 0 var(--spacing-4);
-  list-style: none outside;
-  border-block-end: 1px solid v-bind(colors.subtle);
-
-  &::before {
-    position: absolute;
-    inset-block-end: anchor(bottom);
-    inset-inline-start: anchor(left);
-    display: block;
-    /* stylelint-disable-next-line declaration-property-value-no-unknown */
-    inline-size: anchor-size(inline);
-    /* stylelint-disable-next-line declaration-property-value-no-unknown */
-    block-size: anchor-size(block);
-    position-anchor: v-bind(anchor);
-    content: "";
-    background: v-bind(colors.muted);
+    margin-block-end: var(--spacing-4);
+    container-type: inline-size;
     transition:
-      left var(--transition),
-      width var(--transition);
-  }
-}
-
-[role="tab"] {
-  position: relative;
-  inline-size: 100%;
-  padding: var(--spacing-3) var(--spacing-2);
-  text-align: center;
-  transition: background var(--transition);
-
-  &:hover:not([aria-selected="true"]) {
-    color: v-bind(colors.fg);
-    background-color: v-bind(colors.subtle);
+      height var(--transition),
+      content-visibility var(--transition) allow-discrete;
   }
 
-  &[aria-selected="true"] {
-    anchor-name: v-bind(anchor);
-    color: v-bind(colors.fg);
+  ul {
+    display: grid;
+    grid-template-columns: repeat(v-bind(total), 1fr);
+    padding: 0;
+    margin: 0 0 var(--spacing-4);
+    list-style: none outside;
+    border-block-end: 1px solid v-bind(colors.subtle);
+
+    --color: purple;
+
+    @container style(--variant: blue) {
+      --color: green;
+    }
+
+    &::before {
+      position: absolute;
+      inset-block-end: anchor(bottom);
+      inset-inline-start: anchor(left);
+      display: block;
+      /* stylelint-disable-next-line declaration-property-value-no-unknown */
+      inline-size: anchor-size(inline);
+      /* stylelint-disable-next-line declaration-property-value-no-unknown */
+      block-size: anchor-size(block);
+      position-anchor: v-bind(anchor);
+      content: "";
+      background: var(--color);
+
+      /* background: v-bind(colors.muted); */
+      transition:
+        left var(--transition),
+        width var(--transition);
+    }
   }
-}
 
-[role="tabpanel"] {
-  display: none;
-  opacity: 0;
-  transition:
-    opacity var(--transition),
-    overlay allow-discrete,
-    display allow-discrete;
+  [role="tab"] {
+    position: relative;
+    inline-size: 100%;
+    padding: var(--spacing-3) var(--spacing-2);
+    text-align: center;
+    transition: background var(--transition);
 
-  &.active {
-    display: block;
-    opacity: 1;
-    transition-delay: 0.1s;
+    &:hover:not([aria-selected="true"]) {
+      color: v-bind(colors.fg);
+      background-color: v-bind(colors.subtle);
+    }
+
+    &[aria-selected="true"] {
+      anchor-name: v-bind(anchor);
+      color: v-bind(colors.fg);
+    }
   }
-}
 
-@starting-style {
-  [role="tabpanel"].active {
+  [role="tabpanel"] {
+    display: none;
     opacity: 0;
+    transition:
+      opacity var(--transition),
+      overlay allow-discrete,
+      display allow-discrete;
+
+    &.active {
+      display: block;
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+  }
+
+  @starting-style {
+    [role="tabpanel"].active {
+      opacity: 0;
+    }
   }
 }
+
 </style>
