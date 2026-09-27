@@ -2,6 +2,7 @@
   "name": "@m11g/library",
   "version": "0.0.0",
   "type": "module",
+  "private": "false",
   "scripts": {
     "dev": "vite --host",
     "build": "run-p type-check \"build-only {@}\" --",
