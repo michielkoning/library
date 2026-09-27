@@ -35,7 +35,15 @@ textarea {
 }
 
 select,
-input,
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
 textarea {
   display: block;
   inline-size: 100%;
@@ -52,6 +60,16 @@ textarea {
 
   &:focus-visible {
     outline: none;
-    border-color: var(--color-accent-alternative);
+    border-color: var(--color-primary-solid);
   }
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  accent-color: var(--color-primary-solid);
+}
+
+::placeholder {
+  color: var(--chakra-colors-gray-400);
 }

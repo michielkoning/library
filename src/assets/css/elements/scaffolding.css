@@ -34,7 +34,7 @@ body {
 
 ul,
 ol {
-  padding-inline-start: 1rem;
+  padding-inline-start: 0;
   margin: 0 0 var(--spacing-4);
   list-style-position: outside;
 }
@@ -54,7 +54,7 @@ dl {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 dd {

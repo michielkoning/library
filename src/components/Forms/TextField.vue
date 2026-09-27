@@ -36,6 +36,6 @@ const validationListeners = {
 
 <template>
   <form-field :id :title :error-message>
-    <input :id :name :type :autocomplete :value :placeholder v-on="validationListeners" />
+    <input :id :name :type :autocomplete :value placeholder="asdas" v-on="validationListeners" />
   </form-field>
 </template>

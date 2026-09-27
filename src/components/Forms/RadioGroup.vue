@@ -59,7 +59,7 @@ const { colors } = useTheme()
   align-items: start;
 
   &:not(:last-child) {
-    margin-block-end: var(--spacing-2);
+    margin-block-end: var(--spacing-1);
   }
 }
 

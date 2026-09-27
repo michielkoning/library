@@ -43,10 +43,10 @@ import AppButton from "@/components/AppButton.vue";
       obcaecati suscipit exercitationem nisi? Possimus!
     </summary-details>
 
-    <app-notification title="error" variant="error" />
-    <app-notification title="success" variant="success" />
-    <app-notification title="warning" variant="warning" />
-    <app-notification title="info" variant="info" />
+    <app-notification variant="error">error</app-notification>
+    <app-notification variant="success">success</app-notification>
+    <app-notification variant="warning">warning</app-notification>
+    <app-notification variant="info">info</app-notification>
 
     <app-tabs
       :tabs="[

@@ -3,7 +3,7 @@ import { Icon } from "@iconify/vue";
 import { computed, ref } from "vue";
 
 const props = defineProps<{
-  title: string;
+  title?: string;
   variant: "error" | "info" | "success" | "warning";
 }>();
 
@@ -33,7 +33,7 @@ const variantIcon = computed(() => {
   <div class="notification" :class="variant">
     <icon :icon="variantIcon" />
     <div>
-      <div class="title">
+      <div v-if="title" class="title">
         {{ title }}
       </div>
       <slot />
