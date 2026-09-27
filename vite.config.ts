@@ -8,14 +8,18 @@ import dts from 'unplugin-dts/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    dts({
+      processor: 'vue',
+      tsconfigPath: './tsconfig.app.json'
+    }),
     vue(),
     vueDevTools(),
-    dts()
   ],
   build: {
 		lib: {
       entry: resolve(import.meta.dirname, 'src/index.ts'),
       name: 'ComponentLibary',
+      formats: ['es'],
 			fileName: 'library'
 		},
     rolldownOptions: {
