@@ -2,6 +2,18 @@
   "name": "@m11g/library",
   "version": "0.0.2",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/library.umd.cjs",
+  "module": "./dist/library.js",
+  "exports": {
+    ".": {
+      "import": "./dist/library.js",
+      "require": "./dist/library.umd.cjs"
+    },
+    "./style.css": "./dist/library.css"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "run-p type-check \"build-only {@}\" --",
