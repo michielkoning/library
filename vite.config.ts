@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import { resolve } from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,6 +11,13 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  build: {
+		lib: {
+			entry: resolve(__dirname, 'src/index.ts'),
+			name: 'ComponentLibary',
+			fileName: 'component-library'
+		}
+	},
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
