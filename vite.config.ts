@@ -15,7 +15,7 @@ export default defineConfig({
 		lib: {
 			entry: resolve(__dirname, 'src/index.ts'),
 			name: 'ComponentLibary',
-			fileName: 'component-library'
+			fileName: 'index'
 		}
 	},
   resolve: {

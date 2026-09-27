@@ -1,4 +1,3 @@
-import '@/assets/css/base.css'
 
 import AppButton from '@/components/AppButton.vue'
 import AppNotification from '@/components/AppNotification.vue'
