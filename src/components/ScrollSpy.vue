@@ -15,7 +15,7 @@ const anchor = computed(() => {
   return `--${id}`;
 });
 
-const { colors} = useTheme()
+const { colors } = useTheme();
 </script>
 
 <template>

@@ -1,20 +1,20 @@
 :root {
   --color-blue-contrast: light-dark(white, white);
-  --color-blue-fg: light-dark(var(--colors-blue-700), var(--colors-blue-300));
-  --color-blue-subtle: light-dark(var(--colors-blue-100), var(--colors-blue-900));
-  --color-blue-muted: light-dark(var(--colors-blue-200), var(--colors-blue-800));
-  --color-blue-emphasized: light-dark(var(--colors-blue-300), var(--colors-blue-700));
-  --color-blue-solid: light-dark(var(--colors-blue-600), var(--colors-blue-600));
-  --color-blue-focus-ring: light-dark(var(--colors-blue-500), var(--colors-blue-500));
-  --color-blue-border: light-dark(var(--colors-blue-500), var(--colors-blue-400));
-  --colors-blue-50: oklch(97% 0.014 254.6deg);
-  --colors-blue-100: oklch(93.2% 0.032 255.6deg);
-  --colors-blue-200: oklch(88.2% 0.057 254.1deg);
-  --colors-blue-300: oklch(84% 0.082 251deg);
-  --colors-blue-400: oklch(71.4% 0.143 254.6deg);
-  --colors-blue-500: oklch(62.3% 0.188 259.8deg);
-  --colors-blue-600: oklch(54.6% 0.215 262.9deg);
-  --colors-blue-700: oklch(40.8% 0.174 264.4deg);
-  --colors-blue-800: oklch(34.9% 0.121 264.9deg);
-  --colors-blue-900: oklch(26% 0.08 268.4deg);
+  --color-blue-fg: light-dark(var(--color-blue-700), var(--color-blue-300));
+  --color-blue-subtle: light-dark(var(--color-blue-100), var(--color-blue-900));
+  --color-blue-muted: light-dark(var(--color-blue-200), var(--color-blue-800));
+  --color-blue-emphasized: light-dark(var(--color-blue-300), var(--color-blue-700));
+  --color-blue-solid: light-dark(var(--color-blue-600), var(--color-blue-600));
+  --color-blue-focus-ring: light-dark(var(--color-blue-500), var(--color-blue-500));
+  --color-blue-border: light-dark(var(--color-blue-500), var(--color-blue-400));
+  --color-blue-50: oklch(97% 0.014 254.6deg);
+  --color-blue-100: oklch(93.2% 0.032 255.6deg);
+  --color-blue-200: oklch(88.2% 0.057 254.1deg);
+  --color-blue-300: oklch(84% 0.082 251deg);
+  --color-blue-400: oklch(71.4% 0.143 254.6deg);
+  --color-blue-500: oklch(62.3% 0.188 259.8deg);
+  --color-blue-600: oklch(54.6% 0.215 262.9deg);
+  --color-blue-700: oklch(40.8% 0.174 264.4deg);
+  --color-blue-800: oklch(34.9% 0.121 264.9deg);
+  --color-blue-900: oklch(26% 0.08 268.4deg);
 }

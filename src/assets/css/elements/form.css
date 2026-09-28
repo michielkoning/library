@@ -54,7 +54,7 @@ textarea {
   line-height: var(--line-height-heading);
   color: currentcolor;
   background: transparent;
-  border: 2px solid var(--chakra-colors-gray-800);
+  border: 2px solid var(--color-gray-800);
   border-radius: 0;
   transition: border-color var(--transition);
 
@@ -71,5 +71,5 @@ input[type="range"] {
 }
 
 ::placeholder {
-  color: var(--chakra-colors-gray-400);
+  color: var(--color-gray-400);
 }

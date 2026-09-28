@@ -37,7 +37,7 @@ import AppButton from "@/components/AppButton.vue";
       </p>
     </app-dialog>
     <button commandfor="dialog" command="show-modal">Open Dialog</button>
-    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em;">
+    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
       quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
       obcaecati suscipit exercitationem nisi? Possimus!
@@ -94,9 +94,10 @@ import AppButton from "@/components/AppButton.vue";
       </template>
     </app-tabs>
 
-    <div class="buttons">
-      <app-button title="Button" />
-      <app-button title="Button" variant="ghost" />
+    <div v-for="theme in ['primary', 'accent', 'secondary']" :key="theme" class="buttons">
+      <app-button title="Button" :theme />
+      <app-button title="Button" variant="subtle" :theme />
+      <app-button title="Button" variant="outline" :theme />
     </div>
   </center-wrapper>
 </template>
@@ -105,5 +106,6 @@ import AppButton from "@/components/AppButton.vue";
 .buttons {
   display: flex;
   gap: var(--spacing-2);
+  margin-block-end: 1em;
 }
 </style>

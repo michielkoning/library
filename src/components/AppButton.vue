@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import useTheme from "@/composables/useTheme";
-import type { Theme } from "@/types/Theme";
 import { computed, resolveComponent } from "vue";
 import type { RouteLocationRaw } from "vue-router";
 
@@ -8,21 +7,19 @@ const props = withDefaults(
   defineProps<{
     to?: RouteLocationRaw;
     type?: "submit" | "button";
-    variant?: "primary" | "ghost" | "secondary";
-    theme?: Theme;
+    variant?: "solid" | "outline" | "subtle";
+    theme?: "primary" | "secondary" | "accent";
     title: string;
     disabled?: boolean;
   }>(),
   {
     theme: undefined,
     to: undefined,
-    variant: "primary",
+    variant: "solid",
     type: "button",
     disabled: false,
   },
 );
-
-const { colors } = useTheme(props.theme);
 
 const component = computed(() => {
   if (props.to) {
@@ -31,13 +28,15 @@ const component = computed(() => {
     return "button";
   }
 });
+
+const { colors } = useTheme(props.theme);
 </script>
 
 <template>
   <component
     :is="component"
     :to
-    :class="variant"
+    :class="[variant, theme]"
     :type="component === 'button' ? type : undefined"
     :disabled
   >
@@ -46,24 +45,32 @@ const component = computed(() => {
 </template>
 
 <style lang="css" scoped>
+.solid {
+  --btn-background-color: v-bind(colors.solid);
+  --btn-background-color-hover: v-bind(colors.emphasized);
+  --btn-text-color: v-bind(colors.contrast);
+  --focus-ring-color: v-bind(colors.focusRing);
+}
+
+.outline {
+  --btn-background-color: transparant;
+  --btn-background-color-hover: v-bind(colors.subtle);
+  --btn-text-color: v-bind(colors.solid);
+  --btn-border-color: currentcolor;
+  --focus-ring-color: var(--btn-text-color);
+}
+
+.subtle {
+  --btn-background-color: transparant;
+  --btn-background-color-hover: v-bind(colors.subtle);
+  --btn-text-color: v-bind(colors.solid);
+  --btn-border-color: currentcolor;
+  --focus-ring-color: var(--btn-text-color);
+}
+
 a,
 button {
   --btn-border-radius: 0.5em;
-
-  &.primary {
-    --btn-background-color: v-bind(colors.solid);
-    --btn-background-color-hover: v-bind(colors.emphasized);
-    --btn-text-color: v-bind(colors.contrast);
-    --focus-ring-color: v-bind(colors.focusRing);
-  }
-
-  &.ghost {
-    --btn-background-color: transparant;
-    --btn-background-color-hover: v-bind(colors.subtle);
-    --btn-text-color: v-bind(colors.solid);
-    --btn-border-color: currentcolor;
-    --focus-ring-color: var(--btn-text-color);
-  }
 
   display: inline-block;
   inline-size: auto;
