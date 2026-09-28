@@ -5,7 +5,8 @@ html {
 
 body {
   scrollbar-gutter: stable;
-  font-family: var(--font-family-base), Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const props = defineProps<{
-  title: string;
-  variant: "danger" | "info" | "success" | "warning";
+  title?: string;
+  variant: "error" | "info" | "success" | "warning";
 }>();
 
 const variantIcon = computed(() => {
   switch (props.variant) {
-    case "danger":
+    case "error":
       return "solar:danger-triangle-bold";
     case "info":
       return "solar:info-circle-bold";
@@ -20,13 +20,20 @@ const variantIcon = computed(() => {
       return "solar:check-circle-bold";
   }
 });
+
+ const colors = ref({
+    bg: `var(--color-bg-${props.variant})`,
+    fg: `var(--color-fg-${props.variant})`,
+    border: `var(--color-border-${props.variant})`,
+  })
+
 </script>
 
 <template>
   <div class="notification" :class="variant">
     <icon :icon="variantIcon" />
     <div>
-      <div class="title">
+      <div v-if="title" class="title">
         {{ title }}
       </div>
       <slot />
@@ -36,37 +43,13 @@ const variantIcon = computed(() => {
 
 <style lang="css" scoped>
 .notification {
-  &.success {
-    --notification-background-color: var(--color-success);
-    --notification-text-color: var(--color-success-text);
-    --notification-border-color: var(--color-success-subtle);
-  }
-
-  &.danger {
-    --notification-background-color: var(--color-danger);
-    --notification-text-color: var(--color-danger-text);
-    --notification-border-color: var(--color-danger-subtle);
-  }
-
-  &.info {
-    --notification-background-color: var(--color-info);
-    --notification-text-color: var(--color-info-text);
-    --notification-border-color: var(--color-info-subtle);
-  }
-
-  &.warning {
-    --notification-background-color: var(--color-warning);
-    --notification-text-color: var(--color-warning-text);
-    --notification-border-color: var(--color-warning-subtle);
-  }
-
   display: flex;
   gap: var(--spacing-1);
   padding: var(--spacing-2);
   margin-block-end: var(--spacing-4);
-  color: var(--notification-text-color);
-  background-color: var(--notification-background-color);
-  border: 1px solid var(--notification-border-color);
+  color: v-bind(colors.fg);
+  background-color: v-bind(colors.bg);
+  border: 1px solid v-bind(colors.border);
   border-inline-start-width: 0.25em;
 }
 

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import useTheme from "@/composables/useTheme";
 import { computed, useId } from "vue";
 
 defineProps<{
@@ -13,6 +14,8 @@ const id = useId();
 const anchor = computed(() => {
   return `--${id}`;
 });
+
+const { colors} = useTheme()
 </script>
 
 <template>
@@ -58,7 +61,7 @@ nav {
   inset-block-start: var(--spacing-4);
   display: none;
   order: -1;
-  background: var(--color-body-background);
+  background: var(--color-bg-panel);
   scroll-target-group: auto;
 
   @media (--md) {
@@ -82,7 +85,7 @@ ol {
     block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
-    background: var(--color-primary-solid);
+    background: v-bind(colors.solid);
     transition:
       top var(--transition),
       height var(--transition);
@@ -92,17 +95,17 @@ ol {
 a {
   display: block;
   padding-block: var(--spacing-1);
-  padding-inline-start: var(--spacing-2);
+  padding-inline-start: var(--spacing-3);
   text-decoration: none;
-  border-inline-start: 0.25em solid var(--color-primary-subtle);
+  border-inline-start: 0.25em solid v-bind(colors.subtle);
 
   &:target-current {
     anchor-name: v-bind(anchor);
-    color: var(--color-primary-solid);
+    color: v-bind(colors.solid);
   }
 
   &:hover {
-    border-color: var(--color-primary-solid);
+    border-color: v-bind(colors.solid);
   }
 }
 </style>

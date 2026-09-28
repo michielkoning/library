@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import useTheme from "@/composables/useTheme";
+import type { Theme } from "@/types/Theme";
 import { computed, resolveComponent } from "vue";
 import type { RouteLocationRaw } from "vue-router";
 
@@ -7,16 +9,20 @@ const props = withDefaults(
     to?: RouteLocationRaw;
     type?: "submit" | "button";
     variant?: "primary" | "ghost" | "secondary";
+    theme?: Theme
     title: string;
     disabled?: boolean;
   }>(),
   {
+    theme: undefined,
     to: undefined,
     variant: "primary",
     type: "button",
     disabled: false,
   },
 );
+
+const { colors } = useTheme(props.theme);
 
 const component = computed(() => {
   if (props.to) {
@@ -25,6 +31,7 @@ const component = computed(() => {
     return "button";
   }
 });
+
 </script>
 
 <template>
@@ -45,23 +52,16 @@ button {
   --btn-border-radius: 0.5em;
 
   &.primary {
-    --btn-background-color: var(--color-primary-solid);
-    --btn-background-color-hover: var(--color-primary-emphasized);
-    --btn-text-color: var(--color-primary-contrast);
-    --focus-ring-color: var(--btn-background-color);
-  }
-
-  &.secondary {
-    --btn-background-color: var(--color-secondary-solid);
-    --btn-background-color-hover: var(--color-secondary-emphasized);
-    --btn-text-color: var(--color-secondary-contrast);
-    --focus-ring-color: var(--btn-background-color);
+    --btn-background-color: v-bind(colors.solid);
+    --btn-background-color-hover: v-bind(colors.emphasized);
+    --btn-text-color: v-bind(colors.contrast);
+    --focus-ring-color: v-bind(colors.focusRing);
   }
 
   &.ghost {
     --btn-background-color: transparant;
-    --btn-background-color-hover: var(--color-primary-subtle);
-    --btn-text-color: var(--color-primary-solid);
+    --btn-background-color-hover: v-bind(colors.subtle);
+    --btn-text-color: v-bind(colors.solid);
     --btn-border-color: currentcolor;
     --focus-ring-color: var(--btn-text-color);
   }

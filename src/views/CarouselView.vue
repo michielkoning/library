@@ -18,3 +18,10 @@ const entries = [
     </app-carousel>
   </center-wrapper>
 </template>
+
+<style lang="css" scoped>
+img {
+  display: block;
+  margin: 0;
+}
+</style>

@@ -9,8 +9,8 @@
   --font-size-sm: calc(var(--scale-base) * pow(var(--scale-ratio), -1));
   --line-height: 1.5;
   --line-height-heading: 1.1;
-  --font-family-base: "Domine", arial, helvetica, sans-serif;
-  --font-family-heading: "Sora", var(--font-family-base);
+  --font-family: "Domine", arial, helvetica, sans-serif;
+  --font-family-heading: "Sora", var(--font-family);
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;

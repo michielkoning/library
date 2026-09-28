@@ -7,6 +7,7 @@ import AppDialog from "@/components/AppDialog.vue";
 import AppBreadcrumb from "@/components/AppBreadcrumb.vue";
 import AppPopover from "@/components/AppPopover.vue";
 import { Icon } from "@iconify/vue";
+import AppButton from "@/components/AppButton.vue";
 </script>
 
 <template>
@@ -41,13 +42,12 @@ import { Icon } from "@iconify/vue";
       quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
       obcaecati suscipit exercitationem nisi? Possimus!
     </summary-details>
-    <app-notification title="test" variant="danger" />
-    <app-notification
-      title="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet obcaecati suscipit exercitationem nisi? Possimus!"
-      variant="success"
-    />
-    <app-notification title="test" variant="warning" />
-    <app-notification title="test" variant="info" />
+
+    <app-notification variant="error">error</app-notification>
+    <app-notification variant="success">success</app-notification>
+    <app-notification variant="warning">warning</app-notification>
+    <app-notification variant="info">info</app-notification>
+
     <app-tabs
       :tabs="[
         {
@@ -93,5 +93,8 @@ import { Icon } from "@iconify/vue";
         </p>
       </template>
     </app-tabs>
+
+    <app-button title="Button" />
+    <app-button title="Button" variant="ghost" />
   </center-wrapper>
 </template>

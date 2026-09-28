@@ -2,6 +2,7 @@
 import { useField } from "vee-validate";
 import { toRefs, useId } from "vue";
 import FormErrorMessage from "./FormErrorMessage.vue";
+import useTheme from "@/composables/useTheme.ts";
 
 const props = defineProps<{
   // type: 'directors' | 'authors'
@@ -24,6 +25,9 @@ const { value, handleChange, errorMessage } = useField<string>(name);
 const validationListeners = {
   change: handleChange,
 };
+
+const { colors } = useTheme()
+
 </script>
 
 <template>
@@ -55,7 +59,7 @@ const validationListeners = {
   align-items: start;
 
   &:not(:last-child) {
-    margin-block-end: var(--spacing-2);
+    margin-block-end: var(--spacing-1);
   }
 }
 
@@ -75,7 +79,7 @@ input {
     background var(--transition);
 
   &:checked {
-    background-color: var(--color-primary);
+    background-color: v-bind(colors.solid);
   }
 }
 </style>
