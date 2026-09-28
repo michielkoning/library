@@ -1,0 +1,21 @@
+:root {
+  --color-purple-contrast: light-dark(white, white);
+  --color-purple-fg: light-dark(var(--colors-purple-700), var(--colors-purple-300));
+  --color-purple-subtle: light-dark(var(--colors-purple-100), var(--colors-purple-900));
+  --color-purple-muted: light-dark(var(--colors-purple-200), var(--colors-purple-800));
+  --color-purple-emphasized: light-dark(var(--colors-purple-300), var(--colors-purple-700));
+  --color-purple-solid: light-dark(var(--colors-purple-600), var(--colors-purple-600));
+  --color-purple-focus-ring: light-dark(var(--colors-purple-500), var(--colors-purple-500));
+  --color-purple-border: light-dark(var(--colors-purple-500), var(--colors-purple-400));
+  --colors-purple-50: oklch(97.7% 0.014 308.3deg);
+  --colors-purple-100: oklch(94.6% 0.033 307.2deg);
+  --colors-purple-200: oklch(90.2% 0.06 306.7deg);
+  --colors-purple-300: oklch(82.7% 0.108 306.4deg);
+  --colors-purple-400: oklch(72.2% 0.177 305.5deg);
+  --colors-purple-500: oklch(62.7% 0.233 303.9deg);
+  --colors-purple-600: oklch(55.8% 0.252 302.3deg);
+  --colors-purple-700: oklch(42% 0.197 302.4deg);
+  --colors-purple-800: oklch(33.9% 0.146 305.1deg);
+  --colors-purple-900: oklch(25.4% 0.125 301.7deg);
+  --colors-purple-950: oklch(18% 0.083 304.1deg);
+}

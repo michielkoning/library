@@ -1,0 +1,21 @@
+:root {
+  --color-cyan-contrast: light-dark(white, white);
+  --color-cyan-fg: light-dark(var(--colors-cyan-700), var(--colors-cyan-300));
+  --color-cyan-subtle: light-dark(var(--colors-cyan-100), var(--colors-cyan-900));
+  --color-cyan-muted: light-dark(var(--colors-cyan-200), var(--colors-cyan-800));
+  --color-cyan-emphasized: light-dark(var(--colors-cyan-300), var(--colors-cyan-700));
+  --color-cyan-solid: light-dark(var(--colors-cyan-600), var(--colors-cyan-600));
+  --color-cyan-focus-ring: light-dark(var(--colors-cyan-500), var(--colors-cyan-500));
+  --color-cyan-border: light-dark(var(--colors-cyan-500), var(--colors-cyan-400));
+  --colors-cyan-50: oklch(98.4% 0.019 200.9deg);
+  --colors-cyan-100: oklch(95.6% 0.044 203.4deg);
+  --colors-cyan-200: oklch(91.7% 0.077 205deg);
+  --colors-cyan-300: oklch(86.5% 0.115 207.1deg);
+  --colors-cyan-400: oklch(79.7% 0.134 211.5deg);
+  --colors-cyan-500: oklch(71.5% 0.126 215.2deg);
+  --colors-cyan-600: oklch(60.9% 0.111 221.7deg);
+  --colors-cyan-700: oklch(44.2% 0.078 222.6deg);
+  --colors-cyan-800: oklch(35.3% 0.057 226.6deg);
+  --colors-cyan-900: oklch(26.8% 0.046 229.2deg);
+  --colors-cyan-950: oklch(20.9% 0.033 227.7deg);
+}

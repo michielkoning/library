@@ -9,7 +9,7 @@ const props = withDefaults(
     to?: RouteLocationRaw;
     type?: "submit" | "button";
     variant?: "primary" | "ghost" | "secondary";
-    theme?: Theme
+    theme?: Theme;
     title: string;
     disabled?: boolean;
   }>(),
@@ -31,7 +31,6 @@ const component = computed(() => {
     return "button";
   }
 });
-
 </script>
 
 <template>

@@ -1,0 +1,21 @@
+:root {
+  --color-pink-contrast: light-dark(white, white);
+  --color-pink-fg: light-dark(var(--colors-pink-700), var(--colors-pink-300));
+  --color-pink-subtle: light-dark(var(--colors-pink-100), var(--colors-pink-900));
+  --color-pink-muted: light-dark(var(--colors-pink-200), var(--colors-pink-800));
+  --color-pink-emphasized: light-dark(var(--colors-pink-300), var(--colors-pink-700));
+  --color-pink-solid: light-dark(var(--colors-pink-600), var(--colors-pink-600));
+  --color-pink-focus-ring: light-dark(var(--colors-pink-500), var(--colors-pink-500));
+  --color-pink-border: light-dark(var(--colors-pink-500), var(--colors-pink-400));
+  --colors-pink-50: oklch(97.1% 0.014 343.2deg);
+  --colors-pink-100: oklch(94.8% 0.028 342.3deg);
+  --colors-pink-200: oklch(89.9% 0.059 343.2deg);
+  --colors-pink-300: oklch(82.3% 0.11 346deg);
+  --colors-pink-400: oklch(72.5% 0.175 349.8deg);
+  --colors-pink-500: oklch(65.6% 0.212 354.3deg);
+  --colors-pink-600: oklch(59.2% 0.218 0.6deg);
+  --colors-pink-700: oklch(47.3% 0.177 3deg);
+  --colors-pink-800: oklch(35.4% 0.129 3.6deg);
+  --colors-pink-900: oklch(25.9% 0.094 3.3deg);
+  --colors-pink-950: oklch(19.9% 0.066 1.1deg);
+}

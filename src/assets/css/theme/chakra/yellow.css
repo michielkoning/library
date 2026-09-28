@@ -1,0 +1,21 @@
+:root {
+  --color-yellow-contrast: light-dark(black, black);
+  --color-yellow-fg: light-dark(var(--colors-yellow-800), var(--colors-yellow-300));
+  --color-yellow-subtle: light-dark(var(--colors-yellow-100), var(--colors-yellow-900));
+  --color-yellow-muted: light-dark(var(--colors-yellow-200), var(--colors-yellow-800));
+  --color-yellow-emphasized: light-dark(var(--colors-yellow-300), var(--colors-yellow-700));
+  --color-yellow-solid: light-dark(var(--colors-yellow-300), var(--colors-yellow-300));
+  --color-yellow-focus-ring: light-dark(var(--colors-yellow-500), var(--colors-yellow-500));
+  --color-yellow-border: light-dark(var(--colors-yellow-500), var(--colors-yellow-500));
+  --colors-yellow-50: oklch(98.7% 0.026 102.2deg);
+  --colors-yellow-100: oklch(97.3% 0.069 103.2deg);
+  --colors-yellow-200: oklch(94.5% 0.124 101.5deg);
+  --colors-yellow-300: oklch(90.5% 0.166 98.1deg);
+  --colors-yellow-400: oklch(86.1% 0.173 91.9deg);
+  --colors-yellow-500: oklch(79.5% 0.162 86deg);
+  --colors-yellow-600: oklch(68.1% 0.142 75.8deg);
+  --colors-yellow-700: oklch(48.4% 0.102 68.2deg);
+  --colors-yellow-800: oklch(42.1% 0.09 57.7deg);
+  --colors-yellow-900: oklch(28.6% 0.064 53.8deg);
+  --colors-yellow-950: oklch(21.3% 0.044 55.6deg);
+}

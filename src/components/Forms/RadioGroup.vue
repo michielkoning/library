@@ -26,8 +26,7 @@ const validationListeners = {
   change: handleChange,
 };
 
-const { colors } = useTheme()
-
+const { colors } = useTheme();
 </script>
 
 <template>

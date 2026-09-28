@@ -1,0 +1,21 @@
+:root {
+  --color-orange-contrast: light-dark(white, black);
+  --color-orange-fg: light-dark(var(--colors-orange-700), var(--colors-orange-300));
+  --color-orange-subtle: light-dark(var(--colors-orange-100), var(--colors-orange-900));
+  --color-orange-muted: light-dark(var(--colors-orange-200), var(--colors-orange-800));
+  --color-orange-emphasized: light-dark(var(--colors-orange-300), var(--colors-orange-700));
+  --color-orange-solid: light-dark(var(--colors-orange-600), var(--colors-orange-500));
+  --color-orange-focus-ring: light-dark(var(--colors-orange-500), var(--colors-orange-500));
+  --color-orange-border: light-dark(var(--colors-orange-500), var(--colors-orange-400));
+  --colors-orange-50: oklch(98% 0.016 73.7deg);
+  --colors-orange-100: oklch(95.4% 0.037 75.2deg);
+  --colors-orange-200: oklch(90.1% 0.073 70.7deg);
+  --colors-orange-300: oklch(83.7% 0.117 66.3deg);
+  --colors-orange-400: oklch(75.8% 0.159 55.9deg);
+  --colors-orange-500: oklch(70.5% 0.187 47.6deg);
+  --colors-orange-600: oklch(64.6% 0.194 41.1deg);
+  --colors-orange-700: oklch(45.2% 0.138 38.8deg);
+  --colors-orange-800: oklch(37.1% 0.104 38deg);
+  --colors-orange-900: oklch(24.5% 0.07 36.1deg);
+  --colors-orange-950: oklch(18.3% 0.044 38.1deg);
+}

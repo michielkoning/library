@@ -16,6 +16,24 @@
   --color-primary-focusring: var(--color-teal-focusring);
   --color-primary-border: var(--color-teal-border);
 
+  /* SECONDARY */
+  --color-secondary-fg: var(--color-teal-fg);
+  --color-secondary-subtle: var(--color-teal-subtle);
+  --color-secondary-muted: var(--color-teal-muted);
+  --color-secondary-emphasized: var(--color-teal-emphasized);
+  --color-secondary-solid: var(--color-teal-solid);
+  --color-secondary-focusring: var(--color-teal-focusring);
+  --color-secondary-border: var(--color-teal-border);
+
+  /* ACCENT */
+  --color-accent-fg: var(--color-teal-fg);
+  --color-accent-subtle: var(--color-teal-subtle);
+  --color-accent-muted: var(--color-teal-muted);
+  --color-accent-emphasized: var(--color-teal-emphasized);
+  --color-accent-solid: var(--color-teal-solid);
+  --color-accent-focusring: var(--color-teal-focusring);
+  --color-accent-border: var(--color-teal-border);
+
   /* BODY */
   --color-body-background: var(--chakra-colors-black);
   --color-body-text: var(--chakra-colors-gray-50);

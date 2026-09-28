@@ -21,12 +21,11 @@ const variantIcon = computed(() => {
   }
 });
 
- const colors = ref({
-    bg: `var(--color-bg-${props.variant})`,
-    fg: `var(--color-fg-${props.variant})`,
-    border: `var(--color-border-${props.variant})`,
-  })
-
+const colors = ref({
+  bg: `var(--color-bg-${props.variant})`,
+  fg: `var(--color-fg-${props.variant})`,
+  border: `var(--color-border-${props.variant})`,
+});
 </script>
 
 <template>

@@ -94,7 +94,16 @@ import AppButton from "@/components/AppButton.vue";
       </template>
     </app-tabs>
 
-    <app-button title="Button" />
-    <app-button title="Button" variant="ghost" />
+    <div class="buttons">
+      <app-button title="Button" />
+      <app-button title="Button" variant="ghost" />
+    </div>
   </center-wrapper>
 </template>
+
+<style lang="css" scoped>
+.buttons {
+  display: flex;
+  gap: var(--spacing-2);
+}
+</style>
