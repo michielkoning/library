@@ -2,12 +2,10 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-standard-vue",
-		"@stylistic/stylelint-config",
+    "@stylistic/stylelint-config",
     "stylelint-config-recess-order"
   ],
-  "plugins": [
-    "stylelint-use-logical"
-  ],  
+  "plugins": ["stylelint-use-logical"],
   "rules": {
     "csstools/use-logical": "always",
     "import-notation": null,
@@ -20,7 +18,14 @@
     "selector-pseudo-class-no-unknown": [
       true,
       {
-        "ignorePseudoClasses": ["global", "readonly", "deep", "scroll-button", "scroll-marker", "target-current"]
+        "ignorePseudoClasses": [
+          "global",
+          "readonly",
+          "deep",
+          "scroll-button",
+          "scroll-marker",
+          "target-current"
+        ]
       }
     ],
     "color-no-hex": true,
