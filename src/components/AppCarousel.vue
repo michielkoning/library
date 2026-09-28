@@ -13,8 +13,8 @@ const total = computed(() => {
 <template>
   <div class="wrapper">
     <ul>
-      <li v-for="tab in items" :key="tab">
-        <slot :name="tab" />
+      <li v-for="item in items" :key="item">
+        <slot :name="item" />
       </li>
     </ul>
   </div>
