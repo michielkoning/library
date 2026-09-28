@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import useTheme from "@/composables/useTheme";
+import { Icon } from "@iconify/vue";
 import { computed, resolveComponent } from "vue";
 import type { RouteLocationRaw } from "vue-router";
 
@@ -11,6 +12,7 @@ const props = withDefaults(
     theme?: "primary" | "secondary" | "accent";
     title: string;
     disabled?: boolean;
+    icon?: string;
   }>(),
   {
     theme: undefined,
@@ -18,6 +20,7 @@ const props = withDefaults(
     variant: "solid",
     type: "button",
     disabled: false,
+    icon: undefined,
   },
 );
 
@@ -40,6 +43,7 @@ const { colors } = useTheme(props.theme);
     :type="component === 'button' ? type : undefined"
     :disabled
   >
+    <icon v-if="icon" :icon />
     {{ title }}
   </component>
 </template>
@@ -73,8 +77,9 @@ a,
 button {
   --btn-border-radius: 0.5em;
 
-  text-box-trim: trim-both;
-  display: inline-block;
+  display: flex;
+  gap: var(--spacing-1);
+  justify-content: center;
   inline-size: auto;
   padding: var(--spacing-2) var(--spacing-8);
   font-family: var(--font-family-heading);
@@ -92,6 +97,7 @@ button {
     background-color var(--transition),
     text-decoration var(--transition),
     opacity var(--transition);
+  text-box-trim: trim-both;
 
   &:hover:not(:disabled) {
     background-color: var(--btn-background-color-hover);

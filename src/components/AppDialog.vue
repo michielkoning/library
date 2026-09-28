@@ -21,7 +21,7 @@ defineProps<{
   </dialog>
 </template>
 
-<style lang="css">
+<style lang="css" scoped>
 dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: var(--container-size-md);
