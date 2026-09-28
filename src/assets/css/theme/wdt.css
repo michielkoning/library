@@ -13,7 +13,7 @@
   --color-primary-muted: var(--color-teal-muted);
   --color-primary-emphasized: var(--color-teal-emphasized);
   --color-primary-solid: var(--color-teal-solid);
-  --color-primary-focusring: var(--color-teal-focusring);
+  --color-primary-focus-ring: var(--color-teal-focus-ring);
   --color-primary-border: var(--color-teal-border);
 
   /* SECONDARY */
@@ -22,7 +22,7 @@
   --color-secondary-muted: var(--color-cyan-muted);
   --color-secondary-emphasized: var(--color-cyan-emphasized);
   --color-secondary-solid: var(--color-cyan-solid);
-  --color-secondary-focusring: var(--color-cyan-focusring);
+  --color-secondary-focus-ring: var(--color-cyan-focus-ring);
   --color-secondary-border: var(--color-cyan-border);
 
   /* ACCENT */
@@ -31,6 +31,6 @@
   --color-accent-muted: var(--color-purple-muted);
   --color-accent-emphasized: var(--color-purple-emphasized);
   --color-accent-solid: var(--color-purple-solid);
-  --color-accent-focusring: var(--color-purple-focusring);
+  --color-accent-focus-ring: var(--color-purple-focus-ring);
   --color-accent-border: var(--color-purple-border);
 }

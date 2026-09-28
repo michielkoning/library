@@ -11,6 +11,7 @@ import CenterWrapper from "./components/CenterWrapper.vue";
         <router-link to="/scroll-spy">Scroll spy</router-link>
         <router-link to="/form">Form</router-link>
         <router-link to="/carousel">Carousel</router-link>
+        <router-link to="/colors">Colors</router-link>
       </nav>
     </center-wrapper>
   </header>

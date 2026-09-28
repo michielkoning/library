@@ -1,8 +1,7 @@
-import type { Theme } from '@/types/Theme';
-import { ref } from 'vue';
+import type { Theme } from "@/types/Theme";
+import { ref } from "vue";
 
-export default (theme: Theme = 'primary') => {
-
+export default (theme: Theme = "primary") => {
   const colors = ref({
     emphasized: `var(--color-${theme}-emphasized)`,
     contrast: `var(--color-${theme}-contrast)`,
@@ -12,9 +11,9 @@ export default (theme: Theme = 'primary') => {
     solid: `var(--color-${theme}-solid)`,
     focusRing: `var(--color-${theme}-focus-ring)`,
     border: `var(--color-${theme}-border)`,
-  })
+  });
 
   return {
-    colors
-  }
-}
+    colors,
+  };
+};

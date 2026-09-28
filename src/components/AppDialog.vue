@@ -68,7 +68,7 @@ dialog {
     align-items: start;
     justify-content: space-between;
     padding: var(--spacing-2) var(--spacing-4) 0;
-    background-color: var(--color-panel-bg);
+    background-color: var(--color-bg-panel);
   }
 
   .content {

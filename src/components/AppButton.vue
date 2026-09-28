@@ -49,6 +49,7 @@ const { colors } = useTheme(props.theme);
   --btn-background-color: v-bind(colors.solid);
   --btn-background-color-hover: v-bind(colors.emphasized);
   --btn-text-color: v-bind(colors.contrast);
+  --btn-border-color: v-bind(colors.solid);
   --focus-ring-color: v-bind(colors.focusRing);
 }
 
@@ -61,17 +62,18 @@ const { colors } = useTheme(props.theme);
 }
 
 .subtle {
-  --btn-background-color: transparant;
-  --btn-background-color-hover: v-bind(colors.subtle);
-  --btn-text-color: v-bind(colors.solid);
-  --btn-border-color: currentcolor;
-  --focus-ring-color: var(--btn-text-color);
+  --btn-background-color: v-bind(colors.subtle);
+  --btn-background-color-hover: v-bind(colors.emphasized);
+  --btn-border-color: v-bind(colors.solid);
+  --btn-text-color: v-bind(colors.contrast);
+  --focus-ring-color: v-bind(colors.focusRing);
 }
 
 a,
 button {
   --btn-border-radius: 0.5em;
 
+  text-box-trim: trim-both;
   display: inline-block;
   inline-size: auto;
   padding: var(--spacing-2) var(--spacing-8);
@@ -84,7 +86,7 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   background-color: var(--btn-background-color);
-  border: 2px solid var(--btn-border-color);
+  border: 1px solid var(--btn-border-color);
   border-radius: var(--btn-border-radius);
   transition:
     background-color var(--transition),
