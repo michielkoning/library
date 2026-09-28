@@ -16,12 +16,17 @@ export default defineConfig({
     vueDevTools(),
   ],
   build: {
+    target: 'esnext',
     lib: {
-      entry: resolve(import.meta.dirname, "src/index.ts"),
+      entry: [
+        resolve(import.meta.dirname, "src/index.ts"),
+        resolve(import.meta.dirname, "src/wdt.ts"),
+      ],
       name: "ComponentLibary",
       formats: ["es"],
       fileName: "library",
     },
+    cssCodeSplit: true,
     rolldownOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library

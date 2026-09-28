@@ -13,7 +13,8 @@
       "require": "./dist/library.umd.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./style.css": "./dist/library.css"
+    "./style.css": "./dist/index.css",
+    "./wdt.css": "./dist/wdt.css"
   },
   "scripts": {
     "dev": "vite --host",
