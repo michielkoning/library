@@ -2,7 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "./assets/css/base.css";
-import "./assets/css/theme/wdt.css";
+import "./assets/css/themes/wdt/_base.css";
+import "./assets/css/themes/wdt/fonts.css";
 
 const app = createApp(App);
 

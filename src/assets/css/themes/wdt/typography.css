@@ -1,0 +1,6 @@
+@layer theme {
+  :root {
+    --font-family: "Domine", serif;
+    --font-family-heading: "Sora", sans-serif;
+  }
+}

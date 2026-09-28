@@ -1,14 +1,15 @@
 /* BASE */
-@import "./chakra/_base.css";
+@import "./../chakra/_base.css";
 
 /* THEME */
-@import "./chakra/teal.css";
-@import "./chakra/purple.css";
-@import "./chakra/cyan.css";
+@import "./../chakra/teal.css";
+@import "./../chakra/purple.css";
+@import "./../chakra/cyan.css";
 
 :root {
   /* PRIMARY */
   --color-primary-fg: var(--color-teal-fg);
+  --color-primary-contrast: var(--color-teal-contrast);
   --color-primary-subtle: var(--color-teal-subtle);
   --color-primary-muted: var(--color-teal-muted);
   --color-primary-emphasized: var(--color-teal-emphasized);
@@ -18,6 +19,7 @@
 
   /* SECONDARY */
   --color-secondary-fg: var(--color-cyan-fg);
+  --color-secondary-contrast: var(--color-cyan-contrast);
   --color-secondary-subtle: var(--color-cyan-subtle);
   --color-secondary-muted: var(--color-cyan-muted);
   --color-secondary-emphasized: var(--color-cyan-emphasized);
@@ -27,6 +29,7 @@
 
   /* ACCENT */
   --color-accent-fg: var(--color-purple-fg);
+  --color-accent-contrast: var(--color-purple-contrast);
   --color-accent-subtle: var(--color-purple-subtle);
   --color-accent-muted: var(--color-purple-muted);
   --color-accent-emphasized: var(--color-purple-emphasized);

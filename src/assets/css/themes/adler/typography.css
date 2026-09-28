@@ -1,0 +1,4 @@
+:root {
+  --font-family: "Domine", arial, helvetica, sans-serif;
+  --font-family-heading: "Sora", var(--font-family);
+}

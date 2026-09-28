@@ -1,0 +1,39 @@
+/* BASE */
+@import "./../chakra/_base.css";
+
+/* THEME */
+@import "./../chakra/teal.css";
+@import "./../chakra/purple.css";
+@import "./../chakra/cyan.css";
+
+:root {
+  /* PRIMARY */
+  --color-primary-fg: var(--color-teal-fg);
+  --color-primary-contrast: var(--color-teal-contrast);
+  --color-primary-subtle: var(--color-teal-subtle);
+  --color-primary-muted: var(--color-teal-muted);
+  --color-primary-emphasized: var(--color-teal-emphasized);
+  --color-primary-solid: var(--color-teal-solid);
+  --color-primary-focus-ring: var(--color-teal-focus-ring);
+  --color-primary-border: var(--color-teal-border);
+
+  /* SECONDARY */
+  --color-secondary-fg: var(--color-cyan-fg);
+  --color-secondary-contrast: var(--color-cyan-contrast);
+  --color-secondary-subtle: var(--color-cyan-subtle);
+  --color-secondary-muted: var(--color-cyan-muted);
+  --color-secondary-emphasized: var(--color-cyan-emphasized);
+  --color-secondary-solid: var(--color-cyan-solid);
+  --color-secondary-focus-ring: var(--color-cyan-focus-ring);
+  --color-secondary-border: var(--color-cyan-border);
+
+  /* ACCENT */
+  --color-accent-fg: var(--color-purple-fg);
+  --color-accent-contrast: var(--color-purple-contrast);
+  --color-accent-subtle: var(--color-purple-subtle);
+  --color-accent-muted: var(--color-purple-muted);
+  --color-accent-emphasized: var(--color-purple-emphasized);
+  --color-accent-solid: var(--color-purple-solid);
+  --color-accent-focus-ring: var(--color-purple-focus-ring);
+  --color-accent-border: var(--color-purple-border);
+}
