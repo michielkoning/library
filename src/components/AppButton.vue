@@ -97,7 +97,6 @@ button {
     background-color var(--transition),
     text-decoration var(--transition),
     opacity var(--transition);
-  text-box-trim: trim-both;
 
   &:hover:not(:disabled) {
     background-color: var(--btn-background-color-hover);
