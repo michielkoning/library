@@ -17,6 +17,10 @@ p {
   text-wrap: pretty;
 }
 
+:heading {
+  font-size: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), sibling-index()));
+}
+
 h1,
 h2,
 h3 {
@@ -42,6 +46,12 @@ h2 {
 h3 {
   margin: 0 0 var(--spacing-2);
   font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  margin: 0 0 var(--spacing-2);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
 }
 
