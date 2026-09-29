@@ -1,11 +1,11 @@
 /* BASE */
-@import "./gray.css";
+@import "./../chakra/gray.css";
 
 /* NOTIFICATIONS */
-@import "./red.css";
-@import "./green.css";
-@import "./orange.css";
-@import "./blue.css";
+@import "./../chakra/red.css";
+@import "./../chakra/green.css";
+@import "./../chakra/orange.css";
+@import "./../chakra/blue.css";
 
 :root {
   /* BASE */
@@ -63,29 +63,4 @@
   --color-bg-error: light-dark(var(--color-red-50), var(--color-red-950));
   --color-fg-error: light-dark(var(--color-red-500), var(--color-red-400));
   --color-border-error: light-dark(var(--color-red-500), var(--color-red-400));
-  --shadow:
-    0 1px 2px light-dark(lightgray, transparent),
-    0 4px 12px light-dark(lightgray, transparent),
-    0 12px 32px light-dark(lightgray, transparent),
-    inset 0 0 0 1px light-dark(
-      transparent,
-      oklch(
-        from var(--color-bg)
-        calc(l + 0.5) c h / 50%
-      )
-    ),
-    0 0 16px light-dark(
-      transparent,
-      oklch(
-        from var(--color-bg)
-        calc(l + 0.5) c h / 30%
-      )
-    ),
-    0 0 3px light-dark(
-      transparent,
-      oklch(
-        from var(--color-bg)
-        calc(l + 0.5) c h / 50%
-      )
-    );
 }
