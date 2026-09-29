@@ -1,15 +1,15 @@
 @layer base {
   :root {
     --font-size-base: clamp(16px, 2.75vw, 18px);
-    --scale-base: 1rem;
     --font-family: helvetica, sans-serif;
     --font-family-heading: var(--font-family);
-    --font-size-scale-ratio: 1.1;
-    --font-size-h1: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), 4));
-    --font-size-h2: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), 3));
-    --font-size-h3: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), 2));
-    --font-size-h4: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), 1));
-    --font-size-sm: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), -1));
+    --font-size-scale-base: 1rem;
+    --font-size-scale-ratio: 1.25;
+    --font-size-h1: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 4));
+    --font-size-h2: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 3));
+    --font-size-h3: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 2));
+    --font-size-h4: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 1));
+    --font-size-sm: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), -1));
     --line-height: 1.5;
     --line-height-heading: 1.1;
     --font-weight-normal: 400;

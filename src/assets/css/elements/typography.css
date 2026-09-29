@@ -18,12 +18,13 @@ p {
 }
 
 :heading {
-  font-size: calc(var(--scale-base) * pow(var(--font-size-scale-ratio), sibling-index()));
+  font-size: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 5 - sibling-index()));
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-heading);
