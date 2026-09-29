@@ -22,12 +22,13 @@ const tokens = ["contrast", "fg", "subtle", "muted", "emphasized", "solid", "foc
         </div>
       </template>
     </div>
+    <app-button title="Button" :loading="true" />
     <div class="buttons">
       <template v-for="theme in ['primary', 'accent', 'secondary']" :key="theme">
         {{ theme }}
-        <app-button title="Button" :theme />
-        <app-button title="Button" variant="subtle" :theme />
-        <app-button title="Button" variant="outline" :theme />
+        <app-button title="Button" :theme icon="solar:info-circle-bold" :loading="true" />
+        <app-button title="Button" variant="subtle" :theme :loading="true" />
+        <app-button title="Button" variant="outline" :theme :loading="true" />
       </template>
     </div>
   </center-wrapper>

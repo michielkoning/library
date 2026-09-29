@@ -10,11 +10,13 @@ import { toTypedSchema } from "@vee-validate/zod";
 import { useForm } from "vee-validate";
 import { ref, type Ref } from "vue";
 import RadioGroup from "@/components/Forms/RadioGroup.vue";
+import SearchField from "@/components/Forms/SearchField.vue";
 
 const { handleSubmit, errors, values } = useForm({
   name: "form",
   validationSchema: toTypedSchema(
     z.object({
+      search: z.string(),
       name: z.string().min(1, "Het veld naam is verplicht"),
       comment: z.string(),
       email: z.email({
@@ -29,6 +31,7 @@ const { handleSubmit, errors, values } = useForm({
     }),
   ),
   initialValues: {
+    search: "",
     name: "",
     comment: "",
     select: "",
@@ -57,6 +60,7 @@ const submit = handleSubmit(() => {
       @submit-form="submit"
     >
       <form-fieldset title="Adres" :columns="3">
+        <search-field name="search" title="Zoeken" class="search" />
         <text-field name="name" title="Name" autocomplete="name" />
         <text-field name="email" title="Email" type="email" autocomplete="email" />
         <select-field
@@ -104,6 +108,7 @@ const submit = handleSubmit(() => {
 </template>
 
 <style lang="css" scoped>
+.search,
 .options,
 .comment {
   grid-column: span 3;

@@ -3,7 +3,6 @@ import { useField } from "vee-validate";
 import { toRefs, useId } from "vue";
 import FormField from "./FormField.vue";
 import { Icon } from "@iconify/vue";
-import useTheme from "@/composables/useTheme.ts";
 
 const props = defineProps<{
   // type: 'directors' | 'authors'
@@ -28,8 +27,6 @@ const { value, handleChange, errorMessage } = useField<string>(name, undefined, 
 const validationListeners = {
   change: handleChange,
 };
-
-const { colors } = useTheme()
 </script>
 
 <template>
@@ -71,7 +68,25 @@ button {
 }
 
 ::checkmark {
-  display: none;
+  display: block;
+  inline-size: 1em;
+  aspect-ratio: 1.348;
+  content: "";
+  background: currentcolor;
+  clip-path: shape(
+    from 91.74% 1.91%,
+    curve to 98.58% 1.91% with 93.63% -0.64%/96.69% -0.64%,
+    curve to 98.58% 11.13% with 100.47% 4.46%/100.47% 8.59%,
+    line to 34.07% 98.09%,
+    curve to 27.22% 98.09% with 32.18% 100.64%/29.11% 100.64%,
+    line to 1.42% 63.31%,
+    curve to 1.42% 54.08% with -0.47% 60.76%/-0.47% 56.63%,
+    curve to 8.26% 54.08% with 3.31% 51.54%/6.37% 51.54%,
+    line to 30.65% 84.26%,
+    line to 91.74% 1.91%,
+    close
+  );
+  fill: currentcolor;
 }
 
 ::picker-icon {
@@ -81,7 +96,8 @@ button {
 ::picker(select) {
   margin-block-start: var(--spacing-1);
   appearance: base-select;
-  border: 2px solid var(--color-white);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border-inverted);
   opacity: 0;
   translate: 0 calc(-1 * var(--spacing-4));
   transition:
@@ -108,18 +124,20 @@ option {
   gap: var(--spacing-2);
   padding: var(--spacing-2);
   color: var(--color-fg);
-  background-color: var(--color-body-background);
-  border-inline-start: 3px solid transparent;
 
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
   &:hover {
-    color: v-bind(colors.fg);
-    background-color: var(--color-primary-hover);
+    color: var(--color-primary-fg);
+    background-color: var(--color-primary-subtle);
   }
 
   &:checked {
-    font-weight: var(--font-weight-bold);
-    color: v-bind(colors.fg);
-    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+    background-color: var(--color-primary-solid);
   }
 }
 </style>

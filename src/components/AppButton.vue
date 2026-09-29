@@ -13,6 +13,7 @@ const props = withDefaults(
     title: string;
     disabled?: boolean;
     icon?: string;
+    loading?: boolean;
   }>(),
   {
     theme: undefined,
@@ -21,6 +22,7 @@ const props = withDefaults(
     type: "button",
     disabled: false,
     icon: undefined,
+    loading: false,
   },
 );
 
@@ -39,7 +41,13 @@ const { colors } = useTheme(props.theme);
   <component
     :is="component"
     :to
-    :class="[variant, theme]"
+    :class="[
+      variant,
+      theme,
+      {
+        loading: loading ? 'loading' : undefined,
+      },
+    ]"
     :type="component === 'button' ? type : undefined"
     :disabled
   >
@@ -54,6 +62,18 @@ const { colors } = useTheme(props.theme);
   --btn-background-color-hover: v-bind(colors.emphasized);
   --btn-text-color: v-bind(colors.contrast);
   --btn-border-color: v-bind(colors.solid);
+  --btn-spinner-border: v-bind(colors.emphasized);
+  --btn-spinner-bg: v-bind(colors.contrast);
+  --focus-ring-color: v-bind(colors.focusRing);
+}
+
+.subtle {
+  --btn-background-color: v-bind(colors.subtle);
+  --btn-background-color-hover: v-bind(colors.emphasized);
+  --btn-border-color: v-bind(colors.solid);
+  --btn-text-color: v-bind(colors.fg);
+  --btn-spinner-border: v-bind(colors.solid);
+  --btn-spinner-bg: v-bind(colors.contrast);
   --focus-ring-color: v-bind(colors.focusRing);
 }
 
@@ -62,15 +82,9 @@ const { colors } = useTheme(props.theme);
   --btn-background-color-hover: v-bind(colors.subtle);
   --btn-text-color: v-bind(colors.solid);
   --btn-border-color: currentcolor;
+  --btn-spinner-border: v-bind(colors.solid);
+  --btn-spinner-bg: v-bind(colors.contrast);
   --focus-ring-color: var(--btn-text-color);
-}
-
-.subtle {
-  --btn-background-color: v-bind(colors.subtle);
-  --btn-background-color-hover: v-bind(colors.emphasized);
-  --btn-border-color: v-bind(colors.solid);
-  --btn-text-color: v-bind(colors.contrast);
-  --focus-ring-color: v-bind(colors.focusRing);
 }
 
 a,
@@ -78,14 +92,15 @@ button {
   --btn-border-radius: 0.5em;
 
   display: flex;
-  gap: var(--spacing-1);
+  gap: var(--spacing-2);
+  align-items: center;
   justify-content: center;
   inline-size: auto;
   padding: var(--spacing-2) var(--spacing-8);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-heading);
+  line-height: 1;
   color: var(--btn-text-color);
   text-align: center;
   text-transform: uppercase;
@@ -110,9 +125,31 @@ button {
     outline: var(--focus-ring-color) solid 2px;
     outline-offset: 2px;
   }
+
+  &.loading::before {
+    box-sizing: border-box;
+    display: inline-block;
+    inline-size: 0.75rem;
+    block-size: 0.75rem;
+    content: "";
+    border: 2px solid var(--btn-spinner-bg);
+    border-block-end-color: var(--btn-spinner-border);
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+  }
 }
 
 button:disabled {
   opacity: 0.5;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

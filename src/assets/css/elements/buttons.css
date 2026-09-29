@@ -2,6 +2,7 @@ button {
   padding: 0;
   font-family: var(--font-family);
   font-size: 1em;
+  line-height: var(--line-height-heading);
   color: currentcolor;
   cursor: pointer;
   background-color: transparent;
