@@ -11,31 +11,81 @@
   /* BASE */
   --color-black: oklch(14.1% 0.004 285.8deg);
   --color-white: oklch(100% 0 0deg);
-  --color-bg: light-dark(var(--color-white), var(--color-black));
-  --color-bg-subtle: light-dark(var(--color-gray-50), var(--color-gray-950));
-  --color-bg-muted: light-dark(var(--color-gray-100), var(--color-gray-900));
-  --color-bg-emphasized: light-dark(var(--color-gray-200), var(--color-gray-800));
-  --color-bg-inverted: light-dark(var(--color-black), var(--color-white));
-  --color-bg-panel: light-dark(var(--color-white), var(--color-gray-950));
-  --color-bg-error: light-dark(var(--color-red-50), var(--color-red-950));
-  --color-bg-warning: light-dark(var(--color-orange-50), var(--color-orange-950));
-  --color-bg-success: light-dark(var(--color-green-50), var(--color-green-950));
-  --color-bg-info: light-dark(var(--color-blue-50), var(--color-blue-950));
+  --color-bg: light-dark(var(--color-white), var(--color-gray-900));
   --color-fg: light-dark(var(--color-black), var(--color-gray-50));
-  --color-fg-muted: light-dark(var(--color-gray-600), var(--color-gray-400));
-  --color-fg-subtle: light-dark(var(--color-gray-400), var(--color-gray-500));
-  --color-fg-inverted: light-dark(var(--color-gray-50), var(--color-black));
-  --color-fg-error: light-dark(var(--color-red-500), var(--color-red-400));
-  --color-fg-warning: light-dark(var(--color-orange-600), var(--color-orange-300));
-  --color-fg-success: light-dark(var(--color-green-600), var(--color-green-300));
-  --color-fg-info: light-dark(var(--color-blue-600), var(--color-blue-300));
   --color-border: light-dark(var(--color-gray-200), var(--color-gray-800));
-  --color-border-muted: light-dark(var(--color-gray-100), var(--color-gray-900));
+
+  /* LANDMARK */
+  --color-landmark-bg: var(--color-black);
+  --color-landmark-fg: var(--color-white);
+  --color-landmark-border: var(--color-white);
+
+  /* PANEL */
+  --color-panel-bg: light-dark(var(--color-gray-100), var(--color-gray-950));
+  --color-panel-fg: var(--color-fg);
+  --color-panel-border: light-dark(var(--color-gray-100), var(--color-gray-900));
+
+  /* MUTED */
+  --color-bg-muted: light-dark(var(--color-gray-100), var(--color-gray-950));
+  --color-fg-muted: light-dark(var(--color-gray-600), var(--color-gray-400));
+  --color-border-muted: light-dark(var(--color-gray-200), var(--color-black));
+
+  /* SUBTLE */
+  --color-bg-subtle: light-dark(var(--color-gray-50), var(--color-gray-950));
+  --color-fg-subtle: light-dark(var(--color-gray-400), var(--color-gray-500));
   --color-border-subtle: light-dark(var(--color-gray-50), var(--color-gray-950));
+
+  /* emphasized */
+  --color-bg-emphasized: light-dark(var(--color-gray-200), var(--color-gray-800));
   --color-border-emphasized: light-dark(var(--color-gray-300), var(--color-gray-700));
+
+  /* INVERTED */
+  --color-bg-inverted: light-dark(var(--color-black), var(--color-white));
+  --color-fg-inverted: light-dark(var(--color-gray-50), var(--color-black));
   --color-border-inverted: light-dark(var(--color-gray-800), var(--color-gray-200));
-  --color-border-error: light-dark(var(--color-red-500), var(--color-red-400));
-  --color-border-warning: light-dark(var(--color-orange-500), var(--color-orange-400));
+
+  /* SUCCESS */
+  --color-bg-success: light-dark(var(--color-green-50), var(--color-green-950));
+  --color-fg-success: light-dark(var(--color-green-600), var(--color-green-300));
   --color-border-success: light-dark(var(--color-green-500), var(--color-green-400));
+
+  /* INFO */
+  --color-bg-info: light-dark(var(--color-blue-50), var(--color-blue-950));
+  --color-fg-info: light-dark(var(--color-blue-600), var(--color-blue-300));
   --color-border-info: light-dark(var(--color-blue-500), var(--color-blue-400));
+
+  /* WARNING */
+  --color-bg-warning: light-dark(var(--color-orange-50), var(--color-orange-950));
+  --color-fg-warning: light-dark(var(--color-orange-600), var(--color-orange-300));
+  --color-border-warning: light-dark(var(--color-orange-500), var(--color-orange-400));
+
+  /* ERROR */
+  --color-bg-error: light-dark(var(--color-red-50), var(--color-red-950));
+  --color-fg-error: light-dark(var(--color-red-500), var(--color-red-400));
+  --color-border-error: light-dark(var(--color-red-500), var(--color-red-400));
+  --shadow:
+    0 1px 2px light-dark(lightgray, transparent),
+    0 4px 12px light-dark(lightgray, transparent),
+    0 12px 32px light-dark(lightgray, transparent),
+    inset 0 0 0 1px light-dark(
+      transparent,
+      oklch(
+        from var(--color-bg)
+        calc(l + 0.5) c h / 50%
+      )
+    ),
+    0 0 16px light-dark(
+      transparent,
+      oklch(
+        from var(--color-bg)
+        calc(l + 0.5) c h / 30%
+      )
+    ),
+    0 0 3px light-dark(
+      transparent,
+      oklch(
+        from var(--color-bg)
+        calc(l + 0.5) c h / 50%
+      )
+    );
 }

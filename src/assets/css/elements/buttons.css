@@ -7,7 +7,6 @@ button {
   cursor: pointer;
   background-color: transparent;
   border: 0;
-  text-box: trim-both cap alphabetic;
 
   &:disabled {
     cursor: not-allowed;

@@ -67,10 +67,10 @@ blockquote {
 pre {
   padding: var(--spacing-4);
   font-family: "Courier New", Courier, monospace;
-  line-height: var(--line-height-heading);
+  color: var(--color-panel-fg);
   white-space: pre-wrap;
   background-color: var(--color-panel-bg);
-  box-shadow: var(--shadow);
+  border: 1px solid var(--color-panel-border);
 }
 
 blockquote {

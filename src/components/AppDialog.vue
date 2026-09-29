@@ -28,10 +28,9 @@ dialog {
   padding: 0;
   overscroll-behavior: contain;
   color: var(--color-fg);
-  background-color: var(--color-bg-panel);
-  border: 0;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: 0.25em;
-  box-shadow: var(--shadow);
 
   @media (prefers-reduced-motion: no-preference) {
     transition:
@@ -60,26 +59,35 @@ dialog {
   }
 }
 
-@scope (dialog) {
-  svg {
-    font-size: 2em;
-    cursor: pointer;
-  }
+button {
+  display: block;
+  align-self: flex-start;
+  aspect-ratio: 1;
+}
 
-  header {
-    position: sticky;
-    inset-block-start: 0;
-    display: flex;
-    gap: var(--spacing-2);
-    align-items: start;
-    justify-content: space-between;
-    padding: var(--spacing-2) var(--spacing-4) 0;
-    background-color: var(--color-bg-panel);
-  }
+svg {
+  font-size: 2em;
+  cursor: pointer;
+}
 
-  .content {
-    padding: var(--spacing-4);
-  }
+h2 {
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--spacing-4);
+  color: var(--color-landmark-fg);
+  background-color: var(--color-landmark-bg);
+}
+
+.content {
+  padding: var(--spacing-4);
 }
 
 @keyframes dialog-hide {

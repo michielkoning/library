@@ -109,9 +109,11 @@ const { colors } = useTheme();
     display: grid;
     grid-template-columns: repeat(v-bind(total), 1fr);
     padding: 0;
-    margin: 0 0 var(--spacing-4);
+    margin: 0;
+    margin-block-end: var(--spacing-4);
     list-style: none outside;
-    border-block-end: 1px solid v-bind(colors.subtle);
+    background-color: var(--color-panel-bg);
+    border-block-end: 2px solid v-bind(colors.emphasized);
 
     &::before {
       position: absolute;
@@ -137,6 +139,7 @@ const { colors } = useTheme();
     position: relative;
     inline-size: 100%;
     padding: var(--spacing-3) var(--spacing-2);
+    color: var(--color-panel-fg);
     text-align: center;
     transition: background var(--transition);
 

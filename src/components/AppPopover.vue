@@ -31,10 +31,10 @@ button {
   position-area: top;
   position-anchor: v-bind(anchor);
   position-try-fallbacks: flip-block;
-  color: rgb(250 250 250);
+  color: var(--color-panel-fg);
   zoom: 0.9;
-  background-color: rgb(17 17 17);
-  border: 1px solid rgb(39 39 42);
+  background-color: var(--color-panel-bg);
+  border: 1px solid var(--color-panel-border);
   opacity: 0;
   transition:
     opacity var(--transition),

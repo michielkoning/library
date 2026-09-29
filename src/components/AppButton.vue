@@ -112,6 +112,7 @@ button {
     background-color var(--transition),
     text-decoration var(--transition),
     opacity var(--transition);
+  text-box: trim-both cap alphabetic;
 
   &:hover:not(:disabled) {
     background-color: var(--btn-background-color-hover);

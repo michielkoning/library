@@ -61,7 +61,9 @@ nav {
   inset-block-start: var(--spacing-4);
   display: none;
   order: -1;
-  background: var(--color-bg-panel);
+  color: var(--color-panel-fg);
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-panel-border);
   scroll-target-group: auto;
 
   @media (--md) {
@@ -85,7 +87,7 @@ ol {
     block-size: anchor-size(block);
     position-anchor: v-bind(anchor);
     content: "";
-    background: v-bind(colors.solid);
+    background: var(--color-primary-solid);
     transition:
       top var(--transition),
       height var(--transition);
