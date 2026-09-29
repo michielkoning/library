@@ -52,7 +52,7 @@ const total = computed(() => {
   return props.tabs.length;
 });
 
-const {colors} = useTheme()
+const { colors } = useTheme();
 </script>
 
 <template>
@@ -154,10 +154,13 @@ const {colors} = useTheme()
   [role="tabpanel"] {
     display: none;
     opacity: 0;
-    transition:
-      opacity var(--transition),
-      overlay allow-discrete,
-      display allow-discrete;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        opacity var(--transition),
+        overlay allow-discrete,
+        display allow-discrete;
+    }
 
     &.active {
       display: block;
@@ -172,5 +175,4 @@ const {colors} = useTheme()
     }
   }
 }
-
 </style>

@@ -32,16 +32,19 @@ dialog {
   border: 0;
   border-radius: 0.25em;
   box-shadow: var(--shadow);
-  transition:
-    display var(--transition) allow-discrete,
-    overlay var(--transition) allow-discrete;
-  animation: dialog-hide var(--transition);
 
-  &[open] {
-    animation: dialog-show var(--transition);
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      display var(--transition) allow-discrete,
+      overlay var(--transition) allow-discrete;
+    animation: dialog-hide var(--transition);
 
-    &::backdrop {
-      animation: backdrop-show var(--transition);
+    &[open] {
+      animation: dialog-show var(--transition);
+
+      &::backdrop {
+        animation: backdrop-show var(--transition);
+      }
     }
   }
 }
@@ -51,7 +54,10 @@ dialog {
   overscroll-behavior: contain;
   background-color: rgb(0 0 0 / 50%);
   backdrop-filter: blur(0.25em);
-  animation: backdrop-hide var(--transition);
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: backdrop-hide var(--transition);
+  }
 }
 
 @scope (dialog) {

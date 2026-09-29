@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  margin: var(--spacing-1) 0 var(--spacing-2);
+  margin: var(--spacing-1) 0 var(--spacing-3);
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-bold);
 }

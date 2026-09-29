@@ -98,8 +98,11 @@ ul {
   }
 
   &:has(> li:nth-child(2)) {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+
     overflow-x: scroll;
-    scroll-behavior: smooth;
     scroll-marker-group: after;
 
     &::scroll-button(left),
