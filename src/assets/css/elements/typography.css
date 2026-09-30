@@ -17,10 +17,6 @@ p {
   text-wrap: pretty;
 }
 
-:heading {
-  font-size: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 5 - sibling-index()));
-}
-
 h1,
 h2,
 h3,
