@@ -2,6 +2,6 @@
   --container-size-sm: 26rem;
   --container-size-md: 48rem;
   --container-size-lg: 64rem;
-  --container-size-xlg: 72rem;
+  --container-size-xlg: 96rem;
   --gutter: var(--spacing-4);
 }

@@ -26,7 +26,6 @@ h4 {
   line-height: var(--line-height-heading);
   text-wrap: balance;
   overflow-wrap: break-word;
-  text-box: trim-both cap alphabetic;
 }
 
 h1 {
