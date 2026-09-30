@@ -8,7 +8,6 @@ const props = defineProps<{
 const total = computed(() => {
   return props.items.length;
 });
-
 </script>
 
 <template>
@@ -51,20 +50,7 @@ ul {
     border: 0;
     opacity: 0.7;
     transition: opacity var(--transition);
-    border-shape:
-      shape(
-        from 96.34% 44.96%,
-        curve by 0% 10.11% with 4.88% 2.79%/4.88% 7.32%,
-        line by -74.99% 42.84%,
-        curve by -17.69% 0% with -4.88% 2.79%/-12.81% 2.79%,
-        smooth by 0% -10.11% with -4.88% -7.32%,
-        line to 69.82% 50%,
-        line to 3.7% 12.2%,
-        curve by 0% -10.11% with -4.88% -2.79%/-4.88% -7.32%,
-        smooth by 17.69% 0% with 12.81% -2.79%,
-        line by 74.99% 42.84%,
-        close
-      );
+    border-shape: var(--chevron);
   }
 
   &::scroll-button(*):hover,

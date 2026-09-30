@@ -79,19 +79,7 @@ button {
   aspect-ratio: 1.348;
   content: "";
   background: currentcolor;
-  clip-path: shape(
-    from 91.74% 1.91%,
-    curve to 98.58% 1.91% with 93.63% -0.64%/96.69% -0.64%,
-    curve to 98.58% 11.13% with 100.47% 4.46%/100.47% 8.59%,
-    line to 34.07% 98.09%,
-    curve to 27.22% 98.09% with 32.18% 100.64%/29.11% 100.64%,
-    line to 1.42% 63.31%,
-    curve to 1.42% 54.08% with -0.47% 60.76%/-0.47% 56.63%,
-    curve to 8.26% 54.08% with 3.31% 51.54%/6.37% 51.54%,
-    line to 30.65% 84.26%,
-    line to 91.74% 1.91%,
-    close
-  );
+  border-shape: var(--check);
   fill: currentcolor;
 }
 
