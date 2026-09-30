@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 withDefaults(
   defineProps<{
-    size?: "full" | "md" | "lg" | "sm";
+    size?: "full" | "sm" |"md" | "lg" | 'xlg';
     top?: boolean;
   }>(),
   {
@@ -38,6 +38,10 @@ withDefaults(
 
 .wrapper-lg {
   --wrapper-size: var(--container-size-lg);
+}
+
+.wrapper-xlg {
+  --wrapper-size: var(--container-size-xlg);
 }
 
 .wrapper {
