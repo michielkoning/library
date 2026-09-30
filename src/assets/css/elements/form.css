@@ -70,6 +70,7 @@ input[type="range"] {
   accent-color: var(--color-primary-solid);
 }
 
+input[type="checkbox"],
 input[type="radio"] {
   --size: 1.5em;
 
@@ -79,8 +80,7 @@ input[type="radio"] {
   margin: 0;
   appearance: none;
   background: var(--color-panel-bg);
-  border: 3px solid var(--color-border-inverted);
-  border-radius: 50%;
+  border: 2px solid var(--color-border-inverted);
   transition:
     border var(--transition),
     background var(--transition);
@@ -93,6 +93,43 @@ input[type="radio"] {
     outline: var(--color-primary-solid) solid 2px;
     outline-offset: 2px;
   }
+}
+
+input[type="checkbox"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    inline-size: 0.75em;
+    aspect-ratio: 1;
+    content: "";
+    background-color: var(--color-primary-contrast);
+    opacity: 0;
+    transition: opacity var(--transition);
+    border-shape:
+      shape(
+        from 91.74% 1.91%,
+        curve to 98.58% 1.91% with 93.63% -0.64%/96.69% -0.64%,
+        curve to 98.58% 11.13% with 100.47% 4.46%/100.47% 8.59%,
+        line to 34.07% 98.09%,
+        curve to 27.22% 98.09% with 32.18% 100.64%/29.11% 100.64%,
+        line to 1.42% 63.31%,
+        curve to 1.42% 54.08% with -0.47% 60.76%/-0.47% 56.63%,
+        curve to 8.26% 54.08% with 3.31% 51.54%/6.37% 51.54%,
+        line to 30.65% 84.26%,
+        line to 91.74% 1.91%,
+        close
+      );
+  }
+
+  &:checked::before {
+    opacity: 1;
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
 }
 
 ::placeholder {
