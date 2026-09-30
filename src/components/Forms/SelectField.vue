@@ -31,7 +31,13 @@ const validationListeners = {
 
 <template>
   <form-field :id :title :error-message>
-    <select :id :value :name v-on="validationListeners">
+    <select
+      :id
+      :value
+      :name
+      :aria-invalid="errorMessage !== undefined ? 'true' : 'false'"
+      v-on="validationListeners"
+    >
       <button>
         <selectedcontent />
         <icon icon="solar:alt-arrow-down-outline" class="icon" />

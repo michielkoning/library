@@ -27,6 +27,13 @@ const validationListeners = {
 
 <template>
   <form-field :id :title :name :error-message>
-    <textarea :id :value :name :placeholder v-on="validationListeners" />
+    <textarea
+      :id
+      :value
+      :name
+      :placeholder
+      :aria-invalid="errorMessage !== undefined ? 'true' : 'false'"
+      v-on="validationListeners"
+    />
   </form-field>
 </template>

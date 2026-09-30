@@ -30,7 +30,16 @@ const validationListeners = {
 <template>
   <form-field :id :title :error-message>
     <div class="field">
-      <input :id :name type="search" :autocomplete :value :placeholder v-on="validationListeners" />
+      <input
+        :id
+        :name
+        type="search"
+        :autocomplete
+        :value
+        :placeholder
+        :aria-invalid="errorMessage !== undefined ? 'true' : 'false'"
+        v-on="validationListeners"
+      />
       <button type="submit">
         <icon icon="solar:minimalistic-magnifer-outline" />
       </button>

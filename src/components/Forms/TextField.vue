@@ -36,6 +36,15 @@ const validationListeners = {
 
 <template>
   <form-field :id :title :error-message>
-    <input :id :name :type :autocomplete :value :placeholder v-on="validationListeners" />
+    <input
+      :id
+      :name
+      :type
+      :autocomplete
+      :value
+      :placeholder
+      :aria-invalid="errorMessage !== undefined ? 'true' : 'false'"
+      v-on="validationListeners"
+    />
   </form-field>
 </template>
