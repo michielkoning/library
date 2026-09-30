@@ -8,6 +8,7 @@ import AppBreadcrumb from "@/components/AppBreadcrumb.vue";
 import AppPopover from "@/components/AppPopover.vue";
 import { Icon } from "@iconify/vue";
 import AppButton from "@/components/AppButton.vue";
+import AppPagination from "@/components/AppPagination.vue";
 </script>
 
 <template>
@@ -37,7 +38,7 @@ import AppButton from "@/components/AppButton.vue";
       </p>
     </app-dialog>
     <button commandfor="dialog" command="show-modal">Open Dialog</button>
-    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em">
+    <summary-details title="Hic eos, libero iste asperiores" style="margin-bottom: 1em;">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eos, libero iste asperiores
       quisquam inventore? Hic quaerat id recusandae, esse cumque omnis officia, debitis amet
       obcaecati suscipit exercitationem nisi? Possimus!
@@ -99,6 +100,7 @@ import AppButton from "@/components/AppButton.vue";
       <app-button title="Button" variant="subtle" :theme />
       <app-button title="Button" variant="outline" :theme />
     </div>
+    <app-pagination :total-pages="3" />
   </center-wrapper>
 </template>
 

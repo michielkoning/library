@@ -4,7 +4,7 @@ import AppButton from '@/components/AppButton.vue'
 import AppNotification from '@/components/AppNotification.vue'
 import AppTabs from '@/components/AppTabs.vue'
 import AppCarousel from '@/components/AppCarousel.vue'
-// import AppPagination from '@/components/AppPagination.vue'
+import AppPagination from '@/components/AppPagination.vue'
 import CenterWrapper from '@/components/CenterWrapper.vue'
 import ScrollSpy from '@/components/ScrollSpy.vue'
 import AppBreadcrumb from '@/components/AppBreadcrumb.vue'
@@ -27,7 +27,7 @@ export {
   AppNotification,
   AppTabs,
   AppCarousel,
-  // AppPagination,
+  AppPagination,
   CenterWrapper,
   ScrollSpy,
   AppBreadcrumb,

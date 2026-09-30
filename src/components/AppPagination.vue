@@ -67,12 +67,13 @@ const currentPage = computed(() => (route.query.page ? Number(route.query.page) 
 }
 
 ul {
-  @mixin list-reset;
-
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
   justify-content: center;
+  padding-inline-start: 0;
+  margin-block-end: 0;
+  list-style: none;
 }
 
 li {
