@@ -126,7 +126,7 @@ const { colors } = useTheme();
       block-size: anchor-size(block);
       position-anchor: v-bind(anchor);
       content: "";
-      background: v-bind(colors.emphasized);
+      background: v-bind(colors.solid);
 
       /* background: v-bind(colors.muted); */
       transition:

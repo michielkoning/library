@@ -3,6 +3,19 @@ import AppButton from "@/components/AppButton.vue";
 import CenterWrapper from "@/components/CenterWrapper.vue";
 
 const tokens = ["contrast", "fg", "subtle", "muted", "emphasized", "solid", "focus-ring", "border"];
+const palette = [
+  50,
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  950,
+]
 </script>
 
 <template>
@@ -12,6 +25,22 @@ const tokens = ["contrast", "fg", "subtle", "muted", "emphasized", "solid", "foc
         {{ theme }}
         <div
           v-for="token in tokens"
+          :key="token"
+          class="color"
+          :style="{
+            '--color': `var(--color-${theme}-${token})`,
+          }"
+        >
+          {{ token }}
+        </div>
+      </template>
+    </div>
+
+    <div class="palette">
+      <template v-for="theme in ['wdt-red', 'wdt-yellow', 'green', 'blue']" :key="theme">
+        {{ theme }}
+        <div
+          v-for="token in palette"
           :key="token"
           class="color"
           :style="{
@@ -35,13 +64,17 @@ const tokens = ["contrast", "fg", "subtle", "muted", "emphasized", "solid", "foc
 </template>
 
 <style lang="css" scoped>
+.palette,
 .colors,
 .buttons {
   display: grid;
-  grid-template-columns: 8em repeat(8, 1fr);
   gap: var(--spacing-2);
   align-items: center;
   margin-block-end: 1em;
+}
+
+.palette {
+  grid-template-columns: 8em repeat(11, 1fr);
 }
 
 .buttons {

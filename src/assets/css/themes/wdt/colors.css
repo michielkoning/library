@@ -7,25 +7,43 @@
 @import "./../chakra/cyan.css";
 
 :root {
+  /* BASE */
+  --color-black: oklch(0% 0 0deg);
+  --color-white: oklch(100% 0 0deg);
+  --color-wdt-grey: oklch(85.47% 0.0052 325.62deg);
+  --color-bg: light-dark(var(--color-wdt-grey), var(--color-gray-900));
+  --color-fg: light-dark(var(--color-black), var(--color-gray-50));
+  --color-border: light-dark(var(--color-gray-200), var(--color-gray-800));
+
+  /* LANDMARK */
+  --color-landmark-bg: var(--color-black);
+  --color-landmark-fg: var(--color-white);
+  --color-landmark-border: var(--color-white);
+
+  /* PANEL */
+  --color-panel-bg: light-dark(var(--color-gray-100), var(--color-gray-950));
+  --color-panel-fg: var(--color-fg);
+  --color-panel-border: light-dark(var(--color-gray-100), var(--color-gray-900));
+
   /* PRIMARY */
-  --color-primary-contrast: light-dark(white, white);
-  --color-primary-fg: light-dark(var(--color-wdt-red-700), var(--color-wdt-red-300));
-  --color-primary-subtle: light-dark(var(--color-wdt-red-100), var(--color-wdt-red-900));
-  --color-primary-muted: light-dark(var(--color-wdt-red-200), var(--color-wdt-red-800));
-  --color-primary-emphasized: light-dark(var(--color-wdt-red-300), var(--color-wdt-red-700));
-  --color-primary-solid: light-dark(var(--color-wdt-red-600), var(--color-wdt-red-600));
-  --color-primary-focus-ring: light-dark(var(--color-wdt-red-500), var(--color-wdt-red-500));
-  --color-primary-border: light-dark(var(--color-wdt-red-500), var(--color-wdt-red-400));
+  --color-primary-contrast: var(--color-white);
+  --color-primary-fg: var(--color-black);
+  --color-primary-subtle: var(--color-wdt-red-300);
+  --color-primary-muted: var(--color-wdt-red-400);
+  --color-primary-emphasized: var(--color-wdt-red-950);
+  --color-primary-solid: var(--color-wdt-red-600);
+  --color-primary-focus-ring: var(--color-wdt-red-700);
+  --color-primary-border: var(--color-wdt-red-800);
 
   /* SECONDARY */
-  --color-secondary-contrast: oklch(from var(--color-secondary-solid) 30% 0.1 h);
-  --color-secondary-fg: light-dark(black, black);
-  --color-secondary-subtle: light-dark(var(--color-wdt-yellow-100), var(--color-wdt-yellow-900));
-  --color-secondary-muted: light-dark(var(--color-wdt-yellow-200), var(--color-wdt-yellow-800));
-  --color-secondary-emphasized: light-dark(var(--color-wdt-yellow-400), var(--color-wdt-yellow-700));
-  --color-secondary-solid: light-dark(var(--color-wdt-yellow-300), var(--color-wdt-yellow-300));
-  --color-secondary-focus-ring: light-dark(var(--color-wdt-yellow-500), var(--color-wdt-yellow-500));
-  --color-secondary-border: light-dark(var(--color-wdt-yellow-500), var(--color-wdt-yellow-500));
+  --color-secondary-contrast: var(--color-black);
+  --color-secondary-fg: var(--color-black);
+  --color-secondary-subtle: var(--color-wdt-yellow-50);
+  --color-secondary-muted: var(--color-wdt-yellow-700);
+  --color-secondary-emphasized: var(--color-wdt-yellow-800);
+  --color-secondary-solid: var(--color-wdt-yellow-500);
+  --color-secondary-focus-ring: var(--color-wdt-yellow-700);
+  --color-secondary-border: var(--color-wdt-yellow-700);
 
   /* ACCENT */
   --color-accent-fg: var(--color-purple-fg);
@@ -36,12 +54,12 @@
   --color-accent-solid: var(--color-purple-solid);
   --color-accent-focus-ring: var(--color-purple-focus-ring);
   --color-accent-border: var(--color-purple-border);
-  --color-wdt-yellow: oklch(92.5% 0.193 102.82deg);
   --color-dominant: var(--color-wdt-yellow);
   --color-secondary: var(--color-wdt-red);
 
   /* WDT-RED */
   --color-wdt-red: oklch(47.19% 0.1582 33.33deg);
+  --color-wdt-red-dark: oklch(29.72% 0.1169 28.32deg);
   --color-wdt-red-50: oklch(from var(--color-wdt-red) calc(l + 0.35) c h);
   --color-wdt-red-100: oklch(from var(--color-wdt-red) calc(l + 0.3) c h);
   --color-wdt-red-200: oklch(from var(--color-wdt-red) calc(l + 0.2) c h);
@@ -52,16 +70,20 @@
   --color-wdt-red-700: oklch(from var(--color-wdt-red) calc(l - 0.05) c h);
   --color-wdt-red-800: oklch(from var(--color-wdt-red) calc(l - 0.1) c h);
   --color-wdt-red-900: oklch(from var(--color-wdt-red) calc(l - 0.15) c h);
-  --color-wdt-red-950: oklch(from var(--color-wdt-red) calc(l - 0.2) c h);
+  --color-wdt-red-950: var(--color-wdt-red-dark);
 
   /* WDT YELLOW */
-  --color-wdt-yellow-100: oklch(from var(--color-wdt-yellow) calc(l + 0.1) c h);
-  --color-wdt-yellow-200: oklch(from var(--color-wdt-yellow) calc(l + 0.05) c h);
-  --color-wdt-yellow-300: var(--color-wdt-yellow);
-  --color-wdt-yellow-400: oklch(from var(--color-wdt-yellow) calc(l - 0.05) c h);
-  --color-wdt-yellow-500: oklch(from var(--color-wdt-yellow) calc(l - 0.1) c h);
-  --color-wdt-yellow-600: oklch(from var(--color-wdt-yellow) calc(l - 0.15) c h);
-  --color-wdt-yellow-700: oklch(from var(--color-wdt-yellow) calc(l - 0.2) c h);
-  --color-wdt-yellow-800: oklch(from var(--color-wdt-yellow) calc(l - 0.25) c h);
+  --color-wdt-yellow: oklch(92.5% 0.193 102.82deg);
+  --color-wdt-yellow-light: oklch(96.52% 0.0818 101.03deg);
+  --color-wdt-yellow-50: var(--color-wdt-yellow-light);
+  --color-wdt-yellow-100: oklch(from var(--color-wdt-yellow-light) calc(l - 0.05) c h);
+  --color-wdt-yellow-200: oklch(from var(--color-wdt-yellow-light) calc(l - 0.12) c h);
+  --color-wdt-yellow-300: oklch(from var(--color-wdt-yellow) calc(l - 0.15) 0.1 h);
+  --color-wdt-yellow-400: oklch(from var(--color-wdt-yellow) calc(l - 0.05) 0.1 h);
+  --color-wdt-yellow-500: var(--color-wdt-yellow);
+  --color-wdt-yellow-600: oklch(from var(--color-wdt-yellow) calc(l - 0.05) c h);
+  --color-wdt-yellow-700: oklch(from var(--color-wdt-yellow) calc(l - 0.08) c h);
+  --color-wdt-yellow-800: oklch(from var(--color-wdt-yellow) calc(l - 0.14) c h);
   --color-wdt-yellow-900: oklch(from var(--color-wdt-yellow) calc(l - 0.3) c h);
+  --color-wdt-yellow-950: oklch(from var(--color-wdt-yellow) calc(l - 0.35) c h);
 }

@@ -69,7 +69,7 @@ const { colors } = useTheme(props.theme);
 
 .subtle {
   --btn-background-color: v-bind(colors.subtle);
-  --btn-background-color-hover: v-bind(colors.emphasized);
+  --btn-background-color-hover: v-bind(colors.solid);
   --btn-border-color: v-bind(colors.solid);
   --btn-text-color: v-bind(colors.fg);
   --btn-spinner-border: v-bind(colors.solid);

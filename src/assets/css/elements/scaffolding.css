@@ -4,7 +4,7 @@
 }
 
 ::selection {
-  color: var(--color-primary-fg);
+  color: var(--color-primary-contrast);
   background: var(--color-primary-solid);
 }
 

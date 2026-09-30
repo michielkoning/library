@@ -103,11 +103,11 @@ a {
 
   &:target-current {
     anchor-name: v-bind(anchor);
-    color: v-bind(colors.solid);
+    color: v-bind(colors.emphasized);
   }
 
   &:hover {
-    border-color: v-bind(colors.solid);
+    border-color: v-bind(colors.emphasized);
   }
 }
 </style>
