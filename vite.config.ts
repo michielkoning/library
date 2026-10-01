@@ -12,11 +12,17 @@ export default defineConfig({
       processor: "vue",
       tsconfigPath: "./tsconfig.app.json",
     }),
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => ["selectedcontent"].includes(tag),
+        },
+      },
+    }),
     vueDevTools(),
   ],
   build: {
-    target: 'esnext',
+    target: "esnext",
     lib: {
       entry: [
         resolve(import.meta.dirname, "src/index.ts"),
@@ -30,13 +36,7 @@ export default defineConfig({
     rolldownOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: [
-        "@vee-validate/zod",
-        "vee-validate",
-        "vue",
-        "vue-router",
-        "zod",
-      ],
+      external: ["@vee-validate/zod", "vee-validate", "vue", "vue-router", "zod"],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
