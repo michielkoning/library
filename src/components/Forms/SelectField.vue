@@ -2,7 +2,6 @@
 import { useField } from "vee-validate";
 import { toRefs, useId } from "vue";
 import FormField from "./FormField.vue";
-import { Icon } from "@iconify/vue";
 
 const props = defineProps<{
   // type: 'directors' | 'authors'
@@ -38,10 +37,6 @@ const validationListeners = {
       :aria-invalid="errorMessage !== undefined ? 'true' : 'false'"
       v-on="validationListeners"
     >
-      <button>
-        <selectedcontent />
-        <icon icon="solar:alt-arrow-down-outline" class="icon" />
-      </button>
       <option v-for="option in options" :key="option.value" :value="option.value">
         {{ option.title }}
       </option>
@@ -50,41 +45,38 @@ const validationListeners = {
 </template>
 
 <style lang="css" scoped>
-.icon {
-  transition: rotate var(--transition);
-}
-
 select {
-  appearance: base-select;
-  cursor: pointer;
-
-  &:open {
-    .icon {
-      rotate: -180deg;
-    }
-  }
-}
-
-button {
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
-  justify-content: space-between;
-  inline-size: 100%;
-}
+  appearance: base-select;
+  cursor: pointer;
 
-::checkmark {
-  display: block;
-  inline-size: 1em;
-  aspect-ratio: 1.348;
-  content: "";
-  background: currentcolor;
-  border-shape: var(--check);
-  fill: currentcolor;
-}
+  &::checkmark {
+    display: block;
+    inline-size: 1em;
+    aspect-ratio: 1.348;
+    content: "";
+    background: currentcolor;
+    border-shape: var(--check);
+    fill: currentcolor;
+  }
 
-::picker-icon {
-  display: none;
+  &::picker-icon {
+    inline-size: 0.5em;
+    aspect-ratio: 0.571;
+    content: "";
+    background-color: var(--color-border-inverted);
+    rotate: 90deg;
+    transition: rotate var(--transition);
+    border-shape: var(--chevron);
+  }
+
+  &:open {
+    &::picker-icon {
+      rotate: -90deg;
+    }
+  }
 }
 
 ::picker(select) {

@@ -30,7 +30,13 @@ export default defineConfig({
     rolldownOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ["vue"],
+      external: [
+        "@vee-validate/zod",
+        "vee-validate",
+        "vue",
+        "vue-router",
+        "zod",
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
