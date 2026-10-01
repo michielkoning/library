@@ -6,12 +6,11 @@ module.exports = {
       md: 768,
       lg: 1024,
       xlg: 1240,
-    },
-    'postcss-mixins': {
-      mixinsDir: './app/assets/css/mixins/',
+    },   'postcss-mixins': {
+      mixinsDir: './src/assets/css/mixins/',
     },
     'postcss-preset-env': {
-      browsers: 'last 2 versions',
+      browsers: 'baseline newly available',
       stage: 4,
       features: {
         'nesting-rules': true,
