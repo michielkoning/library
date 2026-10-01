@@ -8,7 +8,7 @@ const props = defineProps<{
   name: string;
   title: string;
   options: {
-    value: string | number;
+    value?: string | number;
     title: string;
   }[];
 }>();
