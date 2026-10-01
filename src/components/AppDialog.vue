@@ -1,14 +1,21 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 
-defineProps<{
+withDefaults(
+  defineProps<{
+    size?: "sm" |"md" | "lg" | 'xlg';
   id: string;
   title: string;
-}>();
+}>(),
+  {
+    top: false,
+    size: "lg",
+  },
+);
 </script>
 
 <template>
-  <dialog :id="id" closedby="any">
+  <dialog :id="id" closedby="any" :class="`dialog-${size}`">
     <header>
       <h2>{{ title }}</h2>
       <button :commandfor="id" command="close" class="btn-close">
@@ -24,7 +31,7 @@ defineProps<{
 <style lang="css" scoped>
 dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
-  max-inline-size: var(--container-size-md);
+  max-inline-size: var(--dialog-width);
   padding: 0;
   overscroll-behavior: contain;
   color: var(--color-fg);
@@ -46,6 +53,22 @@ dialog {
       }
     }
   }
+}
+
+.dialog-sm {
+  --dialog-width: var(--container-size-sm);
+}
+
+.dialog-md {
+  --dialog-width: var(--container-size-md);
+}
+
+.dialog-lg {
+  --dialog-width: var(--container-size-lg);
+}
+
+.dialog-xlg {
+  --dialog-width: var(--container-size-xlg);
 }
 
 ::backdrop {

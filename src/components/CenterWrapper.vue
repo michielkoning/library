@@ -13,7 +13,7 @@ withDefaults(
 
 <template>
   <div class="notch" :class="{ top }">
-    <div class="wrapper" :class="`wrapper-${size}`">
+    <div class="center-wrapper" :class="`center-wrapper-${size}`">
       <slot />
     </div>
   </div>
@@ -28,23 +28,23 @@ withDefaults(
   }
 }
 
-.wrapper-sm {
+.center-wrapper-sm {
   --wrapper-size: var(--container-size-sm);
 }
 
-.wrapper-md {
+.center-wrapper-md {
   --wrapper-size: var(--container-size-md);
 }
 
-.wrapper-lg {
+.center-wrapper-lg {
   --wrapper-size: var(--container-size-lg);
 }
 
-.wrapper-xlg {
+.center-wrapper-xlg {
   --wrapper-size: var(--container-size-xlg);
 }
 
-.wrapper {
+.center-wrapper {
   /* stylelint-disable-next-line length-zero-no-unit */
   --zero: 0px;
 
