@@ -123,7 +123,7 @@ a,
 button {
   --btn-border-radius: 0.5em;
 
-  display: flex;
+  display: inline-flex;
   gap: var(--spacing-2);
   align-items: center;
   justify-content: center;
