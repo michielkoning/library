@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import useTheme from "@/composables/useTheme";
 import { computed, useId } from "vue";
 
 defineProps<{
@@ -14,8 +13,6 @@ const id = useId();
 const anchor = computed(() => {
   return `--${id}`;
 });
-
-const { colors } = useTheme();
 </script>
 
 <template>
@@ -99,15 +96,15 @@ a {
   padding-block: var(--spacing-1);
   padding-inline-start: var(--spacing-3);
   text-decoration: none;
-  border-inline-start: 0.25em solid v-bind(colors.subtle);
+  border-inline-start: 0.25em solid var(--color-primary-subtle);
 
   &:target-current {
     anchor-name: v-bind(anchor);
-    color: v-bind(colors.emphasized);
+    color: var(--color-primary-emphasized);
   }
 
   &:hover {
-    border-color: v-bind(colors.emphasized);
+    border-color: var(--color-primary-emphasized);
   }
 }
 </style>

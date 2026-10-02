@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import useTheme from "@/composables/useTheme";
 import { computed, ref, useId, useTemplateRef } from "vue";
 
 const props = defineProps<{
@@ -51,8 +50,6 @@ const goToTab = (tab: number) => {
 const total = computed(() => {
   return props.tabs.length;
 });
-
-const { colors } = useTheme();
 </script>
 
 <template>
@@ -113,7 +110,7 @@ const { colors } = useTheme();
     margin-block-end: var(--spacing-4);
     list-style: none outside;
     background-color: var(--color-panel-bg);
-    border-block-end: 2px solid v-bind(colors.emphasized);
+    border-block-end: 2px solid var(--color-primary-emphasized);
 
     &::before {
       position: absolute;
@@ -126,9 +123,7 @@ const { colors } = useTheme();
       block-size: anchor-size(block);
       position-anchor: v-bind(anchor);
       content: "";
-      background: v-bind(colors.solid);
-
-      /* background: v-bind(colors.muted); */
+      background: var(--color-primary-solid);
       transition:
         left var(--transition),
         width var(--transition);
@@ -144,13 +139,13 @@ const { colors } = useTheme();
     transition: background var(--transition);
 
     &:hover:not([aria-selected="true"]) {
-      color: v-bind(colors.fg);
-      background-color: v-bind(colors.subtle);
+      color: var(--color-primary-fg);
+      background-color: var(--color-primary-subtle);
     }
 
     &[aria-selected="true"] {
       anchor-name: v-bind(anchor);
-      color: v-bind(colors.fg);
+      color: var(--color-primary-fg);
     }
   }
 

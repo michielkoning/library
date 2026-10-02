@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import useTheme from "@/composables/useTheme";
 import { Icon } from "@iconify/vue";
 import { computed, resolveComponent } from "vue";
 import type { RouteLocationRaw } from "vue-router";
@@ -9,14 +8,14 @@ const props = withDefaults(
     to?: RouteLocationRaw;
     type?: "submit" | "button";
     variant?: "solid" | "outline" | "subtle";
-    theme?: "primary" | "secondary" | "accent";
+    theme?: "primary" | "secondary" | "accent"
     title: string;
     disabled?: boolean;
     icon?: string;
     loading?: boolean;
   }>(),
   {
-    theme: undefined,
+    theme: 'primary',
     to: undefined,
     variant: "solid",
     type: "button",
@@ -33,8 +32,6 @@ const component = computed(() => {
     return "button";
   }
 });
-
-const { colors } = useTheme(props.theme);
 </script>
 
 <template>
@@ -57,33 +54,68 @@ const { colors } = useTheme(props.theme);
 </template>
 
 <style lang="css" scoped>
+.primary {
+  --color-contrast: var(--color-white);
+  --color-fg: var(--color-black);
+  --color-subtle: var(--color-wdt-red-300);
+  --color-muted: var(--color-wdt-red-400);
+  --color-emphasized: var(--color-wdt-red-950);
+  --color-solid: var(--color-wdt-red-600);
+  --color-focus-ring: var(--color-wdt-red-700);
+  --color-border: var(--color-wdt-red-800);
+}
+
+.secondary {
+  /* SECONDARY */
+  --color-contrast: var(--color-black);
+  --color-fg: var(--color-black);
+  --color-subtle: var(--color-wdt-yellow-50);
+  --color-muted: var(--color-wdt-yellow-700);
+  --color-emphasized: var(--color-wdt-yellow-800);
+  --color-solid: var(--color-wdt-yellow-500);
+  --color-focus-ring: var(--color-wdt-yellow-700);
+  --color-border: var(--color-wdt-yellow-700);
+}
+
+.accent {
+  /* ACCENT */
+  --color-fg: var(--color-purple-fg);
+  --color-contrast: var(--color-purple-contrast);
+  --color-subtle: var(--color-purple-subtle);
+  --color-muted: var(--color-purple-muted);
+  --color-emphasized: var(--color-purple-emphasized);
+  --color-solid: var(--color-purple-solid);
+  --color-focus-ring: var(--color-purple-focus-ring);
+  --color-border: var(--color-purple-border);
+}
+
 .solid {
-  --btn-background-color: v-bind(colors.solid);
-  --btn-background-color-hover: v-bind(colors.emphasized);
-  --btn-text-color: v-bind(colors.contrast);
-  --btn-border-color: v-bind(colors.solid);
-  --btn-spinner-border: v-bind(colors.emphasized);
-  --btn-spinner-bg: v-bind(colors.contrast);
-  --focus-ring-color: v-bind(colors.focusRing);
+  --btn-background-color: var(--color-solid);
+  --btn-background-color-hover: var(--color-emphasized);
+  --btn-text-color: var(--color-contrast);
+  --btn-border-color: var(--color-solid);
+  --btn-spinner-border: var(--color-emphasized);
+  --btn-spinner-bg: var(--color-contrast);
+  --focus-ring-color: var(--color-focus-ring);
 }
 
 .subtle {
-  --btn-background-color: v-bind(colors.subtle);
-  --btn-background-color-hover: v-bind(colors.solid);
-  --btn-border-color: v-bind(colors.solid);
-  --btn-text-color: v-bind(colors.fg);
-  --btn-spinner-border: v-bind(colors.solid);
-  --btn-spinner-bg: v-bind(colors.contrast);
-  --focus-ring-color: v-bind(colors.focusRing);
+  --btn-background-color: var(--color-subtle);
+  --btn-background-color-hover: var(--color-solid);
+  --btn-border-color: var(--color-solid);
+  --btn-text-color: var(--color-fg);
+  --btn-spinner-border: var(--color-solid);
+  --btn-spinner-bg: var(--color-contrast);
+  --focus-ring-color: var(--color-focus-ring);
 }
 
 .outline {
   --btn-background-color: transparant;
-  --btn-background-color-hover: v-bind(colors.subtle);
-  --btn-text-color: v-bind(colors.solid);
+  --btn-background-color-hover: var(--color-subtle);
+  --btn-text-color: var(--color-solid);
   --btn-border-color: currentcolor;
-  --btn-spinner-border: v-bind(colors.solid);
-  --btn-spinner-bg: v-bind(colors.contrast);
+  --btn-spinner-border: var(--color-solid);
+  --btn-spinner-bg: var(--color-contrast);
   --focus-ring-color: var(--btn-text-color);
 }
 
