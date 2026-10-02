@@ -1,6 +1,6 @@
 {
   "name": "@m11g/library",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "type": "module",
   "files": [
     "dist"
