@@ -58,18 +58,19 @@ select {
     aspect-ratio: 1.348;
     content: "";
     background: currentcolor;
-    border-shape: var(--check);
+    clip-path: var(--check);
     fill: currentcolor;
   }
 
   &::picker-icon {
-    inline-size: 0.5em;
-    aspect-ratio: 0.571;
+    inline-size: calc(0.5em * 0.571);
+    block-size: calc(0.5em);
+    aspect-ratio: auto;
     content: "";
     background-color: var(--color-border-inverted);
+    clip-path: var(--chevron);
     rotate: 90deg;
     transition: rotate var(--transition);
-    border-shape: var(--chevron);
   }
 
   &:open {

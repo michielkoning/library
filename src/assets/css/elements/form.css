@@ -104,10 +104,11 @@ input[type="checkbox"] {
     inline-size: 0.75em;
     aspect-ratio: 1;
     content: "";
+    background: transparent;
     background-color: var(--color-primary-contrast);
     opacity: 0;
+    clip-path: var(--check);
     transition: opacity var(--transition);
-    border-shape: var(--check);
   }
 
   &:checked::before {
