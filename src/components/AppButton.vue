@@ -8,14 +8,14 @@ const props = withDefaults(
     to?: RouteLocationRaw;
     type?: "submit" | "button";
     variant?: "solid" | "outline" | "subtle";
-    theme?: "primary" | "secondary" | "accent"
+    theme?: "primary" | "secondary" | "accent";
     title: string;
     disabled?: boolean;
     icon?: string;
     loading?: boolean;
   }>(),
   {
-    theme: 'primary',
+    theme: "primary",
     to: undefined,
     variant: "solid",
     type: "button",
@@ -55,38 +55,36 @@ const component = computed(() => {
 
 <style lang="css" scoped>
 .primary {
-  --color-contrast: var(--color-white);
-  --color-fg: var(--color-black);
-  --color-subtle: var(--color-wdt-red-300);
-  --color-muted: var(--color-wdt-red-400);
-  --color-emphasized: var(--color-wdt-red-950);
-  --color-solid: var(--color-wdt-red-600);
-  --color-focus-ring: var(--color-wdt-red-700);
-  --color-border: var(--color-wdt-red-800);
+  --color-contrast: var(--color-primary-contrast);
+  --color-fg: var(--color-primary-fg);
+  --color-subtle: var(--color-primary-subtle);
+  --color-muted: var(--color-primary-muted);
+  --color-emphasized: var(--color-primary-emphasized);
+  --color-solid: var(--color-primary-solid);
+  --color-focus-ring: var(--color-focus-primary-ring);
+  --color-border: var(--color-primary-border);
 }
 
 .secondary {
-  /* SECONDARY */
-  --color-contrast: var(--color-black);
-  --color-fg: var(--color-black);
-  --color-subtle: var(--color-wdt-yellow-50);
-  --color-muted: var(--color-wdt-yellow-700);
-  --color-emphasized: var(--color-wdt-yellow-800);
-  --color-solid: var(--color-wdt-yellow-500);
-  --color-focus-ring: var(--color-wdt-yellow-700);
-  --color-border: var(--color-wdt-yellow-700);
+  --color-contrast: var(--color-secondary-contrast);
+  --color-fg: var(--color-secondary-fg);
+  --color-subtle: var(--color-secondary-subtle);
+  --color-muted: var(--color-secondary-muted);
+  --color-emphasized: var(--color-secondary-emphasized);
+  --color-solid: var(--color-secondary-solid);
+  --color-focus-ring: var(--color-focus-secondary-ring);
+  --color-border: var(--color-secondary-border);
 }
 
 .accent {
-  /* ACCENT */
-  --color-fg: var(--color-purple-fg);
-  --color-contrast: var(--color-purple-contrast);
-  --color-subtle: var(--color-purple-subtle);
-  --color-muted: var(--color-purple-muted);
-  --color-emphasized: var(--color-purple-emphasized);
-  --color-solid: var(--color-purple-solid);
-  --color-focus-ring: var(--color-purple-focus-ring);
-  --color-border: var(--color-purple-border);
+  --color-contrast: var(--color-accent-contrast);
+  --color-fg: var(--color-accent-fg);
+  --color-subtle: var(--color-accent-subtle);
+  --color-muted: var(--color-accent-muted);
+  --color-emphasized: var(--color-accent-emphasized);
+  --color-solid: var(--color-accent-solid);
+  --color-focus-ring: var(--color-focus-accent-ring);
+  --color-border: var(--color-accent-border);
 }
 
 .solid {
