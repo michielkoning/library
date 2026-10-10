@@ -38,10 +38,10 @@ details {
     border-block-start: 1px solid var(--color-black);
     opacity: 0;
     transition:
-      padding var(--transition),
-      opacity var(--transition),
-      height var(--transition),
-      content-visibility var(--transition) allow-discrete;
+      padding var(--transition-reduced),
+      opacity var(--transition-reduced),
+      height var(--transition-reduced),
+      content-visibility var(--transition-reduced) allow-discrete;
   }
 
   &[open]::details-content {

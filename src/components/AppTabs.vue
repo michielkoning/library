@@ -152,13 +152,10 @@ const total = computed(() => {
   [role="tabpanel"] {
     display: none;
     opacity: 0;
-
-    @media (prefers-reduced-motion: no-preference) {
-      transition:
-        opacity var(--transition),
-        overlay allow-discrete,
-        display allow-discrete;
-    }
+    transition:
+      opacity var(--transition-reduced),
+      overlay allow-discrete,
+      display allow-discrete;
 
     &.active {
       display: block;

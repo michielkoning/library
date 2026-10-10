@@ -22,11 +22,6 @@
 }
 
 html {
-  @media (prefers-reduced-motion: no-preference) {
-    scroll-behavior: smooth;
-  }
-
-  container-type: scroll-state;
   overflow: auto;
   text-size-adjust: 100%;
 }

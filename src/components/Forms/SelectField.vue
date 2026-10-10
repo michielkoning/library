@@ -111,10 +111,10 @@ select {
   opacity: 0;
   translate: 0 calc(-1 * var(--spacing-4));
   transition:
-    translate var(--transition),
-    opacity var(--transition),
-    overlay var(--transition) allow-discrete,
-    display var(--transition) allow-discrete;
+    translate var(--transition-reduced),
+    opacity var(--transition-reduced),
+    overlay var(--transition-reduced) allow-discrete,
+    display var(--transition-reduced) allow-discrete;
 }
 
 :open::picker(select) {
