@@ -53,12 +53,10 @@ header {
   min-block-size: 100dvh;
 }
 
-header {
-  margin-block-end: var(--spacing-4);
-}
-
 main {
   flex: 1 0 auto;
+  padding-block: 2em;
+  background-color: var(--color-bg);
 }
 
 a {

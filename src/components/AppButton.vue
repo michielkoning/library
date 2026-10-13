@@ -6,6 +6,7 @@ import type { RouteLocationRaw } from "vue-router";
 const props = withDefaults(
   defineProps<{
     to?: RouteLocationRaw;
+    href?: string
     type?: "submit" | "button";
     variant?: "solid" | "outline" | "subtle";
     theme?: "primary" | "secondary" | "accent";
@@ -16,6 +17,7 @@ const props = withDefaults(
   }>(),
   {
     theme: "primary",
+    href: undefined,
     to: undefined,
     variant: "solid",
     type: "button",
@@ -25,32 +27,43 @@ const props = withDefaults(
   },
 );
 
-const component = computed(() => {
-  if (props.to) {
-    return resolveComponent("RouterLink");
-  } else {
-    return "button";
-  }
+const defaultClasses = computed(() => {
+  return [props.theme, props.variant]
 });
 </script>
 
 <template>
-  <component
-    :is="component"
+  <a
+    v-if="href"
+    :href
+    rel="noopener noreferrer"
+    :class="defaultClasses"
+  >
+    <icon v-if="icon" :icon />
+    {{ title }}
+  </a>
+  <router-link
+    v-else-if="to"
     :to
+    :class="defaultClasses"
+  >
+    <icon v-if="icon" :icon />
+    {{ title }}
+  </router-link>
+  <button
+    v-else
     :class="[
-      variant,
-      theme,
+      ...defaultClasses,
       {
         loading: loading ? 'loading' : undefined,
       },
     ]"
-    :type="component === 'button' ? type : undefined"
-    :disabled
-  >
+    >
     <icon v-if="icon" :icon />
     {{ title }}
-  </component>
+  </button>
+
+
 </template>
 
 <style lang="css" scoped>
