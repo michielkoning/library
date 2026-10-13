@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
-import { computed, resolveComponent } from "vue";
+import { computed } from "vue";
 import type { RouteLocationRaw } from "vue-router";
 
 const props = withDefaults(
