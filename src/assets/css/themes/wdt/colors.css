@@ -10,7 +10,7 @@
   /* BASE */
   --color-black: oklch(0% 0 0deg);
   --color-white: oklch(100% 0 0deg);
-  --color-wdt-grey: oklch(85.47% 0.0052 325.62deg);
+  --color-wdt-grey: oklch(97.93% 0.0051 325.62deg);
   --color-bg: light-dark(var(--color-wdt-grey), var(--color-gray-900));
   --color-fg: light-dark(var(--color-black), var(--color-gray-50));
   --color-subtle: light-dark(var(--color-secondary-subtle), var(--color-gray-700));
