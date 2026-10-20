@@ -32,26 +32,26 @@ button {
   position-anchor: v-bind(anchor);
   position-try-fallbacks: flip-block;
   color: var(--color-panel-fg);
-  zoom: 0.9;
   background-color: var(--color-panel-bg);
   border: 1px solid var(--color-panel-border);
   opacity: 0;
+  scale: 0.9;
   transition:
     opacity var(--transition),
-    zoom var(--transition),
+    scale var(--transition),
     overlay allow-discrete,
     display allow-discrete;
 
   &:popover-open {
-    zoom: 1;
     opacity: 1;
+    scale: 1;
   }
 }
 
 @starting-style {
   [popover]:popover-open {
-    zoom: 0.9;
     opacity: 0;
+    scale: 0.9;
   }
 }
 </style>

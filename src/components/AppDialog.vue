@@ -3,10 +3,10 @@ import { Icon } from "@iconify/vue";
 
 withDefaults(
   defineProps<{
-    size?: "sm" |"md" | "lg" | 'xlg';
-  id: string;
-  title: string;
-}>(),
+    size?: "sm" | "md" | "lg" | "xlg";
+    id: string;
+    title: string;
+  }>(),
   {
     top: false,
     size: "lg",
@@ -110,24 +110,24 @@ header {
 @keyframes dialog-hide {
   from {
     opacity: 1;
-    translate: 0 0;
+    scale: 1;
   }
 
   to {
     opacity: 0;
-    translate: 0 -1em;
+    scale: 0.97;
   }
 }
 
 @keyframes dialog-show {
   from {
     opacity: 0;
-    translate: 0 -1em;
+    scale: 0.97;
   }
 
   to {
     opacity: 1;
-    translate: 0 0;
+    scale: 1;
   }
 }
 
