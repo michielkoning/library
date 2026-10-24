@@ -24,6 +24,10 @@ withDefaults(
     </header>
     <div class="content">
       <slot />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa veritatis iusto sed amet mollitia cupiditate velit libero aliquid, veniam qui recusandae fuga nesciunt ut praesentium nulla, illo asperiores debitis repellat.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa veritatis iusto sed amet mollitia cupiditate velit libero aliquid, veniam qui recusandae fuga nesciunt ut praesentium nulla, illo asperiores debitis repellat.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa veritatis iusto sed amet mollitia cupiditate velit libero aliquid, veniam qui recusandae fuga nesciunt ut praesentium nulla, illo asperiores debitis repellat.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa veritatis iusto sed amet mollitia cupiditate velit libero aliquid, veniam qui recusandae fuga nesciunt ut praesentium nulla, illo asperiores debitis repellat.</p>
     </div>
   </dialog>
 </template>
@@ -38,6 +42,7 @@ dialog {
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 0.25em;
+  transform-origin: top center;
   transition:
     display var(--transition-reduced) allow-discrete,
     overlay var(--transition-reduced) allow-discrete;

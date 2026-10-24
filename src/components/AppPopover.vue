@@ -35,6 +35,7 @@ button {
   background-color: var(--color-panel-bg);
   border: 1px solid var(--color-panel-border);
   opacity: 0;
+  transform-origin: top center;
   scale: 0.9;
   transition:
     opacity var(--transition),

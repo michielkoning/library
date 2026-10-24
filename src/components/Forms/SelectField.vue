@@ -109,6 +109,7 @@ select {
   background-color: var(--color-bg);
   border: 2px solid var(--color-border-inverted);
   opacity: 0;
+  transform-origin: top center;
   scale: 0.95;
   translate: 0;
   transition:
