@@ -109,9 +109,10 @@ select {
   background-color: var(--color-bg);
   border: 2px solid var(--color-border-inverted);
   opacity: 0;
-  translate: 0 calc(-1 * var(--spacing-4));
+  scale: 0.95;
+  translate: 0;
   transition:
-    translate var(--transition-reduced),
+    scale var(--transition-reduced),
     opacity var(--transition-reduced),
     overlay var(--transition-reduced) allow-discrete,
     display var(--transition-reduced) allow-discrete;
@@ -119,13 +120,13 @@ select {
 
 :open::picker(select) {
   opacity: 1;
-  translate: 0 0;
+  scale: 1;
 }
 
 @starting-style {
   :open::picker(select) {
     opacity: 0;
-    translate: 0 calc(-1 * var(--spacing-4));
+    scale: 0.95;
   }
 }
 
